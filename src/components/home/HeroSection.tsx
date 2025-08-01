@@ -67,9 +67,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               Trusted Excellence Since 1998
             </Badge>
             
-            <div className="relative flex items-center justify-center px-4 py-4">
-              <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gradient-premium leading-tight text-center max-w-5xl break-words">
-                <span className="block">
+            <div className="relative flex items-center justify-center px-6 py-6 overflow-visible">
+              <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gradient-premium leading-tight text-center max-w-5xl break-words overflow-visible">
+                <span className="block px-4 py-2 overflow-visible">
                   {taglines[currentTagline]}
                 </span>
               </h1>
