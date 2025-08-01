@@ -61,39 +61,41 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           }} />
           </div>
           
-          <div className="space-y-6 mb-16">
-            <div className="space-y-6">
-              <Badge className="bg-emerald-600/90 backdrop-blur-md text-white border border-emerald-500/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-700/90 transition-all duration-300 hover:scale-105">
-                <Award className="w-4 h-4 mr-2 inline-block animate-pulse" />
-                Trusted Excellence Since 1998
-              </Badge>
-              
-              <div className="relative min-h-[8rem] md:min-h-[12rem] lg:min-h-[16rem] flex items-center justify-center px-4 py-6">
-                <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gradient-premium leading-relaxed text-center max-w-6xl">
-                  <span className="block px-2 py-1">
-                    {taglines[currentTagline]}
-                  </span>
-                </h1>
-                
-              </div>
-              
-              <div className="relative">
-                
-              </div>
+          <div className="space-y-8 mb-12">
+            <Badge className="bg-emerald-600/90 backdrop-blur-md text-white border border-emerald-500/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-700/90 transition-all duration-300 hover:scale-105">
+              <Award className="w-4 h-4 mr-2 inline-block animate-pulse" />
+              Trusted Excellence Since 1998
+            </Badge>
+            
+            <div className="relative flex items-center justify-center px-4 py-4">
+              <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gradient-premium leading-tight text-center max-w-5xl break-words">
+                <span className="block">
+                  {taglines[currentTagline]}
+                </span>
+              </h1>
             </div>
-          </div>
-          
-          <div className="relative overflow-hidden mb-12">
-            <p className="font-inter text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Transforming culinary excellence with{' '}
-              <span className="relative inline-block">
-                {keywords.map((keyword, index) => <span key={index} className={`absolute inset-0 text-gradient-modern font-semibold transition-all duration-1000 ${index === currentKeyword ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
-                    {keyword}
-                  </span>)}
-                <span className="opacity-0 font-semibold">{keywords[0]}</span>
-              </span>
-              {' '}and unmatched quality standards that professional chefs and manufacturers trust worldwide.
-            </p>
+            
+            <div className="relative px-4">
+              <p className="font-inter text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed text-center">
+                Transforming culinary excellence with{' '}
+                <span className="relative inline-block min-w-0">
+                  {keywords.map((keyword, index) => (
+                    <span 
+                      key={index} 
+                      className={`absolute left-0 top-0 text-gradient-modern font-semibold whitespace-nowrap transition-all duration-1000 ${
+                        index === currentKeyword 
+                          ? 'opacity-100 transform translate-y-0' 
+                          : 'opacity-0 transform translate-y-4'
+                      }`}
+                    >
+                      {keyword}
+                    </span>
+                  ))}
+                  <span className="opacity-0 font-semibold whitespace-nowrap">{keywords[currentKeyword]}</span>
+                </span>
+                {' '}and unmatched quality standards that professional chefs and manufacturers trust worldwide.
+              </p>
+            </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
