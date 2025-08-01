@@ -4,17 +4,6 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-// Fix for default markers in react-leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -191,31 +180,17 @@ const Contact = () => {
             </div>
 
             <Card className="overflow-hidden shadow-xl border-0 rounded-xl">
-              <div className="h-[500px] w-full rounded-xl overflow-hidden">
-                <MapContainer
-                  center={[24.8238, 67.2556] as [number, number]}
-                  zoom={16}
-                  style={{ height: '100%', width: '100%' }}
-                >
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                  <Marker position={[24.8238, 67.2556] as [number, number]}>
-                    <Popup>
-                      <div className="text-center">
-                        <h3 className="font-bold text-lg mb-2">Pak Ghiza</h3>
-                        <p className="text-sm">
-                          L-C, 40, near opal laboratory<br />
-                          Sector 29 Landhi Industrial Area<br />
-                          Karachi, 75160<br />
-                          Pakistan
-                        </p>
-                      </div>
-                    </Popup>
-                  </Marker>
-                </MapContainer>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.2!2d67.255!3d24.824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sL-C%2C%2040%2C%20near%20opal%20laboratory%2C%20Sector%2029%20Landhi%20Industrial%20Area%2C%20Karachi%2C%2075160%2C%20Pakistan!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s"
+                width="100%"
+                height="500"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Pak Ghiza Location - Landhi Industrial Area, Karachi"
+                className="rounded-xl"
+              />
             </Card>
           </div>
         </div>
