@@ -18,16 +18,6 @@ const Contact = () => {
     message: ''
   });
 
-  const [partnerFormData, setPartnerFormData] = useState({
-    customerName: '',
-    cityName: '',
-    businessName: '',
-    businessNature: '',
-    mobileNumber: '',
-    email: '',
-    comment: ''
-  });
-
   const [mapboxToken, setMapboxToken] = useState('');
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
@@ -46,27 +36,6 @@ const Contact = () => {
     console.log('Form submitted:', formData);
   };
 
-  const handlePartnerInputChange = (e) => {
-    const { name, value } = e.target;
-    setPartnerFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handlePartnerSubmit = (e) => {
-    e.preventDefault();
-    // Handle partner form submission
-    console.log('Partner form submitted:', partnerFormData);
-  };
-
-  const handleBusinessNatureChange = (value) => {
-    setPartnerFormData(prev => ({
-      ...prev,
-      businessNature: value
-    }));
-  };
-
   // Initialize map
   useEffect(() => {
     if (!mapContainer.current || !mapboxToken) return;
@@ -76,16 +45,16 @@ const Contact = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: [67.0011, 24.8607], // Karachi coordinates
-      zoom: 12
+      center: [67.2556, 24.8238], // Updated coordinates for Landhi Industrial Area
+      zoom: 16
     });
 
     // Add marker for Pak Ghiza location
     new mapboxgl.Marker({
       color: '#f59e0b' // amber-500
     })
-    .setLngLat([67.0011, 24.8607])
-    .setPopup(new mapboxgl.Popup().setHTML('<h3>Pak Ghiza</h3><p>Karachi, Pakistan</p>'))
+    .setLngLat([67.2556, 24.8238])
+    .setPopup(new mapboxgl.Popup().setHTML('<h3>Pak Ghiza</h3><p>L-C, 40, near opal laboratory<br>Sector 29 Landhi Industrial Area<br>Karachi, 75160</p>'))
     .addTo(map.current);
 
     // Add navigation controls
@@ -109,9 +78,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="bg-amber-500 p-3 rounded-lg">
                   <Phone className="w-6 h-6 text-white" />
@@ -134,10 +103,12 @@ const Contact = () => {
                 <div className="bg-amber-500 p-3 rounded-lg">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
-                  <p className="text-gray-600">Karachi, Pakistan</p>
-                </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                    <p className="text-gray-600">L-C, 40, near opal laboratory</p>
+                    <p className="text-gray-600">Sector 29 Landhi Industrial Area</p>
+                    <p className="text-gray-600">Karachi, 75160</p>
+                  </div>
               </div>
 
               {/* Business Hours */}
@@ -237,127 +208,13 @@ const Contact = () => {
                 </div>
               </form>
             </Card>
-
-            {/* Partner With Us Form */}
-            <Card className="p-8 shadow-lg border-0">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Welcome Professionals</h3>
-                <p className="text-sm text-gray-600">(Distributors, HoReCa & O&I Professionals)</p>
-                <p className="text-sm text-gray-700 mt-3">
-                  Take the first step toward joining a growing network of trusted distributors and HoReCa & O&I professionals. 
-                  Fill out the form below to <strong>register your interest</strong> and unlock exclusive access to best pricing and priority support
-                </p>
-              </div>
-              
-              <form onSubmit={handlePartnerSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="customerName" className="text-sm font-medium text-gray-900">Customer Name:</Label>
-                  <Input 
-                    id="customerName"
-                    name="customerName"
-                    value={partnerFormData.customerName}
-                    onChange={handlePartnerInputChange}
-                    className="mt-1 rounded-lg border-amber-200 focus:border-amber-500" 
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="cityName" className="text-sm font-medium text-gray-900">City Name:</Label>
-                  <Input 
-                    id="cityName"
-                    name="cityName"
-                    value={partnerFormData.cityName}
-                    onChange={handlePartnerInputChange}
-                    className="mt-1 rounded-lg border-amber-200 focus:border-amber-500" 
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="businessName" className="text-sm font-medium text-gray-900">Business Name:</Label>
-                  <Input 
-                    id="businessName"
-                    name="businessName"
-                    value={partnerFormData.businessName}
-                    onChange={handlePartnerInputChange}
-                    className="mt-1 rounded-lg border-amber-200 focus:border-amber-500" 
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="businessNature" className="text-sm font-medium text-gray-900">Nature of Business:</Label>
-                  <Select onValueChange={handleBusinessNatureChange} value={partnerFormData.businessNature}>
-                    <SelectTrigger className="mt-1 rounded-lg border-amber-200 focus:border-amber-500">
-                      <SelectValue placeholder="Select business type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="distributor">Distributor</SelectItem>
-                      <SelectItem value="hotel">Hotel</SelectItem>
-                      <SelectItem value="restaurant">Restaurant</SelectItem>
-                      <SelectItem value="cafe">Café</SelectItem>
-                      <SelectItem value="office">Office</SelectItem>
-                      <SelectItem value="institution">Institution</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="mobileNumber" className="text-sm font-medium text-gray-900">Mobile Number:</Label>
-                  <Input 
-                    id="mobileNumber"
-                    name="mobileNumber"
-                    type="tel"
-                    value={partnerFormData.mobileNumber}
-                    onChange={handlePartnerInputChange}
-                    className="mt-1 rounded-lg border-amber-200 focus:border-amber-500" 
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="partnerEmail" className="text-sm font-medium text-gray-900">Email:</Label>
-                  <Input 
-                    id="partnerEmail"
-                    name="email"
-                    type="email"
-                    value={partnerFormData.email}
-                    onChange={handlePartnerInputChange}
-                    className="mt-1 rounded-lg border-amber-200 focus:border-amber-500" 
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="comment" className="text-sm font-medium text-gray-900">Comment Section:</Label>
-                  <Textarea 
-                    id="comment"
-                    name="comment"
-                    value={partnerFormData.comment}
-                    onChange={handlePartnerInputChange}
-                    className="mt-1 rounded-lg border-amber-200 focus:border-amber-500" 
-                    rows={4}
-                    placeholder="Additional comments or requirements..."
-                  />
-                </div>
-
-                <Button 
-                  type="submit"
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-lg font-semibold mt-6"
-                >
-                  Register Interest
-                </Button>
-              </form>
-            </Card>
           </div>
 
           {/* Map Section */}
           <div className="mt-16">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
-              <p className="text-lg text-gray-600">Visit our location in Karachi, Pakistan</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Location</h2>
+              <p className="text-lg text-gray-600">Find us at our facility in Landhi Industrial Area, Karachi</p>
             </div>
 
             {!mapboxToken && (

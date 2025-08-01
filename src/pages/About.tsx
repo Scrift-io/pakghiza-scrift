@@ -1,13 +1,29 @@
 
-import React, { useEffect, useRef } from 'react';
-import { Award, TrendingUp, Star, Users } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Award, TrendingUp, Star, Users, Handshake, Building, Phone, Mail } from 'lucide-react';
 import { AnimatedCard } from '@/components/ui/animated-card';
 import { useCounter } from '@/hooks/use-counter';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 const About = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const yearsCounter = useCounter({ start: 0, end: 25, duration: 2000 });
   const clientsCounter = useCounter({ start: 0, end: 1000, duration: 2500, delay: 200 });
+
+  const [partnerFormData, setPartnerFormData] = useState({
+    customerName: '',
+    cityName: '',
+    businessName: '',
+    businessNature: '',
+    mobileNumber: '',
+    email: '',
+    comment: ''
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +44,27 @@ const About = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handlePartnerInputChange = (e) => {
+    const { name, value } = e.target;
+    setPartnerFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handlePartnerSubmit = (e) => {
+    e.preventDefault();
+    // Handle partner form submission
+    console.log('Partner form submitted:', partnerFormData);
+  };
+
+  const handleBusinessNatureChange = (value) => {
+    setPartnerFormData(prev => ({
+      ...prev,
+      businessNature: value
+    }));
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
@@ -110,6 +147,226 @@ const About = () => {
               </p>
             </div>
           </AnimatedCard>
+
+          {/* Partnership Section */}
+          <div className="mt-20">
+            <AnimatedCard className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-12 border border-blue-100">
+              <div className="text-center mb-12">
+                <div className="bg-blue-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Handshake className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Partner With Us</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Join our growing network of trusted distributors, HoReCa & O&I professionals
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                {/* Partnership Benefits */}
+                <div className="space-y-8">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Partner With Pak Ghiza?</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="bg-green-100 p-2 rounded-lg">
+                          <Star className="w-5 h-5 text-green-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">Exclusive Pricing</h4>
+                          <p className="text-gray-600 text-sm">Get access to best-in-market pricing and special rates</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="bg-blue-100 p-2 rounded-lg">
+                          <Users className="w-5 h-5 text-blue-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">Priority Support</h4>
+                          <p className="text-gray-600 text-sm">Dedicated account management and priority customer service</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="bg-amber-100 p-2 rounded-lg">
+                          <Building className="w-5 h-5 text-amber-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">Business Growth</h4>
+                          <p className="text-gray-600 text-sm">Marketing support and business development opportunities</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="bg-purple-100 p-2 rounded-lg">
+                          <Award className="w-5 h-5 text-purple-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">Quality Assurance</h4>
+                          <p className="text-gray-600 text-sm">Guaranteed quality products with full traceability</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-2xl p-6 shadow-lg">
+                    <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                      <Phone className="w-5 h-5 text-amber-600 mr-2" />
+                      Need Immediate Assistance?
+                    </h4>
+                    <p className="text-gray-600 mb-4">Our partnership team is ready to help you get started</p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button 
+                        className="bg-green-600 hover:bg-green-700 text-white flex-1"
+                        onClick={() => window.open('https://wa.me/92XXXXXXXXX', '_blank')}
+                      >
+                        WhatsApp Now
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        className="border-amber-500 text-amber-600 hover:bg-amber-50 flex-1"
+                        onClick={() => window.location.href = 'mailto:partnerships@pakghiza.com'}
+                      >
+                        Email Us
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Partnership Form */}
+                <Card className="bg-white shadow-xl border-0 overflow-hidden">
+                  <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-6 text-white text-center">
+                    <h3 className="text-2xl font-bold mb-2">Register Your Interest</h3>
+                    <p className="text-amber-100">Take the first step toward joining our network</p>
+                  </div>
+                  
+                  <div className="p-8">
+                    <form onSubmit={handlePartnerSubmit} className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="customerName" className="text-sm font-semibold text-gray-700 mb-2 block">
+                            Customer Name *
+                          </Label>
+                          <Input 
+                            id="customerName"
+                            name="customerName"
+                            value={partnerFormData.customerName}
+                            onChange={handlePartnerInputChange}
+                            className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500" 
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="cityName" className="text-sm font-semibold text-gray-700 mb-2 block">
+                            City Name *
+                          </Label>
+                          <Input 
+                            id="cityName"
+                            name="cityName"
+                            value={partnerFormData.cityName}
+                            onChange={handlePartnerInputChange}
+                            className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500" 
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="businessName" className="text-sm font-semibold text-gray-700 mb-2 block">
+                          Business Name *
+                        </Label>
+                        <Input 
+                          id="businessName"
+                          name="businessName"
+                          value={partnerFormData.businessName}
+                          onChange={handlePartnerInputChange}
+                          className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500" 
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="businessNature" className="text-sm font-semibold text-gray-700 mb-2 block">
+                          Nature of Business *
+                        </Label>
+                        <Select onValueChange={handleBusinessNatureChange} value={partnerFormData.businessNature}>
+                          <SelectTrigger className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500 bg-white">
+                            <SelectValue placeholder="Select your business type" />
+                          </SelectTrigger>
+                          <SelectContent className="bg-white border shadow-lg rounded-lg z-50">
+                            <SelectItem value="distributor">Distributor</SelectItem>
+                            <SelectItem value="hotel">Hotel</SelectItem>
+                            <SelectItem value="restaurant">Restaurant</SelectItem>
+                            <SelectItem value="cafe">Café</SelectItem>
+                            <SelectItem value="office">Office</SelectItem>
+                            <SelectItem value="institution">Institution</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="mobileNumber" className="text-sm font-semibold text-gray-700 mb-2 block">
+                            Mobile Number *
+                          </Label>
+                          <Input 
+                            id="mobileNumber"
+                            name="mobileNumber"
+                            type="tel"
+                            placeholder="+92 XXX XXXXXXX"
+                            value={partnerFormData.mobileNumber}
+                            onChange={handlePartnerInputChange}
+                            className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500" 
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="partnerEmail" className="text-sm font-semibold text-gray-700 mb-2 block">
+                            Email Address *
+                          </Label>
+                          <Input 
+                            id="partnerEmail"
+                            name="email"
+                            type="email"
+                            placeholder="your@email.com"
+                            value={partnerFormData.email}
+                            onChange={handlePartnerInputChange}
+                            className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500" 
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="comment" className="text-sm font-semibold text-gray-700 mb-2 block">
+                          Additional Comments
+                        </Label>
+                        <Textarea 
+                          id="comment"
+                          name="comment"
+                          value={partnerFormData.comment}
+                          onChange={handlePartnerInputChange}
+                          className="rounded-lg border-gray-200 focus:border-amber-500 focus:ring-amber-500" 
+                          rows={4}
+                          placeholder="Tell us more about your business requirements, volume needs, or any specific questions..."
+                        />
+                      </div>
+
+                      <Button 
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white py-3 rounded-lg font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                      >
+                        Submit Partnership Application
+                      </Button>
+
+                      <p className="text-xs text-gray-500 text-center">
+                        By submitting this form, you agree to our terms and conditions. 
+                        We'll contact you within 24 hours to discuss partnership opportunities.
+                      </p>
+                    </form>
+                  </div>
+                </Card>
+              </div>
+            </AnimatedCard>
+          </div>
         </div>
       </div>
     </div>
