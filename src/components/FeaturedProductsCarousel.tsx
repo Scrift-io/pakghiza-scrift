@@ -57,11 +57,11 @@ const FeaturedProductsCarousel = () => {
       features: ["Natural extracts", "Concentrated formulas", "Global sourcing"]
     },
     {
-      name: "Professional Emulsifier Blend",
-      image: "/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png",
-      description: "Advanced emulsifiers for superior texture and stability",
-      category: "Emulsifier",
-      features: ["Superior binding", "Texture enhancement", "Long-lasting stability"]
+      name: "Calcium Aluminate Cement",
+      image: "/lovable-uploads/c97498aa-a0f5-49ba-b455-5a64d6c56a79.png",
+      description: "High-quality calcium aluminate for industrial applications",
+      category: "Industrial",
+      features: ["Superior binding", "High temperature resistance", "Long-lasting durability"]
     },
     {
       name: "Calcium Propionate Food Grade",
