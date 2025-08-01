@@ -25,112 +25,124 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="sticky top-0 z-40 bg-white shadow-lg">
-      {/* Top colored bar */}
-      <div className="h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500"></div>
+    <nav className="sticky top-0 z-50 bg-white shadow-sm">
+      {/* Elegant top accent bar */}
+      <div className="h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
       
       {/* Main navigation */}
-      <div className="bg-gray-50/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+      <div className="bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
             
-            {/* Left Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            {/* Left Navigation - Perfectly Spaced */}
+            <div className="hidden lg:flex items-center justify-end flex-1 space-x-12 pr-16">
               {leftNavItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-amber-600 ${
+                  className={`relative text-[15px] font-medium tracking-wide transition-all duration-300 hover:text-amber-600 group ${
                     location.pathname === item.path 
-                      ? 'text-amber-600 border-b-2 border-amber-600 pb-4' 
-                      : 'text-gray-700'
+                      ? 'text-amber-600' 
+                      : 'text-gray-700 hover:text-gray-900'
                   }`}
                 >
                   {item.label}
+                  <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
+                    location.pathname === item.path 
+                      ? 'scale-x-100' 
+                      : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
                 </Link>
               ))}
             </div>
 
-            {/* Center Logo */}
-            <Link to="/" className="flex items-center">
-              <img 
-                src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" 
-                alt="Pak Ghiza Logo" 
-                className="h-10 w-10 object-contain"
-              />
+            {/* Center Logo - Premium Styling */}
+            <Link to="/" className="flex items-center justify-center px-8 group">
+              <div className="relative">
+                <div className="absolute inset-0 bg-amber-100 rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <img 
+                  src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" 
+                  alt="Pak Ghiza Logo" 
+                  className="relative h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
             </Link>
 
-            {/* Right Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            {/* Right Navigation - Perfectly Balanced */}
+            <div className="hidden lg:flex items-center justify-start flex-1 space-x-12 pl-16">
               {rightNavItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-amber-600 ${
+                  className={`relative text-[15px] font-medium tracking-wide transition-all duration-300 hover:text-amber-600 group ${
                     location.pathname === item.path 
-                      ? 'text-amber-600 border-b-2 border-amber-600 pb-4' 
-                      : 'text-gray-700'
+                      ? 'text-amber-600' 
+                      : 'text-gray-700 hover:text-gray-900'
                   }`}
                 >
                   {item.label}
+                  <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
+                    location.pathname === item.path 
+                      ? 'scale-x-100' 
+                      : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
                 </Link>
               ))}
               
-              {/* Buy Button */}
+              {/* Premium CTA Button */}
               <Button 
-                className="bg-amber-500 hover:bg-amber-600 text-white text-sm px-4 py-2 animate-glow" 
+                className="ml-8 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0" 
                 onClick={() => window.open('https://daraz.pk', '_blank')}
               >
                 <ShoppingCart className="w-4 h-4 mr-2" />
-                Buy on Daraz
+                Shop Now
               </Button>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button - Refined */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="lg:hidden p-3 rounded-full hover:bg-gray-50 transition-colors duration-200"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? 
+                <X className="w-5 h-5 text-gray-700" /> : 
+                <Menu className="w-5 h-5 text-gray-700" />
+              }
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Refined Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200 animate-fade-in">
-            <div className="container mx-auto px-4 py-4 space-y-3">
-              {allNavItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block w-full text-left py-2 px-4 rounded-lg hover:bg-amber-50 transition-colors ${
-                    location.pathname === item.path ? 'bg-amber-50 text-amber-600' : 'text-gray-700'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg animate-fade-in">
+            <div className="container mx-auto px-6 py-6">
+              <div className="space-y-1">
+                {allNavItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block py-3 px-4 rounded-lg font-medium transition-all duration-200 ${
+                      location.pathname === item.path 
+                        ? 'bg-amber-50 text-amber-600 border-l-4 border-amber-500' 
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
               <Button 
-                className="w-full bg-amber-500 hover:bg-amber-600 text-white mt-4" 
+                className="w-full mt-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium py-3 rounded-lg shadow-lg" 
                 onClick={() => window.open('https://daraz.pk', '_blank')}
               >
                 <ShoppingCart className="w-4 h-4 mr-2" />
-                Buy on Daraz
+                Shop Now
               </Button>
             </div>
           </div>
         )}
       </div>
-
-      <style>{`
-        @keyframes glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
-          50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
-        }
-        .animate-glow { animation: glow 2s ease-in-out infinite; }
-      `}</style>
     </nav>
   );
 };
