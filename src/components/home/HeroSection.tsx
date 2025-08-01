@@ -56,9 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4 py-8">
         <div className="animate-fade-in">
           <div className="mb-12">
-            <img src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" alt="Pak Ghiza Logo" className="h-24 w-24 mx-auto mb-8 drop-shadow-2xl hover:scale-105 transition-transform duration-300 md:h-32 md:w-32 animate-bounce" style={{
-            animationDuration: '3s'
-          }} />
+            <img src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" alt="Pak Ghiza Logo" className="h-32 w-32 mx-auto mb-8 drop-shadow-2xl hover:scale-105 transition-transform duration-300 md:h-40 md:w-40 animate-pulse" />
           </div>
           
           <div className="space-y-8 mb-12">
