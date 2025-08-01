@@ -57,7 +57,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="animate-fade-in">
           
           <div className="space-y-8 mb-12">
-            <Badge className="bg-emerald-400/90 backdrop-blur-md text-white border border-emerald-300/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-500/90 transition-all duration-300 hover:scale-105 animate-[bounce_3s_ease-in-out_infinite]">
+            <Badge className="bg-emerald-400/90 backdrop-blur-md text-white border border-emerald-300/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-500/90 transition-all duration-300 hover:scale-105 animate-[bounce_6s_ease-in-out_infinite] [animation-fill-mode:both] [animation-timing-function:cubic-bezier(0.68,-0.55,0.265,1.55)]">
               <Award className="w-4 h-4 mr-2 inline-block animate-pulse" />
               Trusted Excellence Since 1998
             </Badge>
