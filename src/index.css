@@ -334,16 +334,20 @@ html {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo rotation animation */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
+/* Logo coin-spin animation */
+@keyframes coin-spin {
+  0% {
+    transform: rotateY(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
 
 .animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
+  animation: coin-spin 4s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
