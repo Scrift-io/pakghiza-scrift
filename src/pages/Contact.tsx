@@ -45,20 +45,54 @@ const Contact = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: [67.2556, 24.8238], // Updated coordinates for Landhi Industrial Area
-      zoom: 16
+      center: [67.2556, 24.8238], // Landhi Industrial Area coordinates
+      zoom: 16,
+      pitch: 0,
+      bearing: 0
     });
 
-    // Add marker for Pak Ghiza location
-    new mapboxgl.Marker({
-      color: '#f59e0b' // amber-500
-    })
+    // Custom marker element to match the reference red pin
+    const markerElement = document.createElement('div');
+    markerElement.className = 'custom-marker';
+    markerElement.style.width = '40px';
+    markerElement.style.height = '50px';
+    markerElement.style.backgroundImage = `url("data:image/svg+xml,%3Csvg width='40' height='50' viewBox='0 0 40 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0C8.96 0 0 8.96 0 20C0 35 20 50 20 50S40 35 40 20C40 8.96 31.04 0 20 0ZM20 27C16.14 27 13 23.86 13 20C13 16.14 16.14 13 20 13C23.86 13 27 16.14 27 20C27 23.86 23.86 27 20 27Z' fill='%23FF0000'/%3E%3C/svg%3E")`;
+    markerElement.style.backgroundSize = 'contain';
+    markerElement.style.backgroundRepeat = 'no-repeat';
+    markerElement.style.cursor = 'pointer';
+
+    // Add the custom marker
+    new mapboxgl.Marker(markerElement)
     .setLngLat([67.2556, 24.8238])
-    .setPopup(new mapboxgl.Popup().setHTML('<h3>Pak Ghiza</h3><p>L-C, 40, near opal laboratory<br>Sector 29 Landhi Industrial Area<br>Karachi, 75160</p>'))
+    .setPopup(new mapboxgl.Popup({ 
+      offset: 25,
+      closeButton: true,
+      closeOnClick: false 
+    }).setHTML(`
+      <div style="padding: 10px; font-family: Arial, sans-serif;">
+        <h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px; font-weight: bold;">Pak Ghiza</h3>
+        <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.4;">
+          L-C, 40, near opal laboratory<br>
+          Sector 29 Landhi Industrial Area<br>
+          Karachi, 75160<br>
+          Pakistan
+        </p>
+      </div>
+    `))
     .addTo(map.current);
 
     // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    map.current.addControl(new mapboxgl.NavigationControl({
+      showCompass: true,
+      showZoom: true,
+      visualizePitch: false
+    }), 'top-right');
+
+    // Add scale control
+    map.current.addControl(new mapboxgl.ScaleControl({
+      maxWidth: 100,
+      unit: 'metric'
+    }), 'bottom-left');
 
     return () => {
       map.current?.remove();
@@ -239,17 +273,18 @@ const Contact = () => {
               </Card>
             )}
 
-            <Card className="overflow-hidden shadow-lg border-0">
+            <Card className="overflow-hidden shadow-xl border-0 rounded-xl">
               <div 
                 ref={mapContainer} 
-                className="w-full h-96 bg-gray-100"
+                className="w-full h-[500px] bg-gray-100 rounded-xl"
                 style={{ display: mapboxToken ? 'block' : 'none' }}
               />
               {!mapboxToken && (
-                <div className="w-full h-96 bg-gray-100 flex items-center justify-center">
+                <div className="w-full h-[500px] bg-gray-100 flex items-center justify-center rounded-xl">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
                     <p className="text-gray-500">Map will appear here once token is provided</p>
+                    <p className="text-sm text-gray-400 mt-2">Location: L-C, 40, Sector 29 Landhi Industrial Area</p>
                   </div>
                 </div>
               )}
