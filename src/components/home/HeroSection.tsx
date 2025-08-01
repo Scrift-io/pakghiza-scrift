@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
           
           <div className="space-y-8 mb-12">
-            <Badge className="bg-emerald-600/90 backdrop-blur-md text-white border border-emerald-500/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-700/90 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-emerald-400/90 backdrop-blur-md text-white border border-emerald-300/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-500/90 transition-all duration-300 hover:scale-105 animate-bounce">
               <Award className="w-4 h-4 mr-2 inline-block animate-pulse" />
               Trusted Excellence Since 1998
             </Badge>
