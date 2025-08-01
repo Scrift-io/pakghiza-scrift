@@ -4,6 +4,17 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix for default markers in react-leaflet
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -180,17 +191,31 @@ const Contact = () => {
             </div>
 
             <Card className="overflow-hidden shadow-xl border-0 rounded-xl">
-              <iframe
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dw_NzKuB3wFVhU&q=L-C,+40,+near+opal+laboratory,+Sector+29+Landhi+Industrial+Area,+Karachi,+75160,+Pakistan&zoom=16&maptype=roadmap"
-                width="100%"
-                height="500"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Pak Ghiza Location"
-                className="rounded-xl"
-              />
+              <div className="h-[500px] w-full rounded-xl overflow-hidden">
+                <MapContainer
+                  center={[24.8238, 67.2556] as [number, number]}
+                  zoom={16}
+                  style={{ height: '100%', width: '100%' }}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+                  <Marker position={[24.8238, 67.2556] as [number, number]}>
+                    <Popup>
+                      <div className="text-center">
+                        <h3 className="font-bold text-lg mb-2">Pak Ghiza</h3>
+                        <p className="text-sm">
+                          L-C, 40, near opal laboratory<br />
+                          Sector 29 Landhi Industrial Area<br />
+                          Karachi, 75160<br />
+                          Pakistan
+                        </p>
+                      </div>
+                    </Popup>
+                  </Marker>
+                </MapContainer>
+              </div>
             </Card>
           </div>
         </div>
