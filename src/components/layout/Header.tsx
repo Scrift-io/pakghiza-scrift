@@ -63,7 +63,7 @@ const Header = () => {
                 <img 
                   src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" 
                   alt="Pak Ghiza Logo" 
-                  className="relative h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="relative h-16 w-16 object-contain animate-spin-slow transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>
