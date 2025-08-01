@@ -50,20 +50,6 @@ const FeaturedProductsCarousel = () => {
       features: ["Consistent leavening", "Fine crumb texture", "Uniform performance"]
     },
     {
-      name: "CALCIUM PROPIONATE",
-      image: "/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png",
-      description: "Reliable Mold Inhibition Without Compromising Fermentation",
-      category: "Preservative",
-      features: ["Mold inhibition", "Halal certified", "Extended shelf life"]
-    },
-    {
-      name: "CALCIUM ACETATE",
-      image: "/lovable-uploads/ecb641e8-d3bd-483c-9466-c11cb901f8f3.png",
-      description: "Effective Rope Prevention for Extended Shelf Life",
-      category: "Preservative",
-      features: ["Rope prevention", "Spoilage protection", "Quality preservation"]
-    },
-    {
       name: "SOY FLOUR - FULL FAT ENZYME ACTIVE",
       image: "/lovable-uploads/bf220f1d-6528-4e7e-9bbe-6af34bb92678.png",
       description: "Boost Dough Strength and Nutrition with Enzyme-Rich Soy Flour",
