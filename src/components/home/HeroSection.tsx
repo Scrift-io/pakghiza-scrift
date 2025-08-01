@@ -55,7 +55,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4 py-8">
         <div className="animate-fade-in">
-          
+          <div className="mb-12">
+            <img src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" alt="Pak Ghiza Logo" className="h-32 w-32 mx-auto mb-8 drop-shadow-2xl hover:scale-105 transition-transform duration-300 md:h-40 md:w-40 animate-pulse" />
+          </div>
           
           <div className="space-y-8 mb-12">
             <Badge className="bg-emerald-600/90 backdrop-blur-md text-white border border-emerald-500/50 px-6 py-3 text-sm font-medium rounded-full shadow-lg hover:bg-emerald-700/90 transition-all duration-300 hover:scale-105">
@@ -75,9 +77,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <p className="font-inter text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed text-center">
                 Transforming culinary excellence with{' '}
                 <span className="relative inline-block min-w-0">
-                  {keywords.map((keyword, index) => <span key={index} className={`absolute left-0 top-0 text-gradient-modern font-semibold whitespace-nowrap transition-all duration-1000 ${index === currentKeyword ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
+                  {keywords.map((keyword, index) => (
+                    <span 
+                      key={index} 
+                      className={`absolute left-0 top-0 text-gradient-modern font-semibold whitespace-nowrap transition-all duration-1000 ${
+                        index === currentKeyword 
+                          ? 'opacity-100 transform translate-y-0' 
+                          : 'opacity-0 transform translate-y-4'
+                      }`}
+                    >
                       {keyword}
-                    </span>)}
+                    </span>
+                  ))}
                   <span className="opacity-0 font-semibold whitespace-nowrap">{keywords[currentKeyword]}</span>
                 </span>
                 {' '}and unmatched quality standards that professional chefs and manufacturers trust worldwide.
