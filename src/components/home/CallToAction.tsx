@@ -7,7 +7,7 @@ const CallToAction: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-gradient-modern mb-6 md:text-4xl lg:text-5xl">
+        <h2 className="text-3xl font-bold text-gradient-modern mb-6 md:text-4xl lg:text-5xl leading-tight overflow-visible">
           Ready to Elevate Your Products?
         </h2>
         <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto md:text-xl">
