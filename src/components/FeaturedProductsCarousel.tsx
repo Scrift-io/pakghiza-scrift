@@ -15,60 +15,60 @@ interface Product {
 const FeaturedProductsCarousel = () => {
   const products: Product[] = [
     {
-      name: "Super Eka-300 Bread Improver",
-      image: "/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png",
-      description: "Premium bread improver for enhanced texture and extended shelf life",
-      category: "Baking Agent",
-      features: ["Enhanced texture", "Extended shelf life", "Improved dough handling"]
-    },
-    {
-      name: "Pakmaya Gold Instant Yeast",
-      image: "/lovable-uploads/bf220f1d-6528-4e7e-9bbe-6af34bb92678.png",
-      description: "Premium instant dry yeast for professional baking applications",
-      category: "Leavening",
-      features: ["High fermentation power", "Consistent performance", "Long shelf life"]
-    },
-    {
-      name: "Premium Cocoa Powder",
+      name: "PAK MAYA - SUPER EKA 300",
       image: "/lovable-uploads/ab13828d-6ff9-4b6d-aa8f-75f02fbc89e8.png",
-      description: "Dutch-processed cocoa powder for rich chocolate flavor",
-      category: "Flavoring",
-      features: ["Rich chocolate flavor", "Excellent solubility", "Premium quality"]
+      description: "Professional-Grade Softness, Volume & Golden Perfection in Every Loaf",
+      category: "Baking Agent",
+      features: ["Professional-grade quality", "Enhanced softness & volume", "Golden crust perfection"]
     },
     {
-      name: "Natural Preservative Blend",
+      name: "PAK MAYA - EKA PAN",
+      image: "/lovable-uploads/a342924e-7fc4-404b-b6c3-39ce388725e4.png",
+      description: "Versatile Bread Improver for Reliable Texture and Consistency",
+      category: "Baking Agent",
+      features: ["Versatile application", "Superior texture", "Consistent results"]
+    },
+    {
+      name: "PAK MAYA - ALBATROS",
+      image: "/lovable-uploads/a2fd7ec4-7aae-4209-8952-440fc8e5db20.png",
+      description: "Premium Dough Performance for Softer, Sliceable, High-Quality Bread",
+      category: "Baking Agent",
+      features: ["Premium quality", "Multifunctional improver", "Sliceable soft bread"]
+    },
+    {
+      name: "PAK MAYA - EKA EXCEL FROST",
       image: "/lovable-uploads/d75d7d6f-f3de-41f7-81ce-84e84120910f.png",
-      description: "Natural preservation solutions for extended freshness",
+      description: "Superior Frozen Dough Solution for Long-Lasting Freshness & Structure",
+      category: "Baking Agent",
+      features: ["Frozen dough specialist", "Enhanced dough strength", "Prevents freeze damage"]
+    },
+    {
+      name: "PAK GHIZA - BAKING POWDER",
+      image: "/lovable-uploads/677e12d8-6763-4fb9-88ee-3025f225b2b0.png",
+      description: "Consistent Rise, Flawless Texture – Every Bake, Every Time",
+      category: "Baking Agent",
+      features: ["Consistent leavening", "Fine crumb texture", "Uniform performance"]
+    },
+    {
+      name: "CALCIUM PROPIONATE",
+      image: "/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png",
+      description: "Reliable Mold Inhibition Without Compromising Fermentation",
       category: "Preservative",
-      features: ["Natural ingredients", "Extended shelf life", "Clean label"]
+      features: ["Mold inhibition", "Halal certified", "Extended shelf life"]
     },
     {
-      name: "Protein Enhancement Complex",
-      image: "/lovable-uploads/e4e3ccf4-aeef-4435-81b6-e64e5d94b47e.png",
-      description: "Complete protein supplements for nutritional enhancement",
-      category: "Nutrition",
-      features: ["Complete amino profile", "Easy dissolution", "Multiple sources"]
-    },
-    {
-      name: "Artisan Flavor System",
+      name: "CALCIUM ACETATE",
       image: "/lovable-uploads/ecb641e8-d3bd-483c-9466-c11cb901f8f3.png",
-      description: "Premium flavoring system for exceptional taste profiles",
-      category: "Flavoring",
-      features: ["Natural extracts", "Concentrated formulas", "Global sourcing"]
-    },
-    {
-      name: "Calcium Aluminate Cement",
-      image: "/lovable-uploads/c97498aa-a0f5-49ba-b455-5a64d6c56a79.png",
-      description: "High-quality calcium aluminate for industrial applications",
-      category: "Industrial",
-      features: ["Superior binding", "High temperature resistance", "Long-lasting durability"]
-    },
-    {
-      name: "Calcium Propionate Food Grade",
-      image: "/lovable-uploads/d98e959f-7b74-4857-9138-65e6d330ad58.png",
-      description: "Premium food-grade preservative for mold prevention",
+      description: "Effective Rope Prevention for Extended Shelf Life",
       category: "Preservative",
-      features: ["Effective mold prevention", "Food safety certified", "Extended freshness"]
+      features: ["Rope prevention", "Spoilage protection", "Quality preservation"]
+    },
+    {
+      name: "SOY FLOUR - FULL FAT ENZYME ACTIVE",
+      image: "/lovable-uploads/bf220f1d-6528-4e7e-9bbe-6af34bb92678.png",
+      description: "Boost Dough Strength and Nutrition with Enzyme-Rich Soy Flour",
+      category: "Flour",
+      features: ["Protein-rich", "Enhanced dough strength", "Nutritional enhancement"]
     }
   ];
 
