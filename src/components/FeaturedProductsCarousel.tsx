@@ -100,34 +100,6 @@ const FeaturedProductsCarousel = () => {
           </div>
         </div>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.slice(0, 4).map((product, index) => (
-            <div 
-              key={index} 
-              className="group bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 cursor-pointer"
-            >
-              <div className="mb-4">
-                <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300 group-hover:bg-amber-200">
-                  {product.category}
-                </span>
-              </div>
-              <h3 className="text-lg font-bold text-gray-800 mb-2 transition-colors duration-300 group-hover:text-amber-600">
-                {product.name}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4 transition-colors duration-300 group-hover:text-gray-700">
-                {product.description}
-              </p>
-              <div className="space-y-2">
-                {product.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center text-sm text-gray-600 transition-all duration-300 group-hover:text-gray-700">
-                    <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 transition-all duration-300 group-hover:bg-amber-600 group-hover:scale-125"></div>
-                    {feature}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
