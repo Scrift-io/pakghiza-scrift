@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Star, Phone, ShoppingCart } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -5,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AnimatedCard } from '@/components/ui/animated-card';
 import { GradientText } from '@/components/ui/gradient-text';
+import { Typewriter } from '@/components/ui/typewriter-text';
 
 const Industrial = () => {
   const [formData, setFormData] = useState({
@@ -40,9 +42,19 @@ const Industrial = () => {
           >
             Industrial & Commercial Solutions
           </GradientText>
-          <p className="text-xl text-gray-600 mb-12">
-            Bulk solutions for large-scale food production with customized formulations and technical support
-          </p>
+          <div className="text-xl text-gray-600 mb-12">
+            <Typewriter
+              text={[
+                "Bulk solutions for large-scale food production",
+                "Customized formulations and technical support",
+                "Your partner in industrial excellence"
+              ]}
+              speed={50}
+              loop={true}
+              delay={2000}
+              className="text-xl text-gray-600"
+            />
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <AnimatedCard className="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl">

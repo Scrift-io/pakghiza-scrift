@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { GradientText } from '@/components/ui/gradient-text';
+import { Typewriter } from '@/components/ui/typewriter-text';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -39,9 +40,19 @@ const Contact = () => {
             >
               Contact Us
             </GradientText>
-            <p className="text-xl text-gray-600">
-              Ready to elevate your products with premium ingredients? We're here to help.
-            </p>
+            <div className="text-xl text-gray-600">
+              <Typewriter
+                text={[
+                  "Ready to elevate your products with premium ingredients?",
+                  "We're here to help you succeed.",
+                  "Let's create something amazing together."
+                ]}
+                speed={50}
+                loop={true}
+                delay={2000}
+                className="text-xl text-gray-600"
+              />
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
