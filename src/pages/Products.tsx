@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { GradientText } from '@/components/ui/gradient-text';
+import { Typewriter } from '@/components/ui/typewriter-text';
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -454,9 +455,12 @@ const Products = () => {
           >
             Our Product Range
           </GradientText>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our comprehensive range of premium food ingredients designed for professional bakers and food manufacturers
-          </p>
+          <Typewriter
+            text="Discover our comprehensive range of premium food ingredients designed for professional bakers and food manufacturers"
+            speed={50}
+            loop={false}
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+          />
         </div>
 
         {/* Search and Filter */}

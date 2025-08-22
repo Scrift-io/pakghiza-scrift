@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Shield, CheckCircle, Users, Award, Globe, Phone, Mail, Clock, HelpCircle, ChevronDown, Eye, Activity } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GradientText } from '@/components/ui/gradient-text';
+import { Typewriter } from '@/components/ui/typewriter-text';
 
 const Policy = () => {
   const policyPoints = [
@@ -94,10 +96,12 @@ const Policy = () => {
           >
             PAK GHIZA (PRIVATE) LIMITED
           </GradientText>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Committed to the production and supply of safe, high-quality food products and ingredients 
-            that consistently meet or exceed customer expectations and international standards.
-          </p>
+          <Typewriter
+            text="Committed to the production and supply of safe, high-quality food products and ingredients that consistently meet or exceed customer expectations and international standards."
+            speed={50}
+            loop={false}
+            className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+          />
         </div>
       </section>
 
