@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Award, TrendingUp, Star, Users, Handshake, Building, Phone, Mail } from 'lucide-react';
 import { AnimatedCard } from '@/components/ui/animated-card';
@@ -358,7 +359,7 @@ const About = () => {
                         type="submit"
                         className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white py-3 rounded-lg font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200"
                       >
-                        Submit Partnership Application
+                        Submit
                       </Button>
 
                       <p className="text-xs text-gray-500 text-center">
