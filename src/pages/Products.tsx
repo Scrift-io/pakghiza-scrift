@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Search, ShoppingCart, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -255,7 +254,8 @@ const Products = () => {
       id: 20,
       name: 'FUNDRIPS - CHOCOLATE SYRUP',
       category: 'syrup',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400',
+      image: '/lovable-uploads/4908033d-4add-48fe-b311-417be43da8a6.png',
+      backImage: '/lovable-uploads/d4686f25-6ab0-47df-854e-3a1c469313c5.png',
       description: 'Classic Cocoa Richness for Desserts, Beverages & More. Classic chocolate syrup that enhances ice cream, shakes, cakes, and more with deep cocoa richness.',
       usageRate: 'As needed',
       packSize: '750g PET Bottle x 12 pcs',
@@ -267,7 +267,8 @@ const Products = () => {
       id: 21,
       name: 'FUNDRIPS - STRAWBERRY SYRUP',
       category: 'syrup',
-      image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400',
+      image: '/lovable-uploads/a366421d-9444-4bb0-8ac8-4fd8f1019c90.png',
+      backImage: '/lovable-uploads/7bf98528-bded-4130-8b77-cde8c954ba89.png',
       description: 'Sweet Strawberry Flavor That Pops in Every Dish. Fresh strawberry flavor for baked goods and desserts, delivering sweet fruitiness and visual appeal.',
       usageRate: 'As needed',
       packSize: '750g PET Bottle x 12 pcs',
@@ -279,7 +280,8 @@ const Products = () => {
       id: 22,
       name: 'FUNDRIPS - CARAMEL SYRUP',
       category: 'syrup',
-      image: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400',
+      image: '/lovable-uploads/91deaf67-a331-42f7-bc09-6f2ab5269bdc.png',
+      backImage: '/lovable-uploads/6c8e1e68-ab78-41db-8381-42a153afe5e6.png',
       description: 'Golden Caramel Goodness – Smooth, Sweet, and Buttery. Sweet, buttery caramel flavor ideal for coffee, desserts, and garnishing.',
       usageRate: 'As needed',
       packSize: '750g PET Bottle x 12 pcs',
@@ -311,7 +313,7 @@ const Products = () => {
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in">
+        <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in">
           <div className="relative">
             <button 
               onClick={onClose} 
@@ -322,11 +324,20 @@ const Products = () => {
             <div className="p-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="w-full h-64 object-contain rounded-xl shadow-lg bg-gradient-to-br from-amber-50 to-yellow-50 p-4" 
-                  />
+                  <div className="space-y-4">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-64 object-contain rounded-xl shadow-lg bg-gradient-to-br from-amber-50 to-yellow-50 p-4" 
+                    />
+                    {product.backImage && (
+                      <img 
+                        src={product.backImage} 
+                        alt={`${product.name} - Back`} 
+                        className="w-full h-64 object-contain rounded-xl shadow-lg bg-gradient-to-br from-amber-50 to-yellow-50 p-4" 
+                      />
+                    )}
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature, index) => (
                       <Badge key={index} variant="secondary" className="bg-amber-50/80 text-amber-700 border border-amber-200/50 shadow-sm hover:bg-amber-100/80 backdrop-blur-sm text-xs px-2.5 py-1">
