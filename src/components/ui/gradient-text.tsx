@@ -6,7 +6,7 @@ import { HTMLAttributes } from "react"
 interface GradientTextProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * Array of colors for the gradient
-   * @default ["#ffaa40", "#9c40ff", "#ffaa40"]
+   * @default ["hsl(45, 93%, 62%)", "hsl(280, 100%, 62%)", "hsl(45, 93%, 62%)"]
    */
   colors?: string[]
   /**
@@ -24,7 +24,7 @@ interface GradientTextProps extends HTMLAttributes<HTMLDivElement> {
 export function GradientText({
   children,
   className,
-  colors = ["#ffaa40", "#9c40ff", "#ffaa40"],
+  colors = ["hsl(45, 93%, 62%)", "hsl(280, 100%, 62%)", "hsl(45, 93%, 62%)"],
   animationSpeed = 8,
   showBorder = false,
   ...props
@@ -65,12 +65,14 @@ export function GradientText({
         </div>
       )}
       <div
-        className="inline-block relative z-10 text-transparent bg-clip-text animate-gradient px-4 py-2"
+        className="inline-block relative z-10 px-4 py-2"
         style={{
-          ...gradientStyle,
+          background: `linear-gradient(to right, ${colors.join(", ")})`,
           backgroundClip: "text",
           WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
           backgroundSize: "300% 100%",
+          animation: `gradient ${animationSpeed}s linear infinite`,
         }}
       >
         {children}

@@ -93,10 +93,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="relative px-2 sm:px-6 py-4 sm:py-6 overflow-hidden">
               <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight text-center">
                 <span 
-                  className={`inline-block bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent transition-opacity duration-500 ${
+                  className={`inline-block transition-opacity duration-500 ${
                     isTaglineAnimating ? 'opacity-0' : 'opacity-100'
                   }`}
                   style={{
+                    background: 'linear-gradient(to right, hsl(45, 93%, 62%), hsl(50, 100%, 60%), hsl(39, 100%, 57%))',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
                     textShadow: '2px 2px 4px rgba(0,0,0,0.4), 0 0 20px rgba(245, 158, 11, 0.4)'
                   }}
                 >
@@ -113,10 +117,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 Transforming culinary excellence with{' '}
                 <span className="relative inline-block">
                   <span 
-                    className={`text-amber-200 font-medium transition-opacity duration-500 ${
+                    className={`font-medium transition-opacity duration-500 ${
                       isKeywordAnimating ? 'opacity-0' : 'opacity-100'
                     }`}
                     style={{
+                      color: 'hsl(45, 84%, 78%)',
                       textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(245, 158, 11, 0.3)'
                     }}
                   >
