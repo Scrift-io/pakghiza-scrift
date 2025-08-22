@@ -54,10 +54,10 @@ const FAQs = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl modern-title-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-600 font-inter font-light">
+            <p className="text-xl text-gray-600">
               Find answers to common questions about our products and services
             </p>
           </div>
@@ -69,7 +69,7 @@ const FAQs = () => {
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
                   className="w-full p-6 text-left flex items-center justify-between hover:bg-amber-50 transition-colors"
                 >
-                  <h3 className="text-lg font-inter font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
                   {expandedFaq === index ? (
                     <ChevronUp className="w-5 h-5 text-amber-500 flex-shrink-0" />
                   ) : (
@@ -78,7 +78,7 @@ const FAQs = () => {
                 </button>
                 {expandedFaq === index && (
                   <div className="px-6 pb-6 animate-fade-in">
-                    <p className="text-gray-600 leading-relaxed font-inter font-light">{faq.answer}</p>
+                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </Card>
@@ -88,20 +88,20 @@ const FAQs = () => {
           {/* Contact Support */}
           <div className="mt-16 text-center">
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl modern-title-bold text-gray-900 mb-4">Still Have Questions?</h2>
-              <p className="text-gray-600 mb-6 font-inter font-light">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Still Have Questions?</h2>
+              <p className="text-gray-600 mb-6">
                 Can't find the answer you're looking for? Our customer support team is here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 
                   onClick={() => window.location.href = '/contact'}
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-inter font-semibold transition-colors"
+                  className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   Contact Support
                 </button>
                 <button 
                   onClick={() => window.location.href = 'tel:+92XXXXXXXXX'}
-                  className="border border-amber-500 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg font-inter font-semibold transition-colors"
+                  className="border border-amber-500 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   Call Us Now
                 </button>
