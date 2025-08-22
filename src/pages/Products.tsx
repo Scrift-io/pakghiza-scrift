@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -22,6 +22,7 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Show 6 products per page for better mobile experience
+  const productsRef = useRef(null);
 
   const products = [
     // PAK MAYA - Bread Improvers
@@ -324,6 +325,30 @@ const Products = () => {
     setCurrentPage(1);
   }, [activeFilter, searchTerm]);
 
+  const scrollToTop = () => {
+    if (productsRef.current) {
+      productsRef.current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+      });
+    } else {
+      // Fallback to window scroll if ref is not available
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // Small delay to ensure state update, then scroll
+    setTimeout(() => {
+      scrollToTop();
+    }, 100);
+  };
+
   const getPageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 5;
@@ -529,7 +554,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-8" ref={productsRef}>
           <div className="text-center">
             <p className="text-gray-600">
               Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} products
@@ -593,7 +618,7 @@ const Products = () => {
                 <PaginationContent className="flex items-center gap-1">
                   <PaginationItem>
                     <PaginationPrevious 
-                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                      onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                       className={`${currentPage === 1 ? 'pointer-events-none opacity-50' : 'hover:bg-amber-50 hover:text-amber-600 cursor-pointer'} transition-colors duration-200`}
                     />
                   </PaginationItem>
@@ -604,7 +629,7 @@ const Products = () => {
                         <PaginationEllipsis className="text-gray-400" />
                       ) : (
                         <PaginationLink
-                          onClick={() => setCurrentPage(page)}
+                          onClick={() => handlePageChange(page)}
                           isActive={currentPage === page}
                           className={`cursor-pointer transition-all duration-200 ${
                             currentPage === page 
@@ -620,7 +645,7 @@ const Products = () => {
                   
                   <PaginationItem>
                     <PaginationNext 
-                      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                      onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                       className={`${currentPage === totalPages ? 'pointer-events-none opacity-50' : 'hover:bg-amber-50 hover:text-amber-600 cursor-pointer'} transition-colors duration-200`}
                     />
                   </PaginationItem>
