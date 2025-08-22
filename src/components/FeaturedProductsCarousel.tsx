@@ -15,46 +15,53 @@ interface Product {
 const FeaturedProductsCarousel = () => {
   const products: Product[] = [
     {
-      name: "PAK MAYA - SUPER EKA 300",
-      image: "/lovable-uploads/ab13828d-6ff9-4b6d-aa8f-75f02fbc89e8.png",
-      description: "Professional-Grade Softness, Volume & Golden Perfection in Every Loaf",
-      category: "Baking Agent",
-      features: ["Professional-grade quality", "Enhanced softness & volume", "Golden crust perfection"]
+      name: "FUN DRIPS - CARAMEL SYRUP",
+      image: "/lovable-uploads/1148c3f0-b9fc-4a15-b2a9-464aae369df1.png",
+      description: "Premium Caramel Decor Sauce for Dessert Enhancement",
+      category: "Decor Sauce",
+      features: ["Premium quality", "Smooth texture", "Perfect for desserts"]
     },
     {
-      name: "PAK MAYA - EKA PAN",
-      image: "/lovable-uploads/a342924e-7fc4-404b-b6c3-39ce388725e4.png",
-      description: "Versatile Bread Improver for Reliable Texture and Consistency",
-      category: "Baking Agent",
-      features: ["Versatile application", "Superior texture", "Consistent results"]
+      name: "FUN DRIPS - STRAWBERRY SYRUP",
+      image: "/lovable-uploads/1060326f-27a6-43ee-96cb-3a2198ae510e.png",
+      description: "Delicious Strawberry Decor Sauce with Natural Flavor",
+      category: "Decor Sauce",
+      features: ["Natural strawberry flavor", "Vibrant color", "Versatile application"]
     },
     {
-      name: "PAK MAYA - ALBATROS",
-      image: "/lovable-uploads/a2fd7ec4-7aae-4209-8952-440fc8e5db20.png",
-      description: "Premium Dough Performance for Softer, Sliceable, High-Quality Bread",
-      category: "Baking Agent",
-      features: ["Premium quality", "Multifunctional improver", "Sliceable soft bread"]
+      name: "FUN DRIPS - CHOCOLATE SYRUP",
+      image: "/lovable-uploads/898229e8-d9a2-44b1-9fe1-79f1f51bd1f0.png",
+      description: "Rich Chocolate Decor Sauce for Premium Desserts",
+      category: "Decor Sauce",
+      features: ["Rich chocolate taste", "Professional grade", "Easy application"]
     },
     {
-      name: "PAK MAYA - EKA EXCEL FROST",
-      image: "/lovable-uploads/d75d7d6f-f3de-41f7-81ce-84e84120910f.png",
-      description: "Superior Frozen Dough Solution for Long-Lasting Freshness & Structure",
-      category: "Baking Agent",
-      features: ["Frozen dough specialist", "Enhanced dough strength", "Prevents freeze damage"]
+      name: "CHOCOLINO - STANDARD COMPOUND",
+      image: "/lovable-uploads/53b8a033-8fc0-4016-af1d-031479d8dd8c.png",
+      description: "Superior Quality Dark Chocolate Compound",
+      category: "Chocolate",
+      features: ["Superior taste", "Premium quality", "Professional aroma"]
     },
     {
-      name: "PAK GHIZA - BAKING POWDER",
-      image: "/lovable-uploads/677e12d8-6763-4fb9-88ee-3025f225b2b0.png",
-      description: "Consistent Rise, Flawless Texture – Every Bake, Every Time",
-      category: "Baking Agent",
-      features: ["Consistent leavening", "Fine crumb texture", "Uniform performance"]
+      name: "CHOCOLINO - MILK COMPOUND",
+      image: "/lovable-uploads/4193ce9d-be87-4e11-9477-ffcb11dc76af.png",
+      description: "Premium Milk Chocolate Compound with Rich Flavor",
+      category: "Chocolate",
+      features: ["Creamy milk chocolate", "Superior quality", "Rich taste & aroma"]
     },
     {
-      name: "SOY FLOUR - FULL FAT ENZYME ACTIVE",
-      image: "/lovable-uploads/bf220f1d-6528-4e7e-9bbe-6af34bb92678.png",
-      description: "Boost Dough Strength and Nutrition with Enzyme-Rich Soy Flour",
-      category: "Flour",
-      features: ["Protein-rich", "Enhanced dough strength", "Nutritional enhancement"]
+      name: "CHOCOLINO - DARK COMPOUND",
+      image: "/lovable-uploads/c3cb38dc-2ece-459b-a69c-b74b36928b64.png",
+      description: "Premium Dark Chocolate Compound for Professional Use",
+      category: "Chocolate",
+      features: ["Intense dark chocolate", "Premium quality", "Professional grade"]
+    },
+    {
+      name: "CHOCOLINO - HAZELNUT SPREAD",
+      image: "/lovable-uploads/141b75b4-03a8-408f-a99b-6ea09214a15b.png",
+      description: "Indulgent Hazelnut Chocolate Spread",
+      category: "Spread",
+      features: ["Rich hazelnut flavor", "Smooth texture", "Premium ingredients"]
     }
   ];
 
