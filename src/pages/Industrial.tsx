@@ -1,193 +1,126 @@
-
-import React, { useState } from 'react';
-import { Star, Phone, ShoppingCart } from 'lucide-react';
+import React from 'react';
+import { Factory, Truck, Shield, Award, Users, Cog } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { AnimatedCard } from '@/components/ui/animated-card';
+import { Badge } from '@/components/ui/badge';
+import { GradientText } from '@/components/ui/gradient-text';
 
 const Industrial = () => {
-  const [formData, setFormData] = useState({
-    companyName: '',
-    contactPerson: '',
-    email: '',
-    phone: '',
-    requirements: ''
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
+  const solutions = [
+    {
+      title: 'Customized Premixes',
+      description: 'Tailored premixes designed to meet specific nutritional and functional requirements, ensuring consistent quality and performance.',
+      icon: Cog,
+      features: [
+        'Custom ingredient blending',
+        'Nutrient fortification',
+        'Texture and flavor enhancement',
+      ],
+    },
+    {
+      title: 'Supply Chain Solutions',
+      description: 'Efficient and reliable supply chain management, ensuring timely delivery of ingredients and minimizing disruptions.',
+      icon: Truck,
+      features: [
+        'Global sourcing network',
+        'Inventory management',
+        'Logistics optimization',
+      ],
+    },
+    {
+      title: 'Quality Assurance',
+      description: 'Rigorous quality control processes, guaranteeing the safety and purity of all ingredients.',
+      icon: Shield,
+      features: [
+        'Raw material testing',
+        'In-process monitoring',
+        'Final product analysis',
+      ],
+    },
+    {
+      title: 'Technical Support',
+      description: 'Expert technical support and formulation assistance, helping you optimize your products and processes.',
+      icon: Award,
+      features: [
+        'Formulation guidance',
+        'Troubleshooting assistance',
+        'Product development support',
+      ],
+    },
+    {
+      title: 'Training Programs',
+      description: 'Comprehensive training programs for your team, ensuring they have the knowledge and skills to maximize the value of our ingredients.',
+      icon: Users,
+      features: [
+        'Ingredient handling',
+        'Processing techniques',
+        'Quality control',
+      ],
+    },
+    {
+      title: 'Manufacturing Solutions',
+      description: 'Advanced manufacturing solutions that enhance production efficiency and reduce costs.',
+      icon: Factory,
+      features: [
+        'Process optimization',
+        'Equipment recommendations',
+        'Automation strategies',
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       <div className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Industrial & Commercial Solutions
-          </h1>
-          <p className="text-xl text-gray-600 mb-12">
-            Bulk solutions for large-scale food production with customized formulations and technical support
+        <div className="text-center mb-16">
+          <GradientText 
+            colors={["#f59e0b", "#eab308", "#d97706", "#f59e0b"]}
+            animationSpeed={6}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Industrial Solutions
+          </GradientText>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive food ingredient solutions designed for large-scale manufacturing and industrial applications.
           </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <AnimatedCard className="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl">
-              <div className="bg-amber-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Star className="w-8 h-8 text-white" />
+        </div>
+
+        {/* Solutions Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {solutions.map((solution, index) => (
+            <Card key={index} className="overflow-hidden border-0 shadow-lg">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <solution.icon className="w-6 h-6 text-amber-500 mr-2" />
+                  <h3 className="text-xl font-semibold text-gray-900">{solution.title}</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">{solution.description}</p>
+                <ul>
+                  {solution.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-gray-600 mb-2">
+                      <Badge variant="secondary" className="mr-2">{i + 1}</Badge>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Custom Formulations</h3>
-              <p className="text-gray-600 text-center">Tailored ingredient solutions for your specific production requirements</p>
-            </AnimatedCard>
-            <AnimatedCard className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-              <div className="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Phone className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Technical Support</h3>
-              <p className="text-gray-600 text-center">24/7 technical assistance from our team of food technology experts</p>
-            </AnimatedCard>
-            <AnimatedCard className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl">
-              <div className="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <ShoppingCart className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Bulk Orders</h3>
-              <p className="text-gray-600 text-center">Competitive pricing for large volume orders with flexible delivery options</p>
-            </AnimatedCard>
+            </Card>
+          ))}
+        </div>
+
+        {/* Contact CTA */}
+        <div className="mt-16 text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Scale Up?</h2>
+            <p className="text-gray-600 mb-6">
+              Contact us today to discuss your industrial food ingredient needs and how we can help you achieve your goals.
+            </p>
+            <button 
+              onClick={() => window.location.href = '/contact'}
+              className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Get in Touch
+            </button>
           </div>
-
-          {/* Industrial Benefits */}
-          <AnimatedCard className="bg-white rounded-2xl shadow-lg p-12 mb-12 border border-gray-100">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Our Industrial Solutions?</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive solutions designed for enterprise-scale food production with unmatched reliability and support</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">Scale-Ready Solutions</h4>
-                    <p className="text-gray-600 leading-relaxed">Ingredients optimized for large-scale production with consistent performance across all batch sizes</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">Cost-Effective</h4>
-                    <p className="text-gray-600 leading-relaxed">Competitive bulk pricing for volume orders with transparent pricing structure and no hidden fees</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">Consistent Quality</h4>
-                    <p className="text-gray-600 leading-relaxed">Batch-to-batch consistency guaranteed with rigorous quality control and testing protocols</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">Flexible Delivery</h4>
-                    <p className="text-gray-600 leading-relaxed">Scheduled deliveries to match your production needs with real-time tracking and logistics support</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">Expert Consultation</h4>
-                    <p className="text-gray-600 leading-relaxed">Technical guidance for optimal usage with dedicated account managers and R&D support</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">Regulatory Compliance</h4>
-                    <p className="text-gray-600 leading-relaxed">All products meet international food safety standards with complete documentation and certifications</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimatedCard>
-
-          {/* Quote Request Form */}
-          <Card className="p-8 shadow-lg border-0">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Request Industrial Quote</h3>
-            <form onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Input 
-                  name="companyName"
-                  placeholder="Company Name" 
-                  value={formData.companyName}
-                  onChange={handleInputChange}
-                  className="rounded-lg border-amber-200 focus:border-amber-500" 
-                  required
-                />
-                <Input 
-                  name="contactPerson"
-                  placeholder="Contact Person" 
-                  value={formData.contactPerson}
-                  onChange={handleInputChange}
-                  className="rounded-lg border-amber-200 focus:border-amber-500" 
-                  required
-                />
-                <Input 
-                  name="email"
-                  type="email"
-                  placeholder="Email Address" 
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="rounded-lg border-amber-200 focus:border-amber-500" 
-                  required
-                />
-                <Input 
-                  name="phone"
-                  placeholder="Phone Number" 
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="rounded-lg border-amber-200 focus:border-amber-500" 
-                  required
-                />
-                <textarea
-                  name="requirements"
-                  placeholder="Product Requirements & Specifications"
-                  value={formData.requirements}
-                  onChange={handleInputChange}
-                  className="md:col-span-2 w-full px-4 py-3 rounded-lg border border-amber-200 focus:border-amber-500 focus:outline-none resize-none"
-                  rows={4}
-                  required
-                />
-              </div>
-              <Button 
-                type="submit"
-                className="mt-6 bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg"
-              >
-                Submit Request
-              </Button>
-            </form>
-          </Card>
         </div>
       </div>
     </div>
