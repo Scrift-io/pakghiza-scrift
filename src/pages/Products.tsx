@@ -26,54 +26,6 @@ const Products = () => {
       features: ['Professional-grade quality', 'Enhanced softness & volume', 'Golden crust perfection', 'Extended freshness'],
       price: 'Contact for pricing'
     },
-    {
-      id: 2,
-      name: 'PAK MAYA - EKA PAN',
-      category: 'baking',
-      image: '/lovable-uploads/a342924e-7fc4-404b-b6c3-39ce388725e4.png',
-      description: 'Versatile Bread Improver for Reliable Texture and Consistency. A versatile bread improver designed for superior texture and baking performance across various products like buns, pitta bread, and rusk.',
-      usageRate: 'As recommended',
-      packSize: '10Kg Bag',
-      shelfLife: '2 Years',
-      features: ['Versatile application', 'Superior texture', 'Consistent results', 'Tolerates flour variations'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 3,
-      name: 'PAK MAYA - ALBATROS',
-      category: 'baking',
-      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
-      description: 'Premium Dough Performance for Softer, Sliceable, High-Quality Bread. Achieve premium baked goods with ALBATROS – a multifunctional improver enhancing dough handling, appearance, texture, and shelf life.',
-      usageRate: 'As recommended',
-      packSize: '500g x 20 pcs | 1Kg | 5Kg Bag',
-      shelfLife: '2 Years',
-      features: ['Premium quality', 'Multifunctional improver', 'Sliceable soft bread', 'White crumb texture'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 4,
-      name: 'PAK MAYA - EKA EXCEL FROST',
-      category: 'baking',
-      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
-      description: 'Superior Frozen Dough Solution for Long-Lasting Freshness & Structure. Specially formulated for frozen dough products, this improver enhances dough strength and volume while preventing freeze damage.',
-      usageRate: 'As recommended',
-      packSize: '500g x 20 pcs',
-      shelfLife: '2 Years',
-      features: ['Frozen dough specialist', 'Enhanced dough strength', 'Prevents freeze damage', 'Long-lasting freshness'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 5,
-      name: 'PAK MAYA - EKA EXCEL (Pizza)',
-      category: 'baking',
-      image: '/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png',
-      description: 'Perfect Crust & Browning – Even After Cold Storage. Get the perfect pizza every time! This improver strengthens dough, enhances browning, and allows for oil-free recipes with longer usability.',
-      usageRate: 'As recommended',
-      packSize: '500g x 20 pcs',
-      shelfLife: '2 Years',
-      features: ['Perfect pizza crust', 'Enhanced browning', 'Cold storage compatible', 'Oil-free recipes'],
-      price: 'Contact for pricing'
-    },
 
     // PAK GHIZA - Baking Essentials
     {
@@ -229,18 +181,6 @@ const Products = () => {
       packSize: '1Kg | 3Kg Bucket',
       shelfLife: '2 Years',
       features: ['Creamy smooth texture', 'Sweet & versatile', 'Cake layers', 'Delightful desserts'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 18,
-      name: 'CHOCOLINO - LIQUID CHOCOLATE COUVERTURE',
-      category: 'chocolate',
-      image: '/lovable-uploads/e4e3ccf4-aeef-4435-81b6-e64e5d94b47e.png',
-      description: 'Professional Couverture for Perfect Coating & Molding. Premium couverture chocolate perfect for tempering, molding, and glazing pastries and desserts.',
-      usageRate: 'As needed',
-      packSize: 'Custom Commercial Packaging',
-      shelfLife: '2 Years',
-      features: ['Professional grade', 'Perfect coating', 'Molding & glazing', 'Premium couverture'],
       price: 'Contact for pricing'
     },
     {
