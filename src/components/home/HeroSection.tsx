@@ -85,7 +85,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="animate-fade-in">
           
           <div className="space-y-8 mb-12">
-            <Badge className="bg-emerald-400/95 backdrop-blur-md text-white border border-emerald-300/50 px-6 py-3 text-sm font-medium rounded-full shadow-xl hover:bg-emerald-500/95 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white border-0 px-6 py-3 text-sm font-medium rounded-full shadow-xl hover:scale-105 transition-all duration-300">
               <Award className="w-4 h-4 mr-2 inline-block animate-pulse" />
               Trusted Excellence Since 1998
             </Badge>
@@ -111,9 +111,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                    textShadow: '1px 1px 3px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.3)'
                  }}>
                 Transforming culinary excellence with{' '}
-                <span className="relative inline-block min-w-[280px] text-center">
+                <span className="relative inline-block">
                   <span 
-                    className={`absolute inset-0 text-amber-200 font-medium transition-opacity duration-500 ${
+                    className={`text-amber-200 font-medium transition-opacity duration-500 ${
                       isKeywordAnimating ? 'opacity-0' : 'opacity-100'
                     }`}
                     style={{
