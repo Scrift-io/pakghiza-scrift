@@ -8,11 +8,11 @@ import CallToAction from '@/components/home/CallToAction';
 import TextMarquee from '@/components/ui/text-marquee';
 
 const Home = () => {
-  // Updated with new product showcase images
+  // Updated with new styled product showcase images
   const heroImages = [
-    "/lovable-uploads/86e3c425-a665-45a0-bfb2-5de226988f5a.png",
-    "/lovable-uploads/f5dc64a7-99cb-4f24-9a87-84124218c9db.png",
-    "/lovable-uploads/221d4aeb-900a-4a87-8ed4-0f49e803cfca.png"
+    "/lovable-uploads/f63478f5-7694-4a34-b460-32e7ef3cffbd.png",
+    "/lovable-uploads/31c2b2d7-eaf0-4390-93ed-15ce571cc8ae.png",
+    "/lovable-uploads/1c70f403-22b6-432b-8450-6c89fb9e1f32.png"
   ];
 
   return (

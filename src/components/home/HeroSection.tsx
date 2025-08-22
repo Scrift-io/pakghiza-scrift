@@ -61,10 +61,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             />
           </div>
         ))}
-        {/* Refined gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40"></div>
-        {/* Subtle vignette effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+        {/* Enhanced gradient overlay for optimal text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50"></div>
+        {/* Additional center focus overlay for text area */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40"></div>
+        {/* Radial overlay for center text emphasis */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/20 to-black/60"></div>
       </div>
       
       {/* Animated background elements */}
@@ -86,22 +88,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Badge>
             
             <div className="relative flex items-center justify-center px-6 py-6 overflow-visible">
-              <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight text-center max-w-5xl break-words overflow-visible">
+              <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center max-w-5xl break-words overflow-visible">
                 <div className="relative inline-block">
                   {taglines.map((tagline, index) => (
                     <span 
                       key={index}
-                      className={`absolute inset-0 bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 bg-clip-text text-transparent transition-all duration-1000 ease-in-out ${
+                      className={`absolute inset-0 bg-gradient-to-r from-white via-amber-100 to-yellow-100 bg-clip-text text-transparent drop-shadow-2xl transition-all duration-1000 ease-in-out ${
                         index === currentTagline 
                           ? 'opacity-100 transform translate-y-0' 
                           : 'opacity-0 transform translate-y-4'
                       }`}
+                      style={{
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)'
+                      }}
                     >
                       {tagline}
                     </span>
                   ))}
                   {/* Invisible placeholder to maintain layout */}
-                  <span className="opacity-0 bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 bg-clip-text text-transparent">
+                  <span className="opacity-0 bg-gradient-to-r from-white via-amber-100 to-yellow-100 bg-clip-text text-transparent">
                     {taglines[currentTagline]}
                   </span>
                 </div>
@@ -109,7 +114,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
             
             <div className="relative px-4">
-              <p className="font-inter text-lg sm:text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed text-center drop-shadow-2xl">
+              <p className="font-inter text-lg sm:text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-center drop-shadow-2xl"
+                 style={{
+                   textShadow: '1px 1px 3px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.5)'
+                 }}>
                 Transforming culinary excellence with{' '}
                 <span className="relative inline-block min-w-0">
                   {keywords.map((keyword, index) => (
@@ -120,6 +128,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                           ? 'opacity-100 transform translate-y-0' 
                           : 'opacity-0 transform translate-y-4'
                       }`}
+                      style={{
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.2)'
+                      }}
                     >
                       {keyword}
                     </span>
