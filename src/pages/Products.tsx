@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Breadcrumbs, Cake, Candy, Factory, IceCream, Layers3, ShoppingBag } from 'lucide-react';
+import { ArrowRight, Cake, Candy, Factory, IceCream, Layers3, ShoppingBag } from 'lucide-react';
 
 interface Product {
   id: string;
