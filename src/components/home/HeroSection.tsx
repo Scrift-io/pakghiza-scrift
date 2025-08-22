@@ -14,7 +14,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTagline, setCurrentTagline] = useState(0);
   const [currentKeyword, setCurrentKeyword] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isTaglineAnimating, setIsTaglineAnimating] = useState(false);
+  const [isKeywordAnimating, setIsKeywordAnimating] = useState(false);
 
   const taglines = ["Premium Ingredients", "Culinary Excellence", "Quality Solutions", "Trusted Partners"];
   const keywords = ["world-class ingredients", "premium quality standards", "innovative food solutions", "exceptional taste profiles"];
@@ -28,10 +29,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   useEffect(() => {
     const taglineTimer = setInterval(() => {
-      setIsAnimating(true);
+      setIsTaglineAnimating(true);
       setTimeout(() => {
         setCurrentTagline(prev => (prev + 1) % taglines.length);
-        setIsAnimating(false);
+        setIsTaglineAnimating(false);
       }, 500);
     }, 3000);
     return () => clearInterval(taglineTimer);
@@ -39,7 +40,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   useEffect(() => {
     const keywordTimer = setInterval(() => {
-      setCurrentKeyword(prev => (prev + 1) % keywords.length);
+      setIsKeywordAnimating(true);
+      setTimeout(() => {
+        setCurrentKeyword(prev => (prev + 1) % keywords.length);
+        setIsKeywordAnimating(false);
+      }, 500);
     }, 4000);
     return () => clearInterval(keywordTimer);
   }, [keywords.length]);
@@ -62,9 +67,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             />
           </div>
         ))}
-        {/* Subtle gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+        {/* Enhanced gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
       </div>
       
       {/* Animated background elements */}
@@ -88,8 +93,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="relative px-6 py-6 overflow-hidden">
               <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center">
                 <span 
-                  className={`inline-block bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent transition-all duration-500 ${
-                    isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
+                  className={`inline-block bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent transition-opacity duration-500 ${
+                    isTaglineAnimating ? 'opacity-0' : 'opacity-100'
                   }`}
                   style={{
                     textShadow: '2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(245, 158, 11, 0.3)'
@@ -106,9 +111,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                    textShadow: '1px 1px 3px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.3)'
                  }}>
                 Transforming culinary excellence with{' '}
-                <span className="relative inline-block">
+                <span className="relative inline-block min-w-[280px] text-center">
                   <span 
-                    className="text-amber-300 font-semibold transition-all duration-1000"
+                    className={`absolute inset-0 text-amber-200 font-medium transition-opacity duration-500 ${
+                      isKeywordAnimating ? 'opacity-0' : 'opacity-100'
+                    }`}
                     style={{
                       textShadow: '2px 2px 4px rgba(0,0,0,0.7), 0 0 10px rgba(245, 158, 11, 0.2)'
                     }}
