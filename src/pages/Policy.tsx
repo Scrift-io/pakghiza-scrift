@@ -94,7 +94,7 @@ const Policy = () => {
             animationSpeed={6}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            PAK GHIZA (PRIVATE) LIMITED
+            Pak Ghiza Private Limited
           </GradientText>
           <Typewriter
             text="Committed to the production and supply of safe, high-quality food products and ingredients that consistently meet or exceed customer expectations and international standards."
