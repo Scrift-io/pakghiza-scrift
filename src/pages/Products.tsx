@@ -144,7 +144,7 @@ const Products = () => {
     { id: 'decorative', name: 'Decor Sauces', icon: Candy, color: 'bg-pink-100 text-pink-800', count: products.filter(p => p.category === 'decorative').length },
     { id: 'chocolate', name: 'Chocolates', icon: IceCream, color: 'bg-amber-100 text-amber-800', count: products.filter(p => p.category === 'chocolate').length },
     { id: 'spreads', name: 'Spreads', icon: Layers3, color: 'bg-purple-100 text-purple-800', count: products.filter(p => p.category === 'spreads').length },
-    { id: 'compounds', name: 'Compounds', icon: Breadcrumbs, color: 'bg-blue-100 text-blue-800', count: products.filter(p => p.category === 'compounds').length },
+    { id: 'compounds', name: 'Compounds', icon: Layers3, color: 'bg-blue-100 text-blue-800', count: products.filter(p => p.category === 'compounds').length },
     { id: 'industrial', name: 'Industrial Solutions', icon: Factory, color: 'bg-green-100 text-green-800', count: products.filter(p => p.category === 'industrial').length },
   ];
 
