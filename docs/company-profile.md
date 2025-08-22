@@ -41,8 +41,8 @@ To provide the highest quality food ingredients that enable our customers to cre
 - Competitive bulk pricing
 
 ## Contact Information
-- **Phone:** +92 XXX XXXXXXX
+- **Phone:** 021 35026618-20
 - **Email:** info@pakghiza.com
 - **Website:** pakghiza.com
-- **Address:** Karachi, Pakistan
+- **Address:** Plot no. LC-40, Landhi Industrial Area, Karachi, Pakistan
 - **Online Store:** Available on Daraz

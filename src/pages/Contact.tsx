@@ -49,7 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                  <p className="text-gray-600">+92 XXX XXXXXXX</p>
+                  <p className="text-gray-600">021 35026618-20</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -67,9 +67,9 @@ const Contact = () => {
                 </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
-                    <p className="text-gray-600">L-C, 40, near opal laboratory</p>
-                    <p className="text-gray-600">Sector 29 Landhi Industrial Area</p>
-                    <p className="text-gray-600">Karachi, 75160</p>
+                    <p className="text-gray-600">Plot no. LC-40</p>
+                    <p className="text-gray-600">Landhi Industrial Area</p>
+                    <p className="text-gray-600">Karachi, Pakistan</p>
                   </div>
               </div>
 
@@ -98,7 +98,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <Button 
                     className="w-full bg-green-600 hover:bg-green-700 text-white"
-                    onClick={() => window.open('https://wa.me/92XXXXXXXXX', '_blank')}
+                    onClick={() => window.open('https://wa.me/923502661820', '_blank')}
                   >
                     WhatsApp Us
                   </Button>
@@ -181,7 +181,7 @@ const Contact = () => {
 
             <Card className="overflow-hidden shadow-xl border-0 rounded-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.2!2d67.255!3d24.824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sL-C%2C%2040%2C%20near%20opal%20laboratory%2C%20Sector%2029%20Landhi%20Industrial%20Area%2C%20Karachi%2C%2075160%2C%20Pakistan!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.2!2d67.255!3d24.824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPlot%20no.%20LC-40%2C%20Landhi%20Industrial%20Area%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s"
                 width="100%"
                 height="500"
                 style={{ border: 0 }}
