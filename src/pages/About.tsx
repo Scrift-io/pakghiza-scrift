@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Award, TrendingUp, Star, Users, Handshake, Building, Phone, Mail } from 'lucide-react';
 import { AnimatedCard } from '@/components/ui/animated-card';
@@ -9,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { GradientText } from '@/components/ui/gradient-text';
 
 const About = () => {
   const statsRef = useRef<HTMLDivElement>(null);
@@ -70,9 +70,13 @@ const About = () => {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+          <GradientText
+            colors={["#f59e0b", "#d97706", "#f59e0b"]}
+            animationSpeed={6}
+            className="text-4xl md:text-5xl font-bold mb-8"
+          >
             About Pak Ghiza
-          </h1>
+          </GradientText>
           
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6 text-left">

@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Star, Phone, ShoppingCart } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AnimatedCard } from '@/components/ui/animated-card';
+import { GradientText } from '@/components/ui/gradient-text';
 
 const Industrial = () => {
   const [formData, setFormData] = useState({
@@ -33,9 +33,13 @@ const Industrial = () => {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+          <GradientText
+            colors={["#f59e0b", "#d97706", "#f59e0b"]}
+            animationSpeed={6}
+            className="text-4xl md:text-5xl font-bold mb-8"
+          >
             Industrial & Commercial Solutions
-          </h1>
+          </GradientText>
           <p className="text-xl text-gray-600 mb-12">
             Bulk solutions for large-scale food production with customized formulations and technical support
           </p>

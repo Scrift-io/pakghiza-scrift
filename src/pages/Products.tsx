@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { GradientText } from '@/components/ui/gradient-text';
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -446,9 +447,13 @@ const Products = () => {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <GradientText
+            colors={["#f59e0b", "#d97706", "#f59e0b"]}
+            animationSpeed={6}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
             Our Product Range
-          </h1>
+          </GradientText>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover our comprehensive range of premium food ingredients designed for professional bakers and food manufacturers
           </p>

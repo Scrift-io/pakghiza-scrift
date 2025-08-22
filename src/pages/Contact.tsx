@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { GradientText } from '@/components/ui/gradient-text';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,9 +32,13 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <GradientText
+              colors={["#f59e0b", "#d97706", "#f59e0b"]}
+              animationSpeed={6}
+              className="text-4xl md:text-5xl font-bold mb-4"
+            >
               Contact Us
-            </h1>
+            </GradientText>
             <p className="text-xl text-gray-600">
               Ready to elevate your products with premium ingredients? We're here to help.
             </p>

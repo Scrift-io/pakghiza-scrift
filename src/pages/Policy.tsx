@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { GradientText } from '@/components/ui/gradient-text';
 
 const Policy = () => {
   const policyPoints = [
@@ -15,7 +16,7 @@ const Policy = () => {
     },
     {
       icon: Globe,
-      title: "Regulatory Compliance",
+      title: "Regulatory Compliance", 
       description: "Complying with all statutory, regulatory, halal, and customer requirements and enhancing customer satisfaction through consistent product quality and reliable service.",
       color: "from-blue-500 to-indigo-500"
     },
@@ -86,9 +87,13 @@ const Policy = () => {
           <Badge variant="premium" className="px-5 py-2.5 text-sm font-medium tracking-wide mb-6 md:px-6 md:py-3 md:text-base">
             Food Safety & Quality Policy
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
+          <GradientText
+            colors={["#f59e0b", "#d97706", "#f59e0b"]}
+            animationSpeed={6}
+            className="text-4xl md:text-6xl font-bold mb-6"
+          >
             PAK GHIZA (PRIVATE) LIMITED
-          </h1>
+          </GradientText>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
             Committed to the production and supply of safe, high-quality food products and ingredients 
             that consistently meet or exceed customer expectations and international standards.
