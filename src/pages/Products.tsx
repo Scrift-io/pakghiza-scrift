@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
-import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet } from 'lucide-react';
+import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { GradientText } from '@/components/ui/gradient-text';
 import { Typewriter } from '@/components/ui/typewriter-text';
+import { 
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+  PaginationEllipsis,
+} from '@/components/ui/pagination';
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; // Show 6 products per page for better mobile experience
 
   const products = [
     // PAK MAYA - Bread Improvers
@@ -304,6 +315,50 @@ const Products = () => {
     return matchesFilter && matchesSearch;
   });
 
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
+
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [activeFilter, searchTerm]);
+
+  const getPageNumbers = () => {
+    const pages = [];
+    const maxVisiblePages = 5;
+    
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= 3) {
+        for (let i = 1; i <= 4; i++) {
+          pages.push(i);
+        }
+        pages.push('ellipsis');
+        pages.push(totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1);
+        pages.push('ellipsis');
+        for (let i = totalPages - 3; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        pages.push(1);
+        pages.push('ellipsis');
+        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+          pages.push(i);
+        }
+        pages.push('ellipsis');
+        pages.push(totalPages);
+      }
+    }
+    
+    return pages;
+  };
+
   const ProductModal = ({ product, onClose }) => {
     if (!product) return null;
 
@@ -403,7 +458,6 @@ const Products = () => {
           />
         </div>
 
-        {/* Search and Filter */}
         <div className="mb-12 space-y-8">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
             <div className="relative flex-1 max-w-md">
@@ -418,7 +472,6 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Fixed Category Filter with Better Spacing */}
           <div className="flex justify-center">
             <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-white/30 max-w-5xl">
               <div className="flex flex-wrap gap-3 justify-center">
@@ -465,7 +518,6 @@ const Products = () => {
                         {category.count}
                       </Badge>
                       
-                      {/* Active indicator */}
                       {isActive && (
                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-white rounded-full opacity-80" />
                       )}
@@ -477,56 +529,105 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map(product => (
-            <Card 
-              key={product.id} 
-              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden border-0 shadow-lg"
-              onClick={() => setSelectedProduct(product)}
-            >
-              <div className="relative overflow-hidden bg-gradient-to-br from-amber-50 to-yellow-50">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-48 object-contain p-4 group-hover:scale-110 transition-transform duration-300" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <Badge variant="premium" className="text-xs px-3 py-1.5">
-                      {product.category}
-                    </Badge>
+        <div className="space-y-8">
+          <div className="text-center">
+            <p className="text-gray-600">
+              Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} products
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+            {currentProducts.map(product => (
+              <Card 
+                key={product.id} 
+                className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden border-0 shadow-lg"
+                onClick={() => setSelectedProduct(product)}
+              >
+                <div className="relative overflow-hidden bg-gradient-to-br from-amber-50 to-yellow-50">
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="w-full h-48 object-contain p-4 group-hover:scale-110 transition-transform duration-300" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <Badge variant="premium" className="text-xs px-3 py-1.5">
+                        {product.category}
+                      </Badge>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {product.description}
-                </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-500">Usage Rate:</span>
-                    <span className="font-medium text-amber-600">{product.usageRate}</span>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                    {product.description}
+                  </p>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-gray-500">Usage Rate:</span>
+                      <span className="font-medium text-amber-600">{product.usageRate}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-gray-500">Pack Size:</span>
+                      <span className="font-medium">{product.packSize}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-500">Pack Size:</span>
-                    <span className="font-medium">{product.packSize}</span>
+                  <div className="flex gap-2">
+                    <Button className="flex-1 bg-amber-500 hover:bg-amber-600 text-white rounded-lg">
+                      View Details
+                    </Button>
+                    <Button variant="outline" size="icon" className="border-amber-500 text-amber-600 hover:bg-amber-50">
+                      <ShoppingCart className="w-4 h-4" />
+                    </Button>
                   </div>
-                </div>
-                <div className="flex gap-2">
-                  <Button className="flex-1 bg-amber-500 hover:bg-amber-600 text-white rounded-lg">
-                    View Details
-                  </Button>
-                  <Button variant="outline" size="icon" className="border-amber-500 text-amber-600 hover:bg-amber-50">
-                    <ShoppingCart className="w-4 h-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <div className="flex justify-center mt-12">
+              <Pagination className="mx-auto">
+                <PaginationContent className="flex items-center gap-1">
+                  <PaginationItem>
+                    <PaginationPrevious 
+                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                      className={`${currentPage === 1 ? 'pointer-events-none opacity-50' : 'hover:bg-amber-50 hover:text-amber-600 cursor-pointer'} transition-colors duration-200`}
+                    />
+                  </PaginationItem>
+                  
+                  {getPageNumbers().map((page, index) => (
+                    <PaginationItem key={index}>
+                      {page === 'ellipsis' ? (
+                        <PaginationEllipsis className="text-gray-400" />
+                      ) : (
+                        <PaginationLink
+                          onClick={() => setCurrentPage(page)}
+                          isActive={currentPage === page}
+                          className={`cursor-pointer transition-all duration-200 ${
+                            currentPage === page 
+                              ? 'bg-amber-500 text-white hover:bg-amber-600 shadow-md' 
+                              : 'hover:bg-amber-50 hover:text-amber-600 text-gray-600'
+                          }`}
+                        >
+                          {page}
+                        </PaginationLink>
+                      )}
+                    </PaginationItem>
+                  ))}
+                  
+                  <PaginationItem>
+                    <PaginationNext 
+                      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                      className={`${currentPage === totalPages ? 'pointer-events-none opacity-50' : 'hover:bg-amber-50 hover:text-amber-600 cursor-pointer'} transition-colors duration-200`}
+                    />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
+          )}
         </div>
 
         {filteredProducts.length === 0 && (
@@ -540,7 +641,6 @@ const Products = () => {
         )}
       </div>
 
-      {/* Product Modal */}
       <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
     </div>
   );
