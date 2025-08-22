@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ShoppingCart, Home, Package, Info, Factory, Shield, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -64,7 +65,7 @@ const Header = () => {
                 <img 
                   src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" 
                   alt="Pak Ghiza Logo" 
-                  className="relative h-20 w-20 object-contain animate-spin-slow transition-transform duration-300 group-hover:scale-105"
+                  className="relative h-24 w-24 object-contain animate-spin-slow transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>
@@ -147,4 +148,5 @@ const Header = () => {
     </nav>
   );
 };
+
 export default Header;
