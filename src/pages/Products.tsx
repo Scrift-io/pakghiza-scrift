@@ -338,7 +338,7 @@ const Products = () => {
                       <img 
                         src={product.backImage} 
                         alt={`${product.name} - Back`} 
-                        className="w-full h-64 object-contain rounded-xl shadow-lg bg-gradient-to-br from-amber-50 to-yellow-50 p-4" 
+                        className="w-full h-64 object-contain rounded-xl shadow-lg bg-white p-4" 
                       />
                     )}
                   </div>
