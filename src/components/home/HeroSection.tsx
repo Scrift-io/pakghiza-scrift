@@ -14,6 +14,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTagline, setCurrentTagline] = useState(0);
   const [currentKeyword, setCurrentKeyword] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const taglines = ["Premium Ingredients", "Culinary Excellence", "Quality Solutions", "Trusted Partners"];
   const keywords = ["world-class ingredients", "premium quality standards", "innovative food solutions", "exceptional taste profiles"];
@@ -27,11 +28,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   useEffect(() => {
     const taglineTimer = setInterval(() => {
-      setCurrentTagline(prev => {
-        const next = (prev + 1) % taglines.length;
-        console.log('Tagline changing from', prev, 'to', next, 'tagline:', taglines[next]);
-        return next;
-      });
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentTagline(prev => (prev + 1) % taglines.length);
+        setIsAnimating(false);
+      }, 500);
     }, 3000);
     return () => clearInterval(taglineTimer);
   }, [taglines.length]);
@@ -61,12 +62,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             />
           </div>
         ))}
-        {/* Enhanced gradient overlay for optimal text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50"></div>
-        {/* Additional center focus overlay for text area */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40"></div>
-        {/* Radial overlay for center text emphasis */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/20 to-black/60"></div>
+        {/* Subtle gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
       </div>
       
       {/* Animated background elements */}
@@ -87,55 +85,36 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               Trusted Excellence Since 1998
             </Badge>
             
-            <div className="relative flex items-center justify-center px-6 py-6 overflow-visible">
-              <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center max-w-5xl break-words overflow-visible">
-                <div className="relative inline-block">
-                  {taglines.map((tagline, index) => (
-                    <span 
-                      key={index}
-                      className={`absolute inset-0 bg-gradient-to-r from-white via-amber-100 to-yellow-100 bg-clip-text text-transparent drop-shadow-2xl transition-all duration-1000 ease-in-out ${
-                        index === currentTagline 
-                          ? 'opacity-100 transform translate-y-0' 
-                          : 'opacity-0 transform translate-y-4'
-                      }`}
-                      style={{
-                        textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)'
-                      }}
-                    >
-                      {tagline}
-                    </span>
-                  ))}
-                  {/* Invisible placeholder to maintain layout */}
-                  <span className="opacity-0 bg-gradient-to-r from-white via-amber-100 to-yellow-100 bg-clip-text text-transparent">
-                    {taglines[currentTagline]}
-                  </span>
-                </div>
+            <div className="relative px-6 py-6 overflow-hidden">
+              <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center">
+                <span 
+                  className={`inline-block bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent transition-all duration-500 ${
+                    isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
+                  }`}
+                  style={{
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(245, 158, 11, 0.3)'
+                  }}
+                >
+                  {taglines[currentTagline]}
+                </span>
               </h1>
             </div>
             
             <div className="relative px-4">
-              <p className="font-inter text-lg sm:text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-center drop-shadow-2xl"
+              <p className="font-inter text-lg sm:text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-center"
                  style={{
-                   textShadow: '1px 1px 3px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.5)'
+                   textShadow: '1px 1px 3px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.3)'
                  }}>
                 Transforming culinary excellence with{' '}
-                <span className="relative inline-block min-w-0">
-                  {keywords.map((keyword, index) => (
-                    <span 
-                      key={index} 
-                      className={`absolute left-0 top-0 text-amber-200 font-semibold whitespace-nowrap transition-all duration-1000 ease-in-out ${
-                        index === currentKeyword 
-                          ? 'opacity-100 transform translate-y-0' 
-                          : 'opacity-0 transform translate-y-4'
-                      }`}
-                      style={{
-                        textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.2)'
-                      }}
-                    >
-                      {keyword}
-                    </span>
-                  ))}
-                  <span className="opacity-0 font-semibold whitespace-nowrap">{keywords[currentKeyword]}</span>
+                <span className="relative inline-block">
+                  <span 
+                    className="text-amber-300 font-semibold transition-all duration-1000"
+                    style={{
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.7), 0 0 10px rgba(245, 158, 11, 0.2)'
+                    }}
+                  >
+                    {keywords[currentKeyword]}
+                  </span>
                 </span>
                 {' '}and unmatched quality standards that professional chefs and manufacturers trust worldwide.
               </p>
