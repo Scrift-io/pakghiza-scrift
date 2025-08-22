@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -54,8 +53,19 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">© 2024 Pak Ghiza. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400">© 2024 Pak Ghiza. All rights reserved.</p>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700/50 hover:bg-gray-700/50 transition-all duration-300 group">
+              <span className="text-sm text-gray-300 group-hover:text-white transition-colors">Powered by</span>
+              <img 
+                src="/lovable-uploads/e3005d4d-c05c-4f18-9b8b-65f49b30fb0d.png" 
+                alt="Scrift Logo" 
+                className="h-5 w-5 object-contain"
+              />
+              <span className="text-sm font-semibold text-white group-hover:text-amber-400 transition-colors">Scrift</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
