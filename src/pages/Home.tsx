@@ -8,11 +8,11 @@ import CallToAction from '@/components/home/CallToAction';
 import TextMarquee from '@/components/ui/text-marquee';
 
 const Home = () => {
-  // Use niche-relevant background images (industry/manufacturing scenes, not products)
+  // Updated with new product showcase images
   const heroImages = [
-    "/lovable-uploads/966936c5-6052-44a9-a354-373285053f76.png",
-    "/lovable-uploads/677e12d8-6763-4fb9-88ee-3025f225b2b0.png",
-    "/lovable-uploads/a342924e-7fc4-404b-b6c3-39ce388725e4.png"
+    "/lovable-uploads/86e3c425-a665-45a0-bfb2-5de226988f5a.png",
+    "/lovable-uploads/f5dc64a7-99cb-4f24-9a87-84124218c9db.png",
+    "/lovable-uploads/221d4aeb-900a-4a87-8ed4-0f49e803cfca.png"
   ];
 
   return (
