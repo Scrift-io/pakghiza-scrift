@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ShoppingCart, X } from 'lucide-react';
+import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -297,13 +297,62 @@ const Products = () => {
   ];
 
   const categories = [
-    { id: 'all', name: 'All Products', count: products.length },
-    { id: 'baking', name: 'Baking Agents', count: products.filter(p => p.category === 'baking').length },
-    { id: 'preservative', name: 'Preservatives', count: products.filter(p => p.category === 'preservative').length },
-    { id: 'flavoring', name: 'Flavorings', count: products.filter(p => p.category === 'flavoring').length },
-    { id: 'flour', name: 'Flours', count: products.filter(p => p.category === 'flour').length },
-    { id: 'chocolate', name: 'Chocolate', count: products.filter(p => p.category === 'chocolate').length },
-    { id: 'syrup', name: 'Syrups', count: products.filter(p => p.category === 'syrup').length }
+    { 
+      id: 'all', 
+      name: 'All Products', 
+      count: products.length,
+      icon: Package,
+      color: 'bg-amber-500 text-white',
+      hoverColor: 'hover:bg-amber-600'
+    },
+    { 
+      id: 'baking', 
+      name: 'Baking Agents', 
+      count: products.filter(p => p.category === 'baking').length,
+      icon: Cake,
+      color: 'bg-orange-500 text-white',
+      hoverColor: 'hover:bg-orange-600'
+    },
+    { 
+      id: 'preservative', 
+      name: 'Preservatives', 
+      count: products.filter(p => p.category === 'preservative').length,
+      icon: Shield,
+      color: 'bg-green-500 text-white',
+      hoverColor: 'hover:bg-green-600'
+    },
+    { 
+      id: 'flavoring', 
+      name: 'Flavorings', 
+      count: products.filter(p => p.category === 'flavoring').length,
+      icon: Palette,
+      color: 'bg-purple-500 text-white',
+      hoverColor: 'hover:bg-purple-600'
+    },
+    { 
+      id: 'flour', 
+      name: 'Flours', 
+      count: products.filter(p => p.category === 'flour').length,
+      icon: Wheat,
+      color: 'bg-yellow-500 text-white',
+      hoverColor: 'hover:bg-yellow-600'
+    },
+    { 
+      id: 'chocolate', 
+      name: 'Chocolate', 
+      count: products.filter(p => p.category === 'chocolate').length,
+      icon: Coffee,
+      color: 'bg-amber-700 text-white',
+      hoverColor: 'hover:bg-amber-800'
+    },
+    { 
+      id: 'syrup', 
+      name: 'Syrups', 
+      count: products.filter(p => p.category === 'syrup').length,
+      icon: Droplet,
+      color: 'bg-blue-500 text-white',
+      hoverColor: 'hover:bg-blue-600'
+    }
   ];
 
   const filteredProducts = products.filter(product => {
@@ -406,8 +455,8 @@ const Products = () => {
         </div>
 
         {/* Search and Filter */}
-        <div className="mb-12 space-y-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="mb-12 space-y-8">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input 
@@ -415,23 +464,52 @@ const Products = () => {
                 placeholder="Search products..." 
                 value={searchTerm} 
                 onChange={(e) => setSearchTerm(e.target.value)} 
-                className="pl-10 py-3 rounded-xl border-amber-200 focus:border-amber-500" 
+                className="pl-10 py-3 rounded-xl border-amber-200 focus:border-amber-500 bg-white/80 backdrop-blur-sm shadow-sm" 
               />
             </div>
-            <div className="flex flex-wrap gap-2">
-              {categories.map(category => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveFilter(category.id)}
-                  className={`px-4 py-2 rounded-full font-medium transition-all ${
-                    activeFilter === category.id 
-                      ? 'bg-amber-500 text-white shadow-lg' 
-                      : 'bg-gray-100 text-gray-700 hover:bg-amber-100'
-                  }`}
-                >
-                  {category.name} ({category.count})
-                </button>
-              ))}
+          </div>
+
+          {/* Modern Category Filter */}
+          <div className="flex justify-center">
+            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white/20">
+              <div className="flex flex-wrap gap-2 justify-center">
+                {categories.map(category => {
+                  const IconComponent = category.icon;
+                  const isActive = activeFilter === category.id;
+                  
+                  return (
+                    <button
+                      key={category.id}
+                      onClick={() => setActiveFilter(category.id)}
+                      className={`group relative flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+                        isActive 
+                          ? `${category.color} shadow-lg scale-105` 
+                          : `bg-white/80 text-gray-700 hover:bg-white hover:shadow-md ${category.hoverColor.replace('hover:', 'hover:text-white hover:')}`
+                      }`}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                      <span className="font-semibold text-sm">
+                        {category.name}
+                      </span>
+                      <Badge 
+                        variant="secondary" 
+                        className={`ml-1 text-xs px-2 py-0.5 ${
+                          isActive 
+                            ? 'bg-white/20 text-white border-white/30' 
+                            : 'bg-gray-100 text-gray-600 group-hover:bg-white/20 group-hover:text-current'
+                        }`}
+                      >
+                        {category.count}
+                      </Badge>
+                      
+                      {/* Active indicator */}
+                      {isActive && (
+                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-white rounded-full opacity-80" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
