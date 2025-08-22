@@ -469,9 +469,9 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Modern Category Filter */}
+          {/* Fixed Category Filter */}
           <div className="flex justify-center">
-            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white/20">
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-3 shadow-xl border border-white/30">
               <div className="flex flex-wrap gap-2 justify-center">
                 {categories.map(category => {
                   const IconComponent = category.icon;
@@ -484,19 +484,33 @@ const Products = () => {
                       className={`group relative flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
                         isActive 
                           ? `${category.color} shadow-lg scale-105` 
-                          : `bg-white/80 text-gray-700 hover:bg-white hover:shadow-md ${category.hoverColor.replace('hover:', 'hover:text-white hover:')}`
+                          : `bg-white/90 text-gray-700 hover:bg-gradient-to-r hover:shadow-md`
+                      } ${
+                        !isActive && category.id === 'baking' ? 'hover:from-orange-500 hover:to-orange-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'preservative' ? 'hover:from-green-500 hover:to-green-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'flavoring' ? 'hover:from-purple-500 hover:to-purple-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'flour' ? 'hover:from-yellow-500 hover:to-yellow-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'chocolate' ? 'hover:from-amber-700 hover:to-amber-800 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'syrup' ? 'hover:from-blue-500 hover:to-blue-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'all' ? 'hover:from-amber-500 hover:to-amber-600 hover:text-white' : ''
                       }`}
                     >
-                      <IconComponent className="w-4 h-4" />
-                      <span className="font-semibold text-sm">
+                      <IconComponent className="w-4 h-4 flex-shrink-0" />
+                      <span className="font-semibold text-sm whitespace-nowrap">
                         {category.name}
                       </span>
                       <Badge 
                         variant="secondary" 
-                        className={`ml-1 text-xs px-2 py-0.5 ${
+                        className={`ml-1 text-xs px-2 py-0.5 flex-shrink-0 ${
                           isActive 
                             ? 'bg-white/20 text-white border-white/30' 
-                            : 'bg-gray-100 text-gray-600 group-hover:bg-white/20 group-hover:text-current'
+                            : 'bg-gray-100 text-gray-600 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30'
                         }`}
                       >
                         {category.count}
