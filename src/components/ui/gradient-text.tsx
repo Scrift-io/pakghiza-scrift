@@ -39,7 +39,7 @@ export function GradientText({
       className={cn(
         "relative mx-auto flex max-w-fit flex-row items-center justify-center",
         "rounded-[1.25rem] font-medium backdrop-blur transition-shadow duration-500",
-        "overflow-visible p-2",
+        "overflow-visible p-4",
         className
       )}
       {...props}
@@ -65,7 +65,7 @@ export function GradientText({
         </div>
       )}
       <div
-        className="inline-block relative z-10 text-transparent bg-clip-text animate-gradient px-2 py-1"
+        className="inline-block relative z-10 text-transparent bg-clip-text animate-gradient px-4 py-2"
         style={{
           ...gradientStyle,
           backgroundClip: "text",
