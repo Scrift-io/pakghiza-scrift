@@ -32,33 +32,33 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-amber-50 to-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
             Trusted by <span className="text-gradient-modern">Industry Leaders</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
             Our commitment to excellence has made us a preferred partner for food manufacturers across Pakistan.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <AnimatedCard 
               key={index}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100"
+              className="bg-white rounded-2xl p-6 sm:p-8 text-center shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              <div className="inline-flex p-4 rounded-2xl bg-amber-50 mb-6 transition-all duration-300 group-hover:bg-amber-100 group-hover:scale-110">
-                <stat.icon className="w-8 h-8 text-amber-500 transition-all duration-300 group-hover:text-amber-600 group-hover:rotate-12" />
+              <div className="inline-flex p-3 sm:p-4 rounded-2xl bg-amber-50 mb-4 sm:mb-6 transition-all duration-300 group-hover:bg-amber-100 group-hover:scale-110">
+                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-amber-500 transition-all duration-300 group-hover:text-amber-600 group-hover:rotate-12" />
               </div>
-              <div className="text-4xl font-bold text-gray-900 mb-2 transition-all duration-300 group-hover:text-amber-600 group-hover:scale-110">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 transition-all duration-300 group-hover:text-amber-600 group-hover:scale-110">
                 {stat.number}
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2 transition-colors duration-300 group-hover:text-amber-600">
+              <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2 transition-colors duration-300 group-hover:text-amber-600">
                 {stat.label}
               </h3>
-              <p className="text-gray-600 transition-colors duration-300 group-hover:text-gray-700">
+              <p className="text-sm sm:text-base text-gray-600 transition-colors duration-300 group-hover:text-gray-700 leading-relaxed">
                 {stat.description}
               </p>
             </AnimatedCard>
