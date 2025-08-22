@@ -28,14 +28,14 @@ const Home = () => {
           <TextMarquee
             baseVelocity={-2}
             delay={0}
-            clasname="font-bold tracking-[-0.05em] leading-[90%] text-white/90"
+            clasname="font-inter font-bold tracking-[-0.05em] leading-[90%] text-white/90"
           >
             PREMIUM INGREDIENTS • EXCEPTIONAL QUALITY • TRUSTED PARTNERS •
           </TextMarquee>
           <TextMarquee
             baseVelocity={2}
             delay={200}
-            clasname="font-bold tracking-[-0.05em] leading-[90%] text-white/80"
+            clasname="font-inter font-bold tracking-[-0.05em] leading-[90%] text-white/80"
           >
             BAKING EXCELLENCE • FOOD INNOVATION • INDUSTRY LEADERS •
           </TextMarquee>
