@@ -469,10 +469,10 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Fixed Category Filter */}
+          {/* Fixed Category Filter with Better Spacing */}
           <div className="flex justify-center">
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-3 shadow-xl border border-white/30">
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-white/30 max-w-5xl">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {categories.map(category => {
                   const IconComponent = category.icon;
                   const isActive = activeFilter === category.id;
@@ -481,10 +481,10 @@ const Products = () => {
                     <button
                       key={category.id}
                       onClick={() => setActiveFilter(category.id)}
-                      className={`group relative flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+                      className={`group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl font-medium transition-all duration-300 ${
                         isActive 
                           ? `${category.color} shadow-lg scale-105` 
-                          : `bg-white/90 text-gray-700 hover:bg-gradient-to-r hover:shadow-md`
+                          : `bg-white/90 text-gray-700 hover:bg-gradient-to-r hover:shadow-md hover:scale-105`
                       } ${
                         !isActive && category.id === 'baking' ? 'hover:from-orange-500 hover:to-orange-600 hover:text-white' : ''
                       } ${
