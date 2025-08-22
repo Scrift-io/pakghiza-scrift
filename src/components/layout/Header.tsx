@@ -90,15 +90,6 @@ const Header = () => {
                   }`}></span>
                 </Link>
               ))}
-              
-              {/* Premium CTA Button */}
-              <Button 
-                className="ml-8 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0" 
-                onClick={() => window.open('https://daraz.pk', '_blank')}
-              >
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Shop Now
-              </Button>
             </div>
 
             {/* Mobile menu button - Refined */}
@@ -134,13 +125,6 @@ const Header = () => {
                   </Link>
                 ))}
               </div>
-              <Button 
-                className="w-full mt-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium py-3 rounded-lg shadow-lg" 
-                onClick={() => window.open('https://daraz.pk', '_blank')}
-              >
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Shop Now
-              </Button>
             </div>
           </div>
         )}
