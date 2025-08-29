@@ -31,7 +31,7 @@ const WhatsAppWidget = () => {
           onMouseLeave={() => setShowTooltip(false)}
           onTouchStart={() => setShowTooltip(true)}
           onTouchEnd={() => setTimeout(() => setShowTooltip(false), 2000)}
-          className="bg-[#25D366] hover:bg-[#20b954] active:bg-[#1da851] text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 animate-bounce"
+          className="bg-[#25D366] hover:bg-[#20b954] active:bg-[#1da851] text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
           aria-label="Chat on WhatsApp"
         >
           <svg
