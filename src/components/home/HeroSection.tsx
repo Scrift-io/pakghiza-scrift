@@ -92,7 +92,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="relative px-1 sm:px-6 py-2 sm:py-6 overflow-hidden w-full">
               <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.1] sm:leading-tight text-center w-full break-words">
                 <span 
-                  className={`inline-block transition-opacity duration-500 ${
+                  className={`inline-block transition-opacity duration-500 font-black ${
                     isTaglineAnimating ? 'opacity-0' : 'opacity-100'
                   }`}
                   style={{
