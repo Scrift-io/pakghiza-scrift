@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -84,7 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 w-full">
         <div className="animate-fade-in w-full">
           
-          <div className="space-y-4 sm:space-y-8 mb-6 sm:mb-12 w-full">
+          <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-12 w-full">
             <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white border-0 px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium rounded-full shadow-xl hover:scale-105 transition-all duration-300">
               <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 inline-block animate-pulse" />
               Trusted Excellence Since 1998
