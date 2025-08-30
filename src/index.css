@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -90,7 +91,7 @@
   }
   
   html, body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-montserrat font-light;
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
@@ -105,6 +106,22 @@
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-medium;
+  }
+
+  p, span, div {
+    @apply font-montserrat font-light;
+  }
+
+  .font-medium {
+    font-weight: 500 !important;
+  }
+
+  .font-light {
+    font-weight: 300 !important;
   }
 }
 

@@ -73,10 +73,16 @@ export default {
 				}
 			},
 			fontFamily: {
+				'sans': ['Montserrat', 'sans-serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
 				'playfair': ['Playfair Display', 'serif'],
 				'cormorant': ['Cormorant Garamond', 'serif'],
 				'inter': ['Inter', 'sans-serif'],
 				'crimson': ['Crimson Text', 'serif'],
+			},
+			fontWeight: {
+				'light': '300',
+				'medium': '500',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
