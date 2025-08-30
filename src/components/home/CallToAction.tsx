@@ -13,14 +13,16 @@ const CallToAction: React.FC = () => {
         <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 leading-relaxed">
           Join thousands of satisfied customers who trust Pak Ghiza for their premium ingredient needs
         </p>
-        <Button 
-          size="lg"
-          className="w-full xs:w-auto bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-4 sm:px-8 sm:py-6 md:px-12 md:py-8 text-base sm:text-lg md:text-xl rounded-xl transition-all duration-300 hover:scale-105 shadow-xl btn-hover mx-4 sm:mx-0 font-semibold min-h-[52px] sm:min-h-[64px]"
-          onClick={() => window.location.href = '/contact'}
-        >
-          <Phone className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 flex-shrink-0" />
-          <span className="whitespace-nowrap">Start Your Journey Today</span>
-        </Button>
+        <div className="flex justify-center w-full">
+          <Button 
+            size="lg"
+            className="w-full xs:w-auto max-w-xs sm:max-w-none bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-4 sm:px-8 sm:py-6 md:px-12 md:py-8 text-base sm:text-lg md:text-xl rounded-xl transition-all duration-300 hover:scale-105 shadow-xl btn-hover font-semibold min-h-[52px] sm:min-h-[64px]"
+            onClick={() => window.location.href = '/contact'}
+          >
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 flex-shrink-0" />
+            <span className="whitespace-nowrap">Start Your Journey Today</span>
+          </Button>
+        </div>
       </div>
     </section>
   );
