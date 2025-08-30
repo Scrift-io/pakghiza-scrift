@@ -23,19 +23,19 @@ const Home = () => {
       <StatsSection />
       
       {/* Brand Marquee Section */}
-      <section className="py-12 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 overflow-hidden">
-        <div className="space-y-4">
+      <section className="py-8 sm:py-12 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 overflow-hidden">
+        <div className="space-y-3 sm:space-y-4">
           <TextMarquee
             baseVelocity={-2}
             delay={0}
-            clasname="font-bold tracking-[-0.05em] leading-[90%] text-white/90"
+            clasname="font-bold tracking-[-0.05em] leading-[90%] text-white/90 text-lg sm:text-xl md:text-2xl"
           >
             PREMIUM INGREDIENTS • EXCEPTIONAL QUALITY • TRUSTED PARTNERS •
           </TextMarquee>
           <TextMarquee
             baseVelocity={2}
             delay={200}
-            clasname="font-bold tracking-[-0.05em] leading-[90%] text-white/80"
+            clasname="font-bold tracking-[-0.05em] leading-[90%] text-white/80 text-lg sm:text-xl md:text-2xl"
           >
             BAKING EXCELLENCE • FOOD INNOVATION • INDUSTRY LEADERS •
           </TextMarquee>

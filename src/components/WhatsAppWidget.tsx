@@ -16,7 +16,7 @@ const WhatsAppWidget = () => {
       <div className="relative">
         {/* Tooltip */}
         <div
-          className={`absolute bottom-full right-0 mb-2 px-2 py-1 sm:px-3 sm:py-2 bg-gray-800 text-white text-xs sm:text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+          className={`absolute bottom-full right-0 mb-2 px-3 py-2 sm:px-3 sm:py-2 bg-gray-800 text-white text-xs sm:text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
             showTooltip ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
           }`}
         >
@@ -31,7 +31,7 @@ const WhatsAppWidget = () => {
           onMouseLeave={() => setShowTooltip(false)}
           onTouchStart={() => setShowTooltip(true)}
           onTouchEnd={() => setTimeout(() => setShowTooltip(false), 2000)}
-          className="bg-[#25D366] hover:bg-[#20b954] active:bg-[#1da851] text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+          className="bg-[#25D366] hover:bg-[#20b954] active:bg-[#1da851] text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 touch-manipulation"
           aria-label="Chat on WhatsApp"
         >
           <svg

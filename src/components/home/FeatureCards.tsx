@@ -52,8 +52,8 @@ const FeatureCards = () => {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-6 px-2 leading-tight">
             Why Choose <span className="text-gradient-modern">Pak Ghiza</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
@@ -61,16 +61,16 @@ const FeatureCards = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <AnimatedCard 
               key={index}
-              className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-5 sm:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
             >
               <div className={`inline-flex p-3 sm:p-4 rounded-2xl ${feature.bgColor} mb-4 sm:mb-6 transition-all duration-300 group-hover:scale-110`}>
                 <feature.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${feature.color} transition-all duration-300 group-hover:rotate-12`} />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 transition-colors duration-300 group-hover:text-amber-600">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4 transition-colors duration-300 group-hover:text-amber-600 leading-tight">
                 {feature.title}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">

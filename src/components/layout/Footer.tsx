@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+          <div className="space-y-4 col-span-1 sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center space-x-3">
               <img 
                 src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" 
                 alt="Pak Ghiza Logo" 
-                className="h-8 w-8 sm:h-10 sm:w-10 object-contain" 
+                className="h-8 w-8 sm:h-10 sm:w-10 object-contain flex-shrink-0" 
               />
               <span className="text-xl sm:text-2xl font-bold">Pak Ghiza</span>
             </Link>
@@ -23,35 +23,35 @@ const Footer = () => {
             </p>
           </div>
           
-          <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block">Home</Link></li>
-              <li><Link to="/products" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block">Products</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block">About</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block">Contact</Link></li>
+          <div className="space-y-4">
+            <h3 className="text-base sm:text-lg font-semibold text-white">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">Home</Link></li>
+              <li><Link to="/products" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">Products</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">About</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">Contact</Link></li>
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-4 text-white">Categories</h3>
-            <ul className="space-y-3">
-              <li><span className="text-gray-400 text-sm sm:text-base block">Baking Agents</span></li>
-              <li><span className="text-gray-400 text-sm sm:text-base block">Preservatives</span></li>
-              <li><span className="text-gray-400 text-sm sm:text-base block">Flavorings</span></li>
-              <li><span className="text-gray-400 text-sm sm:text-base block">Specialty Flours</span></li>
+          <div className="space-y-4">
+            <h3 className="text-base sm:text-lg font-semibold text-white">Categories</h3>
+            <ul className="space-y-2">
+              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Baking Agents</span></li>
+              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Preservatives</span></li>
+              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Flavorings</span></li>
+              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Specialty Flours</span></li>
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-4 text-white">Newsletter</h3>
-            <p className="text-gray-400 mb-4 text-sm sm:text-base">Stay updated with our latest products and offers</p>
-            <div className="space-y-3">
+          <div className="space-y-4 col-span-1 sm:col-span-2 lg:col-span-1">
+            <h3 className="text-base sm:text-lg font-semibold text-white">Newsletter</h3>
+            <p className="text-gray-400 text-sm sm:text-base">Stay updated with our latest products and offers</p>
+            <div className="space-y-3 max-w-sm">
               <Input 
                 placeholder="Your email" 
-                className="bg-gray-800 border-gray-700 text-white rounded-lg text-sm sm:text-base" 
+                className="bg-gray-800 border-gray-700 text-white rounded-lg text-sm sm:text-base h-10 sm:h-12" 
               />
-              <Button className="bg-amber-500 hover:bg-amber-600 rounded-lg w-full text-sm sm:text-base">
+              <Button className="bg-amber-500 hover:bg-amber-600 rounded-lg w-full text-sm sm:text-base h-10 sm:h-12">
                 Subscribe
               </Button>
             </div>
@@ -66,7 +66,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/e3005d4d-c05c-4f18-9b8b-65f49b30fb0d.png" 
                 alt="Scrift Logo" 
-                className="h-4 w-4 sm:h-5 sm:w-5 object-contain"
+                className="h-4 w-4 sm:h-5 sm:w-5 object-contain flex-shrink-0"
               />
               <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-amber-400 transition-colors">Scrift</span>
             </div>
