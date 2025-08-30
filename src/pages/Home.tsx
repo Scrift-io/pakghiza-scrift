@@ -16,15 +16,15 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white overflow-x-hidden">
       <HeroSection heroImages={heroImages} />
       <FeatureCards />
       <FeaturedProductsCarousel />
       <StatsSection />
       
       {/* Brand Marquee Section */}
-      <section className="py-8 sm:py-12 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 overflow-hidden">
-        <div className="space-y-3 sm:space-y-4">
+      <section className="py-8 sm:py-12 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 overflow-hidden w-full">
+        <div className="space-y-3 sm:space-y-4 w-full">
           <TextMarquee
             baseVelocity={-2}
             delay={0}
