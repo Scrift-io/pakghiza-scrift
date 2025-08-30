@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ShoppingCart, Home, Package, Info, Factory, Shield, MessageCircle } from 'lucide-react';
@@ -26,7 +27,7 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white z-[1000] shadow-[0_2px_5px_rgba(0,0,0,0.1)]">
       {/* Elegant top accent bar */}
       <div className="h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
       
