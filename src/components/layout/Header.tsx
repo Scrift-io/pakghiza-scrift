@@ -27,7 +27,7 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="z-50 bg-white shadow-sm">
+    <nav className="bg-white shadow-sm">
       {/* Elegant top accent bar */}
       <div className="h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
       
