@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -89,8 +90,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               Trusted Excellence Since 1998
             </Badge>
             
-            <div className="relative px-1 sm:px-6 py-2 sm:py-6 overflow-hidden w-full">
-              <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.1] sm:leading-tight text-center w-full break-words">
+            <div className="relative px-2 sm:px-8 py-6 sm:py-12 lg:py-16 overflow-visible w-full">
+              <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.2] sm:leading-[1.15] lg:leading-[1.1] text-center w-full break-words">
                 <span 
                   className={`inline-block transition-opacity duration-500 font-black ${
                     isTaglineAnimating ? 'opacity-0' : 'opacity-100'
