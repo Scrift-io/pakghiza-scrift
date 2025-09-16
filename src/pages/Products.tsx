@@ -120,27 +120,27 @@ const Products = () => {
       price: 'Contact for pricing'
     },
     {
-      id: 16,
-      name: 'CHOCOLINO - HAZELNUT CHOCOLATE SPREAD',
-      category: 'chocolate',
-      image: '/lovable-uploads/d98e959f-7b74-4857-9138-65e6d330ad58.png',
-      description: 'Indulgent Hazelnut Delight for Elevated Bakes. Rich hazelnut chocolate spread for cakes, cheesecakes, and brownies – perfect for indulgent baking.',
-      usageRate: 'As needed',
-      packSize: '1Kg | 3Kg Bucket',
-      shelfLife: '2 Years',
-      features: ['Rich hazelnut flavor', 'Indulgent delight', 'Elevated baking', 'Versatile spread'],
+      id: 7,
+      name: 'PAK GHIZA - BREADCRUMBS',
+      category: 'baking',
+      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
+      description: 'Golden Crunch, Irresistible Texture – Fry or Bake to Perfection. Crispy, golden coating for fried or baked foods. Available in white and orange variants, our breadcrumbs deliver irresistible crunch and texture.',
+      usageRate: 'As needed for coating',
+      packSize: '10Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '9 Months',
+      features: ['Golden crispy coating', 'White & orange variants', 'Irresistible crunch', 'Versatile application'],
       price: 'Contact for pricing'
     },
     {
-      id: 17,
-      name: 'CHOCOLINO - MILK CHOCOLATE SPREAD',
-      category: 'chocolate',
-      image: '/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png',
-      description: 'Creamy Chocolate Spread – Smooth, Sweet & Versatile. Smooth milk chocolate spread perfect for creamy cake layers and delightful desserts.',
-      usageRate: 'As needed',
-      packSize: '1Kg | 3Kg Bucket',
+      id: 9,
+      name: 'CALCIUM PROPIONATE',
+      category: 'preservative',
+      image: '/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png',
+      description: 'Reliable Mold Inhibition Without Compromising Fermentation. A safe, halal-certified preservative that extends the mold-free shelf life of bread without affecting yeast activity.',
+      usageRate: '0.1-0.3% of flour weight',
+      packSize: '25Kg Bag | 1Kg x 10 pcs',
       shelfLife: '2 Years',
-      features: ['Creamy smooth texture', 'Sweet & versatile', 'Cake layers', 'Delightful desserts'],
+      features: ['Mold inhibition', 'Halal certified', 'No yeast interference', 'Extended shelf life'],
       price: 'Contact for pricing'
     },
 
@@ -185,30 +185,6 @@ const Products = () => {
       price: 'Contact for pricing'
     },
     {
-      id: 7,
-      name: 'PAK GHIZA - BREADCRUMBS',
-      category: 'baking',
-      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
-      description: 'Golden Crunch, Irresistible Texture – Fry or Bake to Perfection. Crispy, golden coating for fried or baked foods. Available in white and orange variants, our breadcrumbs deliver irresistible crunch and texture.',
-      usageRate: 'As needed for coating',
-      packSize: '10Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '9 Months',
-      features: ['Golden crispy coating', 'White & orange variants', 'Irresistible crunch', 'Versatile application'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 9,
-      name: 'CALCIUM PROPIONATE',
-      category: 'preservative',
-      image: '/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png',
-      description: 'Reliable Mold Inhibition Without Compromising Fermentation. A safe, halal-certified preservative that extends the mold-free shelf life of bread without affecting yeast activity.',
-      usageRate: '0.1-0.3% of flour weight',
-      packSize: '25Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '2 Years',
-      features: ['Mold inhibition', 'Halal certified', 'No yeast interference', 'Extended shelf life'],
-      price: 'Contact for pricing'
-    },
-    {
       id: 10,
       name: 'CALCIUM ACETATE',
       category: 'preservative',
@@ -242,6 +218,32 @@ const Products = () => {
       packSize: '25Kg Bag | 1Kg x 10 pcs',
       shelfLife: '2 Years',
       features: ['Pure cocoa powder', 'Roasted cacao beans', 'Rich chocolaty flavor', 'Premium quality'],
+      price: 'Contact for pricing'
+    },
+
+    // TIER 5: LOGO PLACEHOLDER PRODUCTS (MOVED TO END)
+    {
+      id: 16,
+      name: 'CHOCOLINO - HAZELNUT CHOCOLATE SPREAD',
+      category: 'chocolate',
+      image: '/lovable-uploads/d98e959f-7b74-4857-9138-65e6d330ad58.png',
+      description: 'Indulgent Hazelnut Delight for Elevated Bakes. Rich hazelnut chocolate spread for cakes, cheesecakes, and brownies – perfect for indulgent baking.',
+      usageRate: 'As needed',
+      packSize: '1Kg | 3Kg Bucket',
+      shelfLife: '2 Years',
+      features: ['Rich hazelnut flavor', 'Indulgent delight', 'Elevated baking', 'Versatile spread'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 17,
+      name: 'CHOCOLINO - MILK CHOCOLATE SPREAD',
+      category: 'chocolate',
+      image: '/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png',
+      description: 'Creamy Chocolate Spread – Smooth, Sweet & Versatile. Smooth milk chocolate spread perfect for creamy cake layers and delightful desserts.',
+      usageRate: 'As needed',
+      packSize: '1Kg | 3Kg Bucket',
+      shelfLife: '2 Years',
+      features: ['Creamy smooth texture', 'Sweet & versatile', 'Cake layers', 'Delightful desserts'],
       price: 'Contact for pricing'
     }
   ];
