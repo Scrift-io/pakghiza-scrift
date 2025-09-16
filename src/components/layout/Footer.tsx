@@ -44,16 +44,23 @@ const Footer = () => {
           </div>
           
           <div className="space-y-4 col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 className="text-base sm:text-lg font-semibold text-white">Newsletter</h3>
-            <p className="text-gray-400 text-sm sm:text-base">Stay updated with our latest products and offers</p>
-            <div className="space-y-3 max-w-sm">
-              <Input 
-                placeholder="Your email" 
-                className="bg-gray-800 border-gray-700 text-white rounded-lg text-sm sm:text-base h-10 sm:h-12" 
-              />
-              <Button className="bg-amber-500 hover:bg-amber-600 rounded-lg w-full text-sm sm:text-base h-10 sm:h-12">
-                Subscribe
-              </Button>
+            <h3 className="text-base sm:text-lg font-semibold text-white">Contact Info</h3>
+            <div className="text-gray-400 text-sm sm:text-base space-y-2">
+              <div>
+                <p className="font-semibold text-amber-400">Karachi Head Office</p>
+                <p>LC-40, Landhi Industrial Area</p>
+                <p>Tel: 021-35026618-20, 35026622</p>
+              </div>
+              <div>
+                <p className="font-semibold text-amber-400">Lahore Regional</p>
+                <p>60th Mall Road, Shahrah-e-Quaid-e-Azam</p>
+                <p>Tel: 042-36361067-9</p>
+              </div>
+              <div>
+                <p className="font-semibold text-amber-400">Rawalpindi Regional</p>
+                <p>Khan Avenue, Chaklala Scheme III</p>
+                <p>Tel: 051-5145024</p>
+              </div>
             </div>
           </div>
         </div>

@@ -64,7 +64,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                  <p className="text-gray-600">021 35026618-20</p>
+                  <div className="text-gray-600 space-y-1">
+                    <p><strong>Karachi Head Office:</strong></p>
+                    <p>021-35026618-20, 35026622, 021-35026602</p>
+                    <p><strong>Lahore Regional Office:</strong></p>
+                    <p>042-36361067-9</p>
+                    <p><strong>Rawalpindi Regional Office:</strong></p>
+                    <p>051-5145024</p>
+                  </div>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -81,10 +88,26 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
-                    <p className="text-gray-600">Plot no. LC-40</p>
-                    <p className="text-gray-600">Landhi Industrial Area</p>
-                    <p className="text-gray-600">Karachi, Pakistan</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Offices</h3>
+                    <div className="text-gray-600 space-y-3">
+                      <div>
+                        <p className="font-semibold">Karachi Head Office</p>
+                        <p>LC-40, Landhi Industrial Area</p>
+                        <p>Near Opal Laboratory, Karachi, Pakistan</p>
+                        <p>Post Code 71500</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold">Lahore Regional Office</p>
+                        <p>60th Mall Road</p>
+                        <p>Shahrah-e-Quaid-e-Azam, Lahore Pakistan</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold">Rawalpindi Regional Office</p>
+                        <p>House No. 51, Street #5, Khan Avenue</p>
+                        <p>Behind Shell Filling Station, Chaklala Scheme III</p>
+                        <p>Rawalpindi</p>
+                      </div>
+                    </div>
                   </div>
               </div>
 
@@ -190,20 +213,20 @@ const Contact = () => {
           {/* Map Section */}
           <div className="mt-16">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Location</h2>
-              <p className="text-lg text-gray-600">Find us at our facility in Landhi Industrial Area, Karachi</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Offices</h2>
+              <p className="text-lg text-gray-600">Find us at our facilities in Karachi, Lahore, and Rawalpindi</p>
             </div>
 
             <Card className="overflow-hidden shadow-xl border-0 rounded-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.2!2d67.255!3d24.824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPlot%20no.%20LC-40%2C%20Landhi%20Industrial%20Area%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.2!2d67.255!3d24.824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLC-40%2C%20Landhi%20Industrial%20Area%2C%20Near%20Opal%20Laboratory%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1609459200000!5m2!1sen!2s"
                 width="100%"
                 height="500"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Pak Ghiza Location - Landhi Industrial Area, Karachi"
+                title="Pak Ghiza Head Office - LC-40, Landhi Industrial Area, Karachi"
                 className="rounded-xl"
               />
             </Card>

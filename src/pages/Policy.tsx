@@ -336,7 +336,7 @@ const Policy = () => {
                     size="lg"
                     variant="outline"
                     className="border-amber-500 text-amber-700 hover:bg-amber-50"
-                    onClick={() => window.open('tel:+1234567890', '_self')}
+                    onClick={() => window.open('tel:+92213502661820', '_self')}
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     Call Now

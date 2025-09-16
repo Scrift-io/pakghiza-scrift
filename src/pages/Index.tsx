@@ -598,7 +598,11 @@ const Index = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                    <p className="text-gray-600">+92 XXX XXXXXXX</p>
+                    <div className="text-gray-600 space-y-1">
+                      <p><strong>Karachi:</strong> 021-35026618-20, 35026622, 021-35026602</p>
+                      <p><strong>Lahore:</strong> 042-36361067-9</p>
+                      <p><strong>Rawalpindi:</strong> 051-5145024</p>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -615,8 +619,12 @@ const Index = () => {
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
-                    <p className="text-gray-600">Karachi, Pakistan</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Offices</h3>
+                    <div className="text-gray-600 space-y-2">
+                      <p><strong>Karachi Head Office:</strong> LC-40, Landhi Industrial Area, Near Opal Laboratory, Karachi, Pakistan 71500</p>
+                      <p><strong>Lahore:</strong> 60th Mall Road, Shahrah-e-Quaid-e-Azam, Lahore Pakistan</p>
+                      <p><strong>Rawalpindi:</strong> House No. 51, Street #5, Khan Avenue, Behind Shell Filling Station, Chaklala Scheme III</p>
+                    </div>
                   </div>
                 </div>
               </div>

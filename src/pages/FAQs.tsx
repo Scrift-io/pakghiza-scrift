@@ -100,7 +100,7 @@ const FAQs = () => {
                   Contact Support
                 </button>
                 <button 
-                  onClick={() => window.location.href = 'tel:+92XXXXXXXXX'}
+                  onClick={() => window.location.href = 'tel:+92213502661820'}
                   className="border border-amber-500 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   Call Us Now
