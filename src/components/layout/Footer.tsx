@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -45,21 +46,54 @@ const Footer = () => {
           
           <div className="space-y-4 col-span-1 sm:col-span-2 lg:col-span-1">
             <h3 className="text-base sm:text-lg font-semibold text-white">Contact Info</h3>
-            <div className="text-gray-400 text-sm sm:text-base space-y-2">
+            <div className="text-gray-400 text-sm sm:text-base space-y-3">
+              <div className="flex items-center gap-2">
+                <Mail size={16} className="text-amber-400 flex-shrink-0" />
+                <a href="mailto:info@pakghiza.com" className="hover:text-amber-400 transition-colors">
+                  info@pakghiza.com
+                </a>
+              </div>
               <div>
                 <p className="font-semibold text-amber-400">Karachi Head Office</p>
                 <p>LC-40, Landhi Industrial Area</p>
-                <p>Tel: 021-35026618-20, 35026622</p>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-amber-400 flex-shrink-0" />
+                  <span>021-35026618-20, 35026622</span>
+                </div>
               </div>
               <div>
                 <p className="font-semibold text-amber-400">Lahore Regional</p>
                 <p>60th Mall Road, Shahrah-e-Quaid-e-Azam</p>
-                <p>Tel: 042-36361067-9</p>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-amber-400 flex-shrink-0" />
+                  <span>042-36361067-9</span>
+                </div>
               </div>
               <div>
                 <p className="font-semibold text-amber-400">Rawalpindi Regional</p>
                 <p>Khan Avenue, Chaklala Scheme III</p>
-                <p>Tel: 051-5145024</p>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-amber-400 flex-shrink-0" />
+                  <span>051-5145024</span>
+                </div>
+              </div>
+              
+              <div className="pt-3">
+                <p className="text-sm font-semibold text-white mb-3">Follow Us</p>
+                <div className="flex items-center gap-3">
+                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                    <Facebook size={18} className="group-hover:scale-110 transition-transform" />
+                  </a>
+                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                    <Instagram size={18} className="group-hover:scale-110 transition-transform" />
+                  </a>
+                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                    <Linkedin size={18} className="group-hover:scale-110 transition-transform" />
+                  </a>
+                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                    <Twitter size={18} className="group-hover:scale-110 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
