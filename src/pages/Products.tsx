@@ -120,15 +120,15 @@ const Products = () => {
       price: 'Contact for pricing'
     },
     {
-      id: 7,
-      name: 'PAK GHIZA - BREADCRUMBS',
-      category: 'baking',
-      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
-      description: 'Golden Crunch, Irresistible Texture – Fry or Bake to Perfection. Crispy, golden coating for fried or baked foods. Available in white and orange variants, our breadcrumbs deliver irresistible crunch and texture.',
-      usageRate: 'As needed for coating',
-      packSize: '10Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '9 Months',
-      features: ['Golden crispy coating', 'White & orange variants', 'Irresistible crunch', 'Versatile application'],
+      id: 10,
+      name: 'CALCIUM ACETATE',
+      category: 'preservative',
+      image: '/lovable-uploads/ecb641e8-d3bd-483c-9466-c11cb901f8f3.png',
+      description: 'Effective Rope Prevention for Extended Shelf Life. A powerful preservative preventing rope formation and spoilage in baked goods, extending shelf life without compromising quality.',
+      usageRate: '0.1-0.2% of total weight',
+      packSize: '25Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '2 Years',
+      features: ['Rope prevention', 'Spoilage protection', 'Quality preservation', 'Extended shelf life'],
       price: 'Contact for pricing'
     },
     {
@@ -185,15 +185,15 @@ const Products = () => {
       price: 'Contact for pricing'
     },
     {
-      id: 10,
-      name: 'CALCIUM ACETATE',
-      category: 'preservative',
-      image: '/lovable-uploads/ecb641e8-d3bd-483c-9466-c11cb901f8f3.png',
-      description: 'Effective Rope Prevention for Extended Shelf Life. A powerful preservative preventing rope formation and spoilage in baked goods, extending shelf life without compromising quality.',
-      usageRate: '0.1-0.2% of total weight',
-      packSize: '25Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '2 Years',
-      features: ['Rope prevention', 'Spoilage protection', 'Quality preservation', 'Extended shelf life'],
+      id: 7,
+      name: 'PAK GHIZA - BREADCRUMBS',
+      category: 'baking',
+      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
+      description: 'Golden Crunch, Irresistible Texture – Fry or Bake to Perfection. Crispy, golden coating for fried or baked foods. Available in white and orange variants, our breadcrumbs deliver irresistible crunch and texture.',
+      usageRate: 'As needed for coating',
+      packSize: '10Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '9 Months',
+      features: ['Golden crispy coating', 'White & orange variants', 'Irresistible crunch', 'Versatile application'],
       price: 'Contact for pricing'
     },
     {
