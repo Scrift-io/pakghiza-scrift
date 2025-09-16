@@ -7,93 +7,102 @@ import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone } from 'lucide-reac
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12 sm:py-16">
+    <footer className="bg-gray-900 text-white py-8 sm:py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
-          <div className="space-y-4 col-span-1 sm:col-span-2 lg:col-span-1">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-4 space-y-3">
             <Link to="/" className="flex items-center space-x-3">
               <img 
                 src="/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png" 
                 alt="Pak Ghiza Logo" 
-                className="h-8 w-8 sm:h-10 sm:w-10 object-contain flex-shrink-0" 
+                className="h-8 w-8 object-contain flex-shrink-0" 
               />
-              <span className="text-xl sm:text-2xl font-bold">Pak Ghiza</span>
+              <span className="text-xl font-bold">Pak Ghiza</span>
             </Link>
-            <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Premium food ingredients for professional bakers and food manufacturers across Pakistan.
             </p>
-          </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-base sm:text-lg font-semibold text-white">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">Home</Link></li>
-              <li><Link to="/products" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">Products</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">About</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-amber-400 transition-colors text-sm sm:text-base block py-1">Contact</Link></li>
-            </ul>
-          </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-base sm:text-lg font-semibold text-white">Categories</h3>
-            <ul className="space-y-2">
-              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Baking Agents</span></li>
-              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Preservatives</span></li>
-              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Flavorings</span></li>
-              <li><span className="text-gray-400 text-sm sm:text-base block py-1">Specialty Flours</span></li>
-            </ul>
-          </div>
-          
-          <div className="space-y-4 col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 className="text-base sm:text-lg font-semibold text-white">Contact Info</h3>
-            <div className="text-gray-400 text-sm sm:text-base space-y-3">
+            
+            {/* Contact Email */}
+            <div className="flex items-center gap-2 text-sm">
+              <Mail size={14} className="text-amber-400 flex-shrink-0" />
+              <a href="mailto:info@pakghiza.com" className="text-gray-400 hover:text-amber-400 transition-colors">
+                info@pakghiza.com
+              </a>
+            </div>
+
+            {/* Social Media */}
+            <div className="pt-2">
+              <p className="text-xs font-semibold text-white mb-2">Follow Us</p>
               <div className="flex items-center gap-2">
-                <Mail size={16} className="text-amber-400 flex-shrink-0" />
-                <a href="mailto:info@pakghiza.com" className="hover:text-amber-400 transition-colors">
-                  info@pakghiza.com
+                <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                  <Facebook size={16} className="group-hover:scale-110 transition-transform" />
+                </a>
+                <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                  <Instagram size={16} className="group-hover:scale-110 transition-transform" />
+                </a>
+                <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                  <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
+                </a>
+                <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                  <Twitter size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
               </div>
-              <div>
-                <p className="font-semibold text-amber-400">Karachi Head Office</p>
-                <p>LC-40, Landhi Industrial Area</p>
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-amber-400 flex-shrink-0" />
-                  <span>021-35026618-20, 35026622</span>
-                </div>
+            </div>
+          </div>
+          
+          {/* Navigation Links */}
+          <div className="lg:col-span-2 space-y-3">
+            <h3 className="text-sm font-semibold text-white">Quick Links</h3>
+            <ul className="space-y-1.5">
+              <li><Link to="/" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Home</Link></li>
+              <li><Link to="/products" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Products</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">About</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Contact</Link></li>
+            </ul>
+            
+            <div className="pt-2 space-y-1.5">
+              <h4 className="text-xs font-semibold text-white">Categories</h4>
+              <div className="text-xs text-gray-400 space-y-1">
+                <p>Baking Agents</p>
+                <p>Preservatives</p>
+                <p>Flavorings</p>
+                <p>Specialty Flours</p>
               </div>
-              <div>
-                <p className="font-semibold text-amber-400">Lahore Regional</p>
-                <p>60th Mall Road, Shahrah-e-Quaid-e-Azam</p>
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-amber-400 flex-shrink-0" />
-                  <span>042-36361067-9</span>
-                </div>
+            </div>
+          </div>
+          
+          {/* Office Locations */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            {/* Karachi */}
+            <div className="space-y-1.5">
+              <p className="font-semibold text-amber-400">Karachi Head Office</p>
+              <p className="text-gray-400 leading-relaxed">LC-40, Landhi Industrial Area, Near Opal Laboratory, Karachi, Pakistan Post Code 71500</p>
+              <div className="flex items-center gap-1">
+                <Phone size={12} className="text-amber-400 flex-shrink-0" />
+                <span className="text-gray-400">021-35026618-20, 35026622, 021-35026602</span>
               </div>
-              <div>
-                <p className="font-semibold text-amber-400">Rawalpindi Regional</p>
-                <p>Khan Avenue, Chaklala Scheme III</p>
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-amber-400 flex-shrink-0" />
-                  <span>051-5145024</span>
-                </div>
+            </div>
+            
+            {/* Lahore */}
+            <div className="space-y-1.5">
+              <p className="font-semibold text-amber-400">Lahore Regional Office</p>
+              <p className="text-gray-400 leading-relaxed">60th Mall Road, Shahrah-e-Quaid-e-Azam, Lahore Pakistan</p>
+              <div className="flex items-center gap-1">
+                <Phone size={12} className="text-amber-400 flex-shrink-0" />
+                <span className="text-gray-400">042-36361067-9</span>
               </div>
-              
-              <div className="pt-3">
-                <p className="text-sm font-semibold text-white mb-3">Follow Us</p>
-                <div className="flex items-center gap-3">
-                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
-                    <Facebook size={18} className="group-hover:scale-110 transition-transform" />
-                  </a>
-                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
-                    <Instagram size={18} className="group-hover:scale-110 transition-transform" />
-                  </a>
-                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
-                    <Linkedin size={18} className="group-hover:scale-110 transition-transform" />
-                  </a>
-                  <a href="#" className="p-2 bg-gray-800/50 rounded-lg hover:bg-amber-500 hover:text-white transition-all duration-300 group">
-                    <Twitter size={18} className="group-hover:scale-110 transition-transform" />
-                  </a>
-                </div>
+            </div>
+            
+            {/* Rawalpindi */}
+            <div className="space-y-1.5">
+              <p className="font-semibold text-amber-400">Rawalpindi Regional Office</p>
+              <p className="text-gray-400 leading-relaxed">House No. 51, Street #5, Khan Avenue Behind Shell filling Station, Chaklala scheme III</p>
+              <div className="flex items-center gap-1">
+                <Phone size={12} className="text-amber-400 flex-shrink-0" />
+                <span className="text-gray-400">051-5145024</span>
               </div>
             </div>
           </div>
