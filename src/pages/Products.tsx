@@ -25,100 +25,48 @@ const Products = () => {
   const productsRef = useRef(null);
 
   const products = [
-    // PAK MAYA - Bread Improvers
+    // TIER 1: HIGH-QUALITY IMAGES WITH PLAIN BACKGROUNDS (FUNDRIPS SYRUPS)
     {
-      id: 1,
-      name: 'PAK MAYA - SUPER EKA 300',
-      category: 'baking',
-      image: '/lovable-uploads/ab13828d-6ff9-4b6d-aa8f-75f02fbc89e8.png',
-      description: 'Professional-Grade Softness, Volume & Golden Perfection in Every Loaf. Enhance your bread quality with Super EKA-300 – a powerful bread improver that boosts dough handling, improves bread softness and texture, and delivers a golden crust.',
-      usageRate: 'As recommended',
-      packSize: '500g x 20 pcs | 10Kg Bag',
+      id: 20,
+      name: 'FUNDRIPS - CHOCOLATE SYRUP',
+      category: 'syrup',
+      image: '/lovable-uploads/4908033d-4add-48fe-b311-417be43da8a6.png',
+      backImage: '/lovable-uploads/d4686f25-6ab0-47df-854e-3a1c469313c5.png',
+      description: 'Classic Cocoa Richness for Desserts, Beverages & More. Classic chocolate syrup that enhances ice cream, shakes, cakes, and more with deep cocoa richness.',
+      usageRate: 'As needed',
+      packSize: '750g PET Bottle x 12 pcs',
       shelfLife: '2 Years',
-      features: ['Professional-grade quality', 'Enhanced softness & volume', 'Golden crust perfection', 'Extended freshness'],
+      features: ['Classic cocoa richness', 'Versatile use', 'Deep flavor', 'Premium syrup'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 21,
+      name: 'FUNDRIPS - STRAWBERRY SYRUP',
+      category: 'syrup',
+      image: '/lovable-uploads/a366421d-9444-4bb0-8ac8-4fd8f1019c90.png',
+      backImage: '/lovable-uploads/7bf98528-bded-4130-8b77-cde8c954ba89.png',
+      description: 'Sweet Strawberry Flavor That Pops in Every Dish. Fresh strawberry flavor for baked goods and desserts, delivering sweet fruitiness and visual appeal.',
+      usageRate: 'As needed',
+      packSize: '750g PET Bottle x 12 pcs',
+      shelfLife: '2 Years',
+      features: ['Fresh strawberry flavor', 'Sweet fruitiness', 'Visual appeal', 'Versatile application'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 22,
+      name: 'FUNDRIPS - CARAMEL SYRUP',
+      category: 'syrup',
+      image: '/lovable-uploads/91deaf67-a331-42f7-bc09-6f2ab5269bdc.png',
+      backImage: '/lovable-uploads/6c8e1e68-ab78-41db-8381-42a153afe5e6.png',
+      description: 'Golden Caramel Goodness – Smooth, Sweet, and Buttery. Sweet, buttery caramel flavor ideal for coffee, desserts, and garnishing.',
+      usageRate: 'As needed',
+      packSize: '750g PET Bottle x 12 pcs',
+      shelfLife: '2 Years',
+      features: ['Golden caramel', 'Smooth & buttery', 'Coffee compatible', 'Perfect garnishing'],
       price: 'Contact for pricing'
     },
 
-    // PAK GHIZA - Baking Essentials
-    {
-      id: 6,
-      name: 'PAK GHIZA - BAKING POWDER',
-      category: 'baking',
-      image: '/lovable-uploads/677e12d8-6763-4fb9-88ee-3025f225b2b0.png',
-      description: 'Consistent Rise, Flawless Texture – Every Bake, Every Time. Ensure consistent leavening and fine crumb texture in cakes, biscuits, and cookies. Produces a soft, white interior and uniform baking performance.',
-      usageRate: 'As recommended',
-      packSize: '4.5Kg | 10Kg Bag',
-      shelfLife: '2 Years',
-      features: ['Consistent leavening', 'Fine crumb texture', 'Soft white interior', 'Uniform performance'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 7,
-      name: 'PAK GHIZA - BREADCRUMBS',
-      category: 'baking',
-      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
-      description: 'Golden Crunch, Irresistible Texture – Fry or Bake to Perfection. Crispy, golden coating for fried or baked foods. Available in white and orange variants, our breadcrumbs deliver irresistible crunch and texture.',
-      usageRate: 'As needed for coating',
-      packSize: '10Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '9 Months',
-      features: ['Golden crispy coating', 'White & orange variants', 'Irresistible crunch', 'Versatile application'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 8,
-      name: 'PAK GHIZA - CAKE GEL',
-      category: 'baking',
-      image: '/lovable-uploads/6c6c03a0-2e73-4dc6-8698-9a1dcf947a34.png',
-      backImage: '/lovable-uploads/7f7dc588-fbfc-4be6-8139-7390d374270e.png',
-      description: 'Enhance Volume, Moisture & Softness in Every Slice. A translucent cake improver gel that increases batter volume, improves crumb softness, and retains moisture for longer freshness.',
-      usageRate: 'As recommended',
-      packSize: '1Kg x 12 pcs | Custom: 4Kg & 15Kg',
-      shelfLife: '1 Year',
-      features: ['Enhanced volume', 'Improved moisture retention', 'Softer crumb', 'Longer freshness'],
-      price: 'Contact for pricing'
-    },
-
-    // Preservatives
-    {
-      id: 9,
-      name: 'CALCIUM PROPIONATE',
-      category: 'preservative',
-      image: '/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png',
-      description: 'Reliable Mold Inhibition Without Compromising Fermentation. A safe, halal-certified preservative that extends the mold-free shelf life of bread without affecting yeast activity.',
-      usageRate: '0.1-0.3% of flour weight',
-      packSize: '25Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '2 Years',
-      features: ['Mold inhibition', 'Halal certified', 'No yeast interference', 'Extended shelf life'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 10,
-      name: 'CALCIUM ACETATE',
-      category: 'preservative',
-      image: '/lovable-uploads/ecb641e8-d3bd-483c-9466-c11cb901f8f3.png',
-      description: 'Effective Rope Prevention for Extended Shelf Life. A powerful preservative preventing rope formation and spoilage in baked goods, extending shelf life without compromising quality.',
-      usageRate: '0.1-0.2% of total weight',
-      packSize: '25Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '2 Years',
-      features: ['Rope prevention', 'Spoilage protection', 'Quality preservation', 'Extended shelf life'],
-      price: 'Contact for pricing'
-    },
-
-    // Bakery Enhancers
-    {
-      id: 11,
-      name: 'SOY FLOUR - FULL FAT ENZYME ACTIVE',
-      category: 'flour',
-      image: '/lovable-uploads/bf220f1d-6528-4e7e-9bbe-6af34bb92678.png',
-      description: 'Boost Dough Strength and Nutrition with Enzyme-Rich Soy Flour. Protein-rich, high-fat soy flour that enhances dough strength, crumb brightness, and nutritional value – perfect for healthier baking.',
-      usageRate: '1-3% of flour weight',
-      packSize: '25Kg Bag | 1Kg x 10 pcs',
-      shelfLife: '6 Months',
-      features: ['Protein-rich', 'Enhanced dough strength', 'Brighter crumb', 'Nutritional enhancement'],
-      price: 'Contact for pricing'
-    },
-
-    // CHOCOLINO - Cocoa & Chocolate
+    // TIER 2: PREMIUM CHOCOLATE PRODUCTS WITH MULTIPLE HIGH-QUALITY IMAGES
     {
       id: 12,
       name: 'CHOCOLINO CHOCOLATE SLAB - PREMIUM DARK',
@@ -195,6 +143,95 @@ const Products = () => {
       features: ['Creamy smooth texture', 'Sweet & versatile', 'Cake layers', 'Delightful desserts'],
       price: 'Contact for pricing'
     },
+
+    // TIER 3: GOOD QUALITY SINGLE IMAGES - PAK GHIZA PRODUCTS WITH BACK IMAGES
+    {
+      id: 8,
+      name: 'PAK GHIZA - CAKE GEL',
+      category: 'baking',
+      image: '/lovable-uploads/6c6c03a0-2e73-4dc6-8698-9a1dcf947a34.png',
+      backImage: '/lovable-uploads/7f7dc588-fbfc-4be6-8139-7390d374270e.png',
+      description: 'Enhance Volume, Moisture & Softness in Every Slice. A translucent cake improver gel that increases batter volume, improves crumb softness, and retains moisture for longer freshness.',
+      usageRate: 'As recommended',
+      packSize: '1Kg x 12 pcs | Custom: 4Kg & 15Kg',
+      shelfLife: '1 Year',
+      features: ['Enhanced volume', 'Improved moisture retention', 'Softer crumb', 'Longer freshness'],
+      price: 'Contact for pricing'
+    },
+
+    // TIER 4: SINGLE QUALITY IMAGES - PAK MAYA & PAK GHIZA
+    {
+      id: 1,
+      name: 'PAK MAYA - SUPER EKA 300',
+      category: 'baking',
+      image: '/lovable-uploads/ab13828d-6ff9-4b6d-aa8f-75f02fbc89e8.png',
+      description: 'Professional-Grade Softness, Volume & Golden Perfection in Every Loaf. Enhance your bread quality with Super EKA-300 – a powerful bread improver that boosts dough handling, improves bread softness and texture, and delivers a golden crust.',
+      usageRate: 'As recommended',
+      packSize: '500g x 20 pcs | 10Kg Bag',
+      shelfLife: '2 Years',
+      features: ['Professional-grade quality', 'Enhanced softness & volume', 'Golden crust perfection', 'Extended freshness'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 6,
+      name: 'PAK GHIZA - BAKING POWDER',
+      category: 'baking',
+      image: '/lovable-uploads/677e12d8-6763-4fb9-88ee-3025f225b2b0.png',
+      description: 'Consistent Rise, Flawless Texture – Every Bake, Every Time. Ensure consistent leavening and fine crumb texture in cakes, biscuits, and cookies. Produces a soft, white interior and uniform baking performance.',
+      usageRate: 'As recommended',
+      packSize: '4.5Kg | 10Kg Bag',
+      shelfLife: '2 Years',
+      features: ['Consistent leavening', 'Fine crumb texture', 'Soft white interior', 'Uniform performance'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 7,
+      name: 'PAK GHIZA - BREADCRUMBS',
+      category: 'baking',
+      image: '/lovable-uploads/123278a7-4077-469b-97f7-07a680cc5957.png',
+      description: 'Golden Crunch, Irresistible Texture – Fry or Bake to Perfection. Crispy, golden coating for fried or baked foods. Available in white and orange variants, our breadcrumbs deliver irresistible crunch and texture.',
+      usageRate: 'As needed for coating',
+      packSize: '10Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '9 Months',
+      features: ['Golden crispy coating', 'White & orange variants', 'Irresistible crunch', 'Versatile application'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 9,
+      name: 'CALCIUM PROPIONATE',
+      category: 'preservative',
+      image: '/lovable-uploads/56a0dfbb-f740-41ad-98b3-fd2f7d4a87fb.png',
+      description: 'Reliable Mold Inhibition Without Compromising Fermentation. A safe, halal-certified preservative that extends the mold-free shelf life of bread without affecting yeast activity.',
+      usageRate: '0.1-0.3% of flour weight',
+      packSize: '25Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '2 Years',
+      features: ['Mold inhibition', 'Halal certified', 'No yeast interference', 'Extended shelf life'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 10,
+      name: 'CALCIUM ACETATE',
+      category: 'preservative',
+      image: '/lovable-uploads/ecb641e8-d3bd-483c-9466-c11cb901f8f3.png',
+      description: 'Effective Rope Prevention for Extended Shelf Life. A powerful preservative preventing rope formation and spoilage in baked goods, extending shelf life without compromising quality.',
+      usageRate: '0.1-0.2% of total weight',
+      packSize: '25Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '2 Years',
+      features: ['Rope prevention', 'Spoilage protection', 'Quality preservation', 'Extended shelf life'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 11,
+      name: 'SOY FLOUR - FULL FAT ENZYME ACTIVE',
+      category: 'flour',
+      image: '/lovable-uploads/bf220f1d-6528-4e7e-9bbe-6af34bb92678.png',
+      description: 'Boost Dough Strength and Nutrition with Enzyme-Rich Soy Flour. Protein-rich, high-fat soy flour that enhances dough strength, crumb brightness, and nutritional value – perfect for healthier baking.',
+      usageRate: '1-3% of flour weight',
+      packSize: '25Kg Bag | 1Kg x 10 pcs',
+      shelfLife: '6 Months',
+      features: ['Protein-rich', 'Enhanced dough strength', 'Brighter crumb', 'Nutritional enhancement'],
+      price: 'Contact for pricing'
+    },
     {
       id: 19,
       name: 'CHOCOLINO - COCOA POWDER',
@@ -205,47 +242,6 @@ const Products = () => {
       packSize: '25Kg Bag | 1Kg x 10 pcs',
       shelfLife: '2 Years',
       features: ['Pure cocoa powder', 'Roasted cacao beans', 'Rich chocolaty flavor', 'Premium quality'],
-      price: 'Contact for pricing'
-    },
-
-    // FUNDRIPS - Syrups
-    {
-      id: 20,
-      name: 'FUNDRIPS - CHOCOLATE SYRUP',
-      category: 'syrup',
-      image: '/lovable-uploads/4908033d-4add-48fe-b311-417be43da8a6.png',
-      backImage: '/lovable-uploads/d4686f25-6ab0-47df-854e-3a1c469313c5.png',
-      description: 'Classic Cocoa Richness for Desserts, Beverages & More. Classic chocolate syrup that enhances ice cream, shakes, cakes, and more with deep cocoa richness.',
-      usageRate: 'As needed',
-      packSize: '750g PET Bottle x 12 pcs',
-      shelfLife: '2 Years',
-      features: ['Classic cocoa richness', 'Versatile use', 'Deep flavor', 'Premium syrup'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 21,
-      name: 'FUNDRIPS - STRAWBERRY SYRUP',
-      category: 'syrup',
-      image: '/lovable-uploads/a366421d-9444-4bb0-8ac8-4fd8f1019c90.png',
-      backImage: '/lovable-uploads/7bf98528-bded-4130-8b77-cde8c954ba89.png',
-      description: 'Sweet Strawberry Flavor That Pops in Every Dish. Fresh strawberry flavor for baked goods and desserts, delivering sweet fruitiness and visual appeal.',
-      usageRate: 'As needed',
-      packSize: '750g PET Bottle x 12 pcs',
-      shelfLife: '2 Years',
-      features: ['Fresh strawberry flavor', 'Sweet fruitiness', 'Visual appeal', 'Versatile application'],
-      price: 'Contact for pricing'
-    },
-    {
-      id: 22,
-      name: 'FUNDRIPS - CARAMEL SYRUP',
-      category: 'syrup',
-      image: '/lovable-uploads/91deaf67-a331-42f7-bc09-6f2ab5269bdc.png',
-      backImage: '/lovable-uploads/6c8e1e68-ab78-41db-8381-42a153afe5e6.png',
-      description: 'Golden Caramel Goodness – Smooth, Sweet, and Buttery. Sweet, buttery caramel flavor ideal for coffee, desserts, and garnishing.',
-      usageRate: 'As needed',
-      packSize: '750g PET Bottle x 12 pcs',
-      shelfLife: '2 Years',
-      features: ['Golden caramel', 'Smooth & buttery', 'Coffee compatible', 'Perfect garnishing'],
       price: 'Contact for pricing'
     }
   ];
