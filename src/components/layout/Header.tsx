@@ -27,12 +27,12 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white z-[1000] shadow-[0_2px_5px_rgba(0,0,0,0.1)]">
+    <nav className="fixed top-0 left-0 w-full z-[1000] backdrop-blur-md bg-white/80 border-b border-white/20 shadow-lg shadow-black/5">
       {/* Elegant top accent bar */}
       <div className="h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
       
       {/* Main navigation */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-transparent">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             
@@ -42,11 +42,11 @@ const Header = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`relative text-[15px] font-medium tracking-wide transition-all duration-300 hover:text-amber-600 group ${
-                    location.pathname === item.path 
-                      ? 'text-amber-600' 
-                      : 'text-gray-700 hover:text-gray-900'
-                  }`}
+                   className={`relative text-[15px] font-semibold tracking-wide transition-all duration-300 hover:text-amber-600 group ${
+                     location.pathname === item.path 
+                       ? 'text-amber-600' 
+                       : 'text-gray-900 hover:text-amber-600'
+                   }`}
                 >
                   {item.label}
                   <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
@@ -76,11 +76,11 @@ const Header = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`relative text-[15px] font-medium tracking-wide transition-all duration-300 hover:text-amber-600 group ${
-                    location.pathname === item.path 
-                      ? 'text-amber-600' 
-                      : 'text-gray-700 hover:text-gray-900'
-                  }`}
+                   className={`relative text-[15px] font-semibold tracking-wide transition-all duration-300 hover:text-amber-600 group ${
+                     location.pathname === item.path 
+                       ? 'text-amber-600' 
+                       : 'text-gray-900 hover:text-amber-600'
+                   }`}
                 >
                   {item.label}
                   <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
@@ -95,11 +95,11 @@ const Header = () => {
             {/* Mobile menu button - Refined */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="lg:hidden p-3 rounded-full hover:bg-gray-50 transition-colors duration-200"
+              className="lg:hidden p-3 rounded-full hover:bg-white/10 transition-colors duration-200"
             >
               {isMenuOpen ? 
-                <X className="w-5 h-5 text-gray-700" /> : 
-                <Menu className="w-5 h-5 text-gray-700" />
+                <X className="w-5 h-5 text-gray-900" /> : 
+                <Menu className="w-5 h-5 text-gray-900" />
               }
             </button>
           </div>
@@ -107,7 +107,7 @@ const Header = () => {
 
         {/* Refined Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg animate-fade-in">
+          <div className="lg:hidden backdrop-blur-md bg-white/90 border-t border-white/20 shadow-lg animate-fade-in">
             <div className="container mx-auto px-6 py-6">
               <div className="space-y-1">
                 {allNavItems.map((item) => (
