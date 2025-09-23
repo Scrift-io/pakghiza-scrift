@@ -43,7 +43,7 @@ const Footer = () => {
                 <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
                   <Instagram size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
-                <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                <a href="https://www.linkedin.com/company/72101038/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
                   <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
                 <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
