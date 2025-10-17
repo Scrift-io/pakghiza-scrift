@@ -79,7 +79,14 @@ const Footer = () => {
             {/* Karachi */}
             <div className="space-y-1.5">
               <p className="font-semibold text-amber-400">Karachi Head Office</p>
-              <p className="text-gray-400 leading-relaxed">LC-40, Landhi Industrial Area, Near Opal Laboratory, Karachi, Pakistan Post Code 71500</p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=LC-40,+Landhi+Industrial+Area,+Near+Opal+Laboratory,+Karachi,+Pakistan+71500"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 leading-relaxed hover:text-amber-400 transition-colors cursor-pointer block"
+              >
+                LC-40, Landhi Industrial Area, Near Opal Laboratory, Karachi, Pakistan Post Code 71500
+              </a>
               <div className="flex items-center gap-1">
                 <Phone size={12} className="text-amber-400 flex-shrink-0" />
                 <span className="text-gray-400">021-35026618-20, 35026622, 021-35026602</span>
@@ -89,7 +96,14 @@ const Footer = () => {
             {/* Lahore */}
             <div className="space-y-1.5">
               <p className="font-semibold text-amber-400">Lahore Regional Office</p>
-              <p className="text-gray-400 leading-relaxed">60th Mall Road, Shahrah-e-Quaid-e-Azam, Lahore Pakistan</p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=60th+Mall+Road,+Shahrah-e-Quaid-e-Azam,+Lahore+Pakistan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 leading-relaxed hover:text-amber-400 transition-colors cursor-pointer block"
+              >
+                60th Mall Road, Shahrah-e-Quaid-e-Azam, Lahore Pakistan
+              </a>
               <div className="flex items-center gap-1">
                 <Phone size={12} className="text-amber-400 flex-shrink-0" />
                 <span className="text-gray-400">042-36361067-9</span>
@@ -99,7 +113,14 @@ const Footer = () => {
             {/* Rawalpindi */}
             <div className="space-y-1.5">
               <p className="font-semibold text-amber-400">Rawalpindi Regional Office</p>
-              <p className="text-gray-400 leading-relaxed">House No. 51, Street #5, Khan Avenue Behind Shell filling Station, Chaklala scheme III</p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=House+No.+51,+Street+5,+Khan+Avenue,+Behind+Shell+Filling+Station,+Chaklala+Scheme+III,+Rawalpindi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 leading-relaxed hover:text-amber-400 transition-colors cursor-pointer block"
+              >
+                House No. 51, Street #5, Khan Avenue Behind Shell filling Station, Chaklala scheme III
+              </a>
               <div className="flex items-center gap-1">
                 <Phone size={12} className="text-amber-400 flex-shrink-0" />
                 <span className="text-gray-400">051-5145024</span>
