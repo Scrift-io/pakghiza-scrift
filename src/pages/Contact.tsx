@@ -22,10 +22,24 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      if (response.ok) {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        alert('Message sent!');
+      } else {
+        const data = await response.json();
+        alert('Submission failed: ' + (data.error || 'Unknown error'));
+      }
+    } catch (error) {
+      alert('Error submitting form: ' + error.message);
+    }
   };
 
   return (
