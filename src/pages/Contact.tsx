@@ -25,26 +25,28 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Submitting form data:', formData);
-      const response = await fetch('/api/contact', {
+      console.log('📧 Submitting form data:', formData);
+      
+      // Call Google Apps Script directly
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxrJNxtWMhnkclRj2brTwyH3QNHPm_WDBfsASF5Ai5siooFYB_ieBkLJ4v19OqpdWZAng/exec', {
         method: 'POST',
-        body: JSON.stringify(formData),
-        headers: { 'Content-Type': 'application/json' }
+        mode: 'no-cors', // Important for Google Apps Script
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
       
-      console.log('Response status:', response.status);
-      const responseData = await response.json();
-      console.log('Response data:', responseData);
+      console.log('📊 Response status:', response.status);
       
-      if (response.ok) {
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        alert('Message sent successfully!');
-      } else {
-        alert('Submission failed: ' + (responseData.error || responseData.message || 'Unknown error'));
-      }
+      // Since we're using no-cors, we can't read the response
+      // But if no error was thrown, assume success
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      alert('✅ Message sent successfully! We will get back to you soon.');
+      
     } catch (error) {
-      console.error('Form submission error:', error);
-      alert('Error submitting form: ' + error.message);
+      console.error('❌ Form submission error:', error);
+      alert('❌ Error submitting form: ' + error.message);
     }
   };
 
