@@ -25,19 +25,25 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log('Submitting form data:', formData);
       const response = await fetch('/api/contact', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' }
       });
+      
+      console.log('Response status:', response.status);
+      const responseData = await response.json();
+      console.log('Response data:', responseData);
+      
       if (response.ok) {
         setFormData({ name: '', email: '', subject: '', message: '' });
-        alert('Message sent!');
+        alert('Message sent successfully!');
       } else {
-        const data = await response.json();
-        alert('Submission failed: ' + (data.error || 'Unknown error'));
+        alert('Submission failed: ' + (responseData.error || responseData.message || 'Unknown error'));
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       alert('Error submitting form: ' + error.message);
     }
   };
