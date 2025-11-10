@@ -1,5 +1,7 @@
 
+
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Sparkles, Award, ArrowRight } from 'lucide-react';
@@ -11,6 +13,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({
   heroImages
 }) => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTagline, setCurrentTagline] = useState(0);
   const [currentKeyword, setCurrentKeyword] = useState(0);
@@ -134,7 +137,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <Button 
               size="lg" 
               className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-4 sm:px-8 sm:py-6 lg:px-12 lg:py-8 text-base sm:text-lg lg:text-xl rounded-xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-3xl border-0 font-semibold min-h-[52px] sm:min-h-[60px] max-w-full" 
-              onClick={() => window.location.href = '/products'}
+              onClick={() => navigate('/products')}
             >
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3 flex-shrink-0" />
               <span className="whitespace-nowrap">Explore Our Products</span>
