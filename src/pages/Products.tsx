@@ -402,7 +402,7 @@ const Products = () => {
                     <img 
                       src={product.image} 
                       alt={product.name} 
-                      className="w-full h-64 object-contain rounded-xl shadow-lg bg-gradient-to-br from-amber-50 to-yellow-50 p-4" 
+                      className="w-full h-64 object-contain rounded-xl shadow-lg bg-gray-50 p-4" 
                     />
                     {product.backImage && (
                       <img 
@@ -414,7 +414,7 @@ const Products = () => {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature, index) => (
-                      <Badge key={index} variant="secondary" className="bg-amber-50/80 text-amber-700 border border-amber-200/50 shadow-sm hover:bg-amber-100/80 backdrop-blur-sm text-xs px-2.5 py-1">
+                      <Badge key={index} variant="secondary" className="bg-white text-gray-700 border border-gray-200 shadow-sm hover:bg-gray-50 text-xs px-2.5 py-1">
                         {feature}
                       </Badge>
                     ))}
@@ -426,18 +426,18 @@ const Products = () => {
                     <p className="text-gray-600 leading-relaxed">{product.description}</p>
                   </div>
                   <div className="space-y-4">
-                    <div className="bg-amber-50 p-4 rounded-lg">
-                      <h3 className="font-semibold text-amber-800 mb-2">Usage Rate</h3>
-                      <p className="text-amber-700">{product.usageRate}</p>
+                    <div className="bg-white border border-gray-200 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-800 mb-2">Usage Rate</h3>
+                      <p className="text-gray-700">{product.usageRate}</p>
                     </div>
-                    <div className="bg-blue-50 p-4 rounded-lg">
-                      <h3 className="font-semibold text-blue-800 mb-2">Pack Size</h3>
-                      <p className="text-blue-700">{product.packSize}</p>
+                    <div className="bg-white border border-gray-200 p-4 rounded-lg">
+                      <h3 className="font-semibold text-gray-800 mb-2">Pack Size</h3>
+                      <p className="text-gray-700">{product.packSize}</p>
                     </div>
                     {product.shelfLife && (
-                      <div className="bg-green-50 p-4 rounded-lg">
-                        <h3 className="font-semibold text-green-800 mb-2">Shelf Life</h3>
-                        <p className="text-green-700">{product.shelfLife}</p>
+                      <div className="bg-white border border-gray-200 p-4 rounded-lg">
+                        <h3 className="font-semibold text-gray-800 mb-2">Shelf Life</h3>
+                        <p className="text-gray-700">{product.shelfLife}</p>
                       </div>
                     )}
                   </div>
