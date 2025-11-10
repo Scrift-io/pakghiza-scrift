@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import CircularGallery from './CircularGallery';
@@ -13,6 +14,7 @@ interface Product {
 }
 
 const FeaturedProductsCarousel = () => {
+  const navigate = useNavigate();
   const products: Product[] = [
     {
       name: "FUN DRIPS - CARAMEL SYRUP",
@@ -98,7 +100,7 @@ const FeaturedProductsCarousel = () => {
           
           <div className="text-center mt-8">
             <Button 
-              onClick={() => window.location.href = '/products'}
+              onClick={() => navigate('/products')}
               className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Explore All Products
