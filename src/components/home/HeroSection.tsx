@@ -62,9 +62,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Badge>
             
             <div className="relative px-2 sm:px-8 py-6 sm:py-12 lg:py-16 overflow-visible w-full">
-              <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.2] sm:leading-[1.15] lg:leading-[1.1] text-center w-full break-words text-white"
+              <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.2] sm:leading-[1.15] lg:leading-[1.1] text-center w-full break-words"
                   style={{
-                    textShadow: '2px 2px 8px rgba(0,0,0,0.8)'
+                    color: 'hsl(45, 93%, 62%)',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
                   }}>
                 Premium Ingredients for Culinary Excellence
               </h1>
