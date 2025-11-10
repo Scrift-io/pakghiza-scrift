@@ -386,8 +386,8 @@ const Products = () => {
     if (!product) return null;
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1001] p-4 overflow-y-auto">
+        <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in my-auto">
           <div className="relative">
             <button 
               onClick={onClose} 
@@ -395,8 +395,8 @@ const Products = () => {
             >
               <X className="w-5 h-5" />
             </button>
-            <div className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-4">
                   <div className="space-y-4">
                     <img 
