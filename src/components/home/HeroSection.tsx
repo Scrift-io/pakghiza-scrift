@@ -12,13 +12,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   heroImages
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentTagline, setCurrentTagline] = useState(0);
-  const [currentKeyword, setCurrentKeyword] = useState(0);
-  const [isTaglineAnimating, setIsTaglineAnimating] = useState(false);
-  const [isKeywordAnimating, setIsKeywordAnimating] = useState(false);
-
-  const taglines = ["Premium Ingredients", "Culinary Excellence", "Quality Solutions", "Trusted Partners"];
-  const keywords = ["world-class ingredients", "premium quality standards", "innovative food solutions", "exceptional taste profiles"];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,28 +19,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     }, 5000);
     return () => clearInterval(timer);
   }, [heroImages.length]);
-
-  useEffect(() => {
-    const taglineTimer = setInterval(() => {
-      setIsTaglineAnimating(true);
-      setTimeout(() => {
-        setCurrentTagline(prev => (prev + 1) % taglines.length);
-        setIsTaglineAnimating(false);
-      }, 500);
-    }, 3000);
-    return () => clearInterval(taglineTimer);
-  }, [taglines.length]);
-
-  useEffect(() => {
-    const keywordTimer = setInterval(() => {
-      setIsKeywordAnimating(true);
-      setTimeout(() => {
-        setCurrentKeyword(prev => (prev + 1) % keywords.length);
-        setIsKeywordAnimating(false);
-      }, 500);
-    }, 4000);
-    return () => clearInterval(keywordTimer);
-  }, [keywords.length]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
@@ -91,21 +62,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Badge>
             
             <div className="relative px-2 sm:px-8 py-6 sm:py-12 lg:py-16 overflow-visible w-full">
-              <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.2] sm:leading-[1.15] lg:leading-[1.1] text-center w-full break-words">
-                <span 
-                  className={`inline-block transition-opacity duration-500 font-black ${
-                    isTaglineAnimating ? 'opacity-0' : 'opacity-100'
-                  }`}
+              <h1 className="font-playfair text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.2] sm:leading-[1.15] lg:leading-[1.1] text-center w-full break-words text-white"
                   style={{
-                    background: 'linear-gradient(to right, hsl(45, 93%, 62%), hsl(50, 100%, 60%), hsl(39, 100%, 57%))',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.4), 0 0 20px rgba(245, 158, 11, 0.4)'
-                  }}
-                >
-                  {taglines[currentTagline]}
-                </span>
+                    textShadow: '2px 2px 8px rgba(0,0,0,0.8)'
+                  }}>
+                Premium Ingredients for Culinary Excellence
               </h1>
             </div>
             
@@ -114,21 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                  style={{
                    textShadow: '1px 1px 3px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.4)'
                  }}>
-                Transforming culinary excellence with{' '}
-                <span className="relative inline-block">
-                  <span 
-                    className={`font-medium transition-opacity duration-500 ${
-                      isKeywordAnimating ? 'opacity-0' : 'opacity-100'
-                    }`}
-                    style={{
-                      color: 'hsl(45, 84%, 78%)',
-                      textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(245, 158, 11, 0.3)'
-                    }}
-                  >
-                    {keywords[currentKeyword]}
-                  </span>
-                </span>
-                {' '}and unmatched quality standards that professional chefs and manufacturers trust worldwide.
+                Transforming culinary excellence with premium quality ingredients and unmatched standards that professional chefs and manufacturers trust worldwide.
               </p>
             </div>
           </div>
