@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Search, ShoppingCart, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, ShoppingCart, X, ChevronLeft, ChevronRight, Package, Cookie, Droplet, Coffee } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -19,6 +19,7 @@ import {
 const Consumer = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilter, setActiveFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const productsRef = useRef(null);
@@ -27,7 +28,7 @@ const Consumer = () => {
     {
       id: 23,
       name: 'CHOCOLINO - MILK CHOCOLATE BAR',
-      category: 'consumer',
+      category: 'chocolate-bar',
       image: '/lovable-uploads/chocolino_milk_1.png',
       images: [
         '/lovable-uploads/chocolino_milk_1.png',
@@ -44,7 +45,7 @@ const Consumer = () => {
     {
       id: 24,
       name: 'CHOCOLINO - DARK CHOCOLATE BAR',
-      category: 'consumer',
+      category: 'chocolate-bar',
       image: '/lovable-uploads/chocolino_dark_front.png',
       images: [
         '/lovable-uploads/chocolino_dark_front.png',
@@ -61,7 +62,7 @@ const Consumer = () => {
     {
       id: 25,
       name: 'CHOCOLINO - DARK CHOCOLATE SPREAD',
-      category: 'consumer',
+      category: 'spread',
       image: '/lovable-uploads/chocolino_dark_spread_consumer_front.png',
       images: [
         '/lovable-uploads/chocolino_dark_spread_consumer_front.png',
@@ -77,7 +78,7 @@ const Consumer = () => {
     {
       id: 26,
       name: 'CHOCOLINO - HAZELNUT CHOCOLATE SPREAD',
-      category: 'consumer',
+      category: 'spread',
       image: '/lovable-uploads/chocolino_hazelnut_spread_consumer_front.png',
       images: [
         '/lovable-uploads/chocolino_hazelnut_spread_consumer_front.png',
@@ -93,7 +94,7 @@ const Consumer = () => {
     {
       id: 27,
       name: 'CHOCOLINO - MILK CHOCOLATE SPREAD',
-      category: 'consumer',
+      category: 'spread',
       image: '/lovable-uploads/milk_choc_spread1.png',
       images: [
         '/lovable-uploads/milk_choc_spread1.png',
@@ -109,7 +110,7 @@ const Consumer = () => {
     {
       id: 28,
       name: 'FUN DRIPS - CHOCOLATE SYRUP',
-      category: 'consumer',
+      category: 'syrup',
       image: '/lovable-uploads/fundrips_chocolate_front.png',
       images: [
         '/lovable-uploads/fundrips_chocolate_front.png',
@@ -125,7 +126,7 @@ const Consumer = () => {
     {
       id: 29,
       name: 'FUN DRIPS - STRAWBERRY SYRUP',
-      category: 'consumer',
+      category: 'syrup',
       image: '/lovable-uploads/fundrips_strawberry_front.png',
       images: [
         '/lovable-uploads/fundrips_strawberry_front.png',
@@ -141,7 +142,7 @@ const Consumer = () => {
     {
       id: 30,
       name: 'FUN DRIPS - CARAMEL SYRUP',
-      category: 'consumer',
+      category: 'syrup',
       image: '/lovable-uploads/fundrips_caramel_front.png',
       images: [
         '/lovable-uploads/fundrips_caramel_front.png',
@@ -156,10 +157,46 @@ const Consumer = () => {
     }
   ];
 
+  const categories = [
+    { 
+      id: 'all', 
+      name: 'All Products', 
+      count: products.length,
+      icon: Package,
+      color: 'bg-amber-500 text-white',
+      hoverColor: 'hover:bg-amber-600'
+    },
+    { 
+      id: 'chocolate-bar', 
+      name: 'Chocolate Bars', 
+      count: products.filter(p => p.category === 'chocolate-bar').length,
+      icon: Cookie,
+      color: 'bg-amber-700 text-white',
+      hoverColor: 'hover:bg-amber-800'
+    },
+    { 
+      id: 'spread', 
+      name: 'Spreads', 
+      count: products.filter(p => p.category === 'spread').length,
+      icon: Coffee,
+      color: 'bg-orange-500 text-white',
+      hoverColor: 'hover:bg-orange-600'
+    },
+    { 
+      id: 'syrup', 
+      name: 'Syrups', 
+      count: products.filter(p => p.category === 'syrup').length,
+      icon: Droplet,
+      color: 'bg-blue-500 text-white',
+      hoverColor: 'hover:bg-blue-600'
+    },
+  ];
+
   const filteredProducts = products.filter(product => {
+    const matchesFilter = activeFilter === 'all' || product.category === activeFilter;
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesSearch;
+    return matchesFilter && matchesSearch;
   });
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -169,7 +206,7 @@ const Consumer = () => {
 
   React.useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm]);
+  }, [searchTerm, activeFilter]);
 
   const scrollToTop = () => {
     if (productsRef.current) {
@@ -376,6 +413,30 @@ const Consumer = () => {
               />
             </div>
           </div>
+
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map(category => (
+              <button
+                key={category.id}
+                onClick={() => setActiveFilter(category.id)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-200 shadow-sm ${
+                  activeFilter === category.id
+                    ? `${category.color} shadow-md scale-105`
+                    : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+                }`}
+              >
+                <category.icon className="w-4 h-4" />
+                <span>{category.name}</span>
+                <span className={`ml-1 px-2 py-0.5 rounded-full text-xs ${
+                  activeFilter === category.id
+                    ? 'bg-white/20 text-white'
+                    : 'bg-gray-100 text-gray-600'
+                }`}>
+                  {category.count}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-8" ref={productsRef}>
@@ -400,8 +461,8 @@ const Consumer = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
-                      <Badge variant="premium" className="text-xs px-3 py-1.5">
-                        {product.category}
+                      <Badge variant="premium" className="text-xs px-3 py-1.5 capitalize">
+                        {product.category.replace('-', ' ')}
                       </Badge>
                     </div>
                   </div>
