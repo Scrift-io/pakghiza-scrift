@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -37,17 +37,14 @@ const Footer = () => {
             <div className="pt-2">
               <p className="text-xs font-semibold text-white mb-2">Follow Us</p>
               <div className="flex items-center gap-2">
-                <a href="https://www.facebook.com/PowerPlusPakistan" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                <a href="https://www.facebook.com/people/Pure-N-Fresh/61583943389438/?rdid=GCOd5d3iWya5uxO9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15wjxkHcY3%2F" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
                   <Facebook size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
-                <a href="https://www.instagram.com/official.powerpluspk?igsh=MW14N2FqODBvNzkzcg" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
+                <a href="https://www.instagram.com/purenfresh.official/?igsh=MXFwOGpwYzIydmRnOA%3D%3D" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
                   <Instagram size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
                 <a href="https://www.linkedin.com/company/progressive-group-pakistan/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
                   <Linkedin size={16} className="group-hover:scale-110 transition-transform" />
-                </a>
-                <a href="#" className="p-1.5 bg-gray-800/50 rounded hover:bg-amber-500 hover:text-white transition-all duration-300 group">
-                  <Twitter size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
               </div>
             </div>
