@@ -414,28 +414,54 @@ const Consumer = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map(category => (
-              <button
-                key={category.id}
-                onClick={() => setActiveFilter(category.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-200 shadow-sm ${
-                  activeFilter === category.id
-                    ? `${category.color} shadow-md scale-105`
-                    : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-                }`}
-              >
-                <category.icon className="w-4 h-4" />
-                <span>{category.name}</span>
-                <span className={`ml-1 px-2 py-0.5 rounded-full text-xs ${
-                  activeFilter === category.id
-                    ? 'bg-white/20 text-white'
-                    : 'bg-gray-100 text-gray-600'
-                }`}>
-                  {category.count}
-                </span>
-              </button>
-            ))}
+          <div className="flex justify-center">
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-white/30 max-w-5xl">
+              <div className="flex flex-wrap gap-3 justify-center">
+                {categories.map(category => {
+                  const IconComponent = category.icon;
+                  const isActive = activeFilter === category.id;
+                  
+                  return (
+                    <button
+                      key={category.id}
+                      onClick={() => setActiveFilter(category.id)}
+                      className={`group relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl font-medium transition-all duration-300 ${
+                        isActive 
+                          ? `${category.color} shadow-lg scale-105` 
+                          : `bg-white/90 text-gray-700 hover:bg-gradient-to-r hover:shadow-md hover:scale-105`
+                      } ${
+                        !isActive && category.id === 'chocolate-bar' ? 'hover:from-amber-700 hover:to-amber-800 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'spread' ? 'hover:from-orange-500 hover:to-orange-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'syrup' ? 'hover:from-blue-500 hover:to-blue-600 hover:text-white' : ''
+                      } ${
+                        !isActive && category.id === 'all' ? 'hover:from-amber-500 hover:to-amber-600 hover:text-white' : ''
+                      }`}
+                    >
+                      <IconComponent className="w-4 h-4 flex-shrink-0" />
+                      <span className="font-semibold text-sm whitespace-nowrap">
+                        {category.name}
+                      </span>
+                      <Badge 
+                        variant="secondary" 
+                        className={`ml-1 text-xs px-2 py-0.5 flex-shrink-0 ${
+                          isActive 
+                            ? 'bg-white/20 text-white border-white/30' 
+                            : 'bg-gray-100 text-gray-600 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30'
+                        }`}
+                      >
+                        {category.count}
+                      </Badge>
+                      
+                      {isActive && (
+                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-white rounded-full opacity-80" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
 
