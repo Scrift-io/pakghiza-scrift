@@ -30,8 +30,11 @@ const Products = () => {
       id: 20,
       name: 'FUNDRIPS - CHOCOLATE SYRUP',
       category: 'syrup',
-      image: '/lovable-uploads/4908033d-4add-48fe-b311-417be43da8a6.png',
-      backImage: '/lovable-uploads/d4686f25-6ab0-47df-854e-3a1c469313c5.png',
+      image: '/lovable-uploads/fundrips_chocolate_front.png',
+      images: [
+        '/lovable-uploads/fundrips_chocolate_front.png',
+        '/lovable-uploads/fundrips_choc_back.png'
+      ],
       description: 'Classic Cocoa Richness for Desserts, Beverages & More. Classic chocolate syrup that enhances ice cream, shakes, cakes, and more with deep cocoa richness.',
       usageRate: 'As needed',
       packSize: '750g PET Bottle x 12 pcs',
@@ -43,8 +46,11 @@ const Products = () => {
       id: 21,
       name: 'FUNDRIPS - STRAWBERRY SYRUP',
       category: 'syrup',
-      image: '/lovable-uploads/a366421d-9444-4bb0-8ac8-4fd8f1019c90.png',
-      backImage: '/lovable-uploads/7bf98528-bded-4130-8b77-cde8c954ba89.png',
+      image: '/lovable-uploads/fundrips_strawberry_front.png',
+      images: [
+        '/lovable-uploads/fundrips_strawberry_front.png',
+        '/lovable-uploads/fundrips_strawberry_back.png'
+      ],
       description: 'Sweet Strawberry Flavor That Pops in Every Dish. Fresh strawberry flavor for baked goods and desserts, delivering sweet fruitiness and visual appeal.',
       usageRate: 'As needed',
       packSize: '750g PET Bottle x 12 pcs',
@@ -56,8 +62,11 @@ const Products = () => {
       id: 22,
       name: 'FUNDRIPS - CARAMEL SYRUP',
       category: 'syrup',
-      image: '/lovable-uploads/91deaf67-a331-42f7-bc09-6f2ab5269bdc.png',
-      backImage: '/lovable-uploads/6c8e1e68-ab78-41db-8381-42a153afe5e6.png',
+      image: '/lovable-uploads/fundrips_caramel_front.png',
+      images: [
+        '/lovable-uploads/fundrips_caramel_front.png',
+        '/lovable-uploads/fundrips_caramel_back.png'
+      ],
       description: 'Golden Caramel Goodness – Smooth, Sweet, and Buttery. Sweet, buttery caramel flavor ideal for coffee, desserts, and garnishing.',
       usageRate: 'As needed',
       packSize: '750g PET Bottle x 12 pcs',
