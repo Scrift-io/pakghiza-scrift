@@ -589,13 +589,13 @@ const Products = () => {
                 className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden border-0 shadow-lg"
                 onClick={() => setSelectedProduct(product)}
               >
-                <div className={`relative overflow-hidden ${product.category === 'syrup' || product.category === 'consumer' || [16, 17].includes(product.id) ? 'bg-white' : 'bg-gradient-to-br from-amber-50 to-yellow-50'}`}>
+                <div className={`relative overflow-hidden ${['syrup', 'consumer', 'baking', 'preservative', 'flavoring', 'flour'].includes(product.category) || [16, 17].includes(product.id) ? 'bg-white' : 'bg-gradient-to-br from-amber-50 to-yellow-50'}`}>
                   <img 
                     src={product.image} 
                     alt={product.name} 
                     className={`w-full h-64 group-hover:scale-110 transition-transform duration-300 ${
-                      product.category === 'syrup' || product.category === 'consumer' || [16, 17].includes(product.id) ? 'object-contain p-4' : 'object-cover'
-                    }`} 
+                      ['syrup', 'consumer', 'baking', 'preservative', 'flavoring', 'flour'].includes(product.category) || [16, 17].includes(product.id) ? 'object-contain p-4' : 'object-cover'
+                    }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
