@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Search, ShoppingCart, X, ShoppingBag, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, ShoppingCart, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -29,12 +29,81 @@ const Consumer = () => {
       name: 'CHOCOLINO - MILK CHOCOLATE BAR',
       category: 'consumer',
       image: '/lovable-uploads/chocolino_milk_1.png',
-      backImage: '/lovable-uploads/Chocolino_Dark_Back.png',
+      images: [
+        '/lovable-uploads/chocolino_milk_1.png',
+        '/lovable-uploads/chocolino_milk_back.png',
+        '/lovable-uploads/chocolino_milk_3.png'
+      ],
       description: 'Premium compound chocolate with superior taste, quality & aroma. A delicious milk chocolate bar perfect for everyday indulgence.',
       usageRate: 'Ready to eat',
       packSize: '200g Bar',
       shelfLife: '2 Years',
       features: ['Premium quality', 'Superior taste & aroma', 'Milk chocolate', 'Ready to eat'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 24,
+      name: 'CHOCOLINO - DARK CHOCOLATE BAR',
+      category: 'consumer',
+      image: '/lovable-uploads/chocolino_dark_front.png',
+      images: [
+        '/lovable-uploads/chocolino_dark_front.png',
+        '/lovable-uploads/chocolino_dark_back.png',
+        '/lovable-uploads/chocolino_dark_3.png'
+      ],
+      description: 'Premium dark chocolate compound with rich cocoa flavor. An intense chocolate experience for those who prefer bold, sophisticated taste.',
+      usageRate: 'Ready to eat',
+      packSize: '200g Bar',
+      shelfLife: '2 Years',
+      features: ['Premium dark chocolate', 'Rich cocoa flavor', 'Intense taste', 'Ready to eat'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 25,
+      name: 'CHOCOLINO - DARK CHOCOLATE SPREAD',
+      category: 'consumer',
+      image: '/lovable-uploads/chocolino_dark_spread_consumer_front.png',
+      images: [
+        '/lovable-uploads/chocolino_dark_spread_consumer_front.png',
+        '/lovable-uploads/chocolino_dark_spread_consumer_back.png'
+      ],
+      description: 'Rich dark chocolate spread with intense cocoa flavor. Perfect for spreading on bread, toast, or as a dessert topping.',
+      usageRate: 'Ready to use',
+      packSize: '350g Jar',
+      shelfLife: '18 Months',
+      features: ['Rich dark chocolate', 'Smooth spreadable texture', 'Intense flavor', 'Versatile use'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 26,
+      name: 'CHOCOLINO - HAZELNUT CHOCOLATE SPREAD',
+      category: 'consumer',
+      image: '/lovable-uploads/chocolino_hazelnut_spread_consumer_front.png',
+      images: [
+        '/lovable-uploads/chocolino_hazelnut_spread_consumer_front.png',
+        '/lovable-uploads/chocolino_hazelnut_consumer_spread_back.png'
+      ],
+      description: 'Delicious hazelnut chocolate spread combining premium cocoa with roasted hazelnuts. A creamy, indulgent treat for any occasion.',
+      usageRate: 'Ready to use',
+      packSize: '350g Jar',
+      shelfLife: '18 Months',
+      features: ['Roasted hazelnuts', 'Premium chocolate', 'Creamy texture', 'Perfect for breakfast'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 27,
+      name: 'CHOCOLINO - MILK CHOCOLATE SPREAD',
+      category: 'consumer',
+      image: '/lovable-uploads/milk_choc_spread1.png',
+      images: [
+        '/lovable-uploads/milk_choc_spread1.png',
+        '/lovable-uploads/chocolinio_milk_spread_consumer_back.png'
+      ],
+      description: 'Creamy milk chocolate spread with smooth, velvety texture. A sweet and delicious spread perfect for bread, pancakes, or desserts.',
+      usageRate: 'Ready to use',
+      packSize: '350g Jar',
+      shelfLife: '18 Months',
+      features: ['Creamy milk chocolate', 'Smooth texture', 'Sweet taste', 'Versatile spread'],
       price: 'Contact for pricing'
     }
   ];
@@ -112,7 +181,19 @@ const Consumer = () => {
   };
 
   const ProductModal = ({ product, onClose }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
     if (!product) return null;
+
+    const images = product.images || [product.image];
+
+    const nextImage = () => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = () => {
+      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1001] p-4 overflow-y-auto">
@@ -127,20 +208,44 @@ const Consumer = () => {
             <div className="p-4 sm:p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-4">
-                  <div className="space-y-4">
+                  <div className="relative">
                     <img 
-                      src={product.image} 
+                      src={images[currentImageIndex]} 
                       alt={product.name} 
-                      className="w-full h-64 object-contain rounded-xl shadow-lg bg-gray-50 p-4" 
+                      className="w-full h-80 object-contain rounded-xl shadow-lg bg-white p-4" 
                     />
-                    {product.backImage && (
-                      <img 
-                        src={product.backImage} 
-                        alt={`${product.name} - Back`} 
-                        className="w-full h-64 object-contain rounded-xl shadow-lg bg-white p-4" 
-                      />
+                    {images.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all"
+                        >
+                          <ChevronLeft className="w-5 h-5 text-gray-700" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all"
+                        >
+                          <ChevronRight className="w-5 h-5 text-gray-700" />
+                        </button>
+                      </>
                     )}
                   </div>
+                  {images.length > 1 && (
+                    <div className="flex justify-center gap-2">
+                      {images.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-3 h-3 rounded-full transition-all ${
+                            index === currentImageIndex 
+                              ? 'bg-amber-500 scale-110' 
+                              : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature, index) => (
                       <Badge key={index} variant="secondary" className="bg-white text-gray-700 border border-gray-200 shadow-sm hover:bg-gray-50 text-xs px-2.5 py-1">
