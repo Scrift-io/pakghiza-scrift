@@ -546,6 +546,8 @@ const Products = () => {
                       } ${
                         !isActive && category.id === 'syrup' ? 'hover:from-blue-500 hover:to-blue-600 hover:text-white' : ''
                       } ${
+                        !isActive && category.id === 'consumer' ? 'hover:from-pink-500 hover:to-pink-600 hover:text-white' : ''
+                      } ${
                         !isActive && category.id === 'all' ? 'hover:from-amber-500 hover:to-amber-600 hover:text-white' : ''
                       }`}
                     >
