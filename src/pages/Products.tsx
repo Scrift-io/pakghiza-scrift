@@ -578,7 +578,9 @@ const Products = () => {
                   <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" 
+                    className={`w-full h-64 group-hover:scale-110 transition-transform duration-300 ${
+                      product.category === 'syrup' ? 'object-contain p-4' : 'object-cover'
+                    }`} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
