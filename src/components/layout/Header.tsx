@@ -1,8 +1,8 @@
 
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ShoppingCart, Home, Package, Info, Factory, Shield, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,22 +39,60 @@ const Header = () => {
             {/* Left Navigation - Perfectly Spaced */}
             <div className="hidden lg:flex items-center justify-end flex-1 space-x-12 pr-16">
               {leftNavItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                   className={`relative text-[15px] font-semibold tracking-wide transition-all duration-300 hover:text-amber-600 group ${
-                     location.pathname === item.path 
-                       ? 'text-amber-600' 
-                       : 'text-gray-900 hover:text-amber-600'
-                   }`}
-                >
-                  {item.label}
-                  <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
-                    location.pathname === item.path 
-                      ? 'scale-x-100' 
-                      : 'scale-x-0 group-hover:scale-x-100'
-                  }`}></span>
-                </Link>
+                item.path === '/products' ? (
+                  <div key={item.path} className="relative group">
+                    <Link
+                      to={item.path}
+                      className={`relative text-[15px] font-semibold tracking-wide transition-all duration-300 hover:text-amber-600 flex items-center gap-1 ${
+                        location.pathname === item.path || location.pathname === '/industrial'
+                          ? 'text-amber-600' 
+                          : 'text-gray-900 hover:text-amber-600'
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+                      <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
+                        location.pathname === item.path || location.pathname === '/industrial'
+                          ? 'scale-x-100' 
+                          : 'scale-x-0 group-hover:scale-x-100'
+                      }`}></span>
+                    </Link>
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]">
+                        <Link
+                          to="/industrial"
+                          className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+                        >
+                          Industrial Goods
+                        </Link>
+                        <Link
+                          to="/products"
+                          className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+                        >
+                          Consumer Goods
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`relative text-[15px] font-semibold tracking-wide transition-all duration-300 hover:text-amber-600 group ${
+                      location.pathname === item.path 
+                        ? 'text-amber-600' 
+                        : 'text-gray-900 hover:text-amber-600'
+                    }`}
+                  >
+                    {item.label}
+                    <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
+                      location.pathname === item.path 
+                        ? 'scale-x-100' 
+                        : 'scale-x-0 group-hover:scale-x-100'
+                    }`}></span>
+                  </Link>
+                )
               ))}
             </div>
 
