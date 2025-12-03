@@ -9,6 +9,7 @@ import LoadingScreen from "./components/LoadingScreen";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import Consumer from "./pages/Consumer";
 import About from "./pages/About";
 import Industrial from "./pages/Industrial";
 import Policy from "./pages/Policy";
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="products" element={<Products />} />
+              <Route path="consumer" element={<Consumer />} />
               <Route path="about" element={<About />} />
               <Route path="industrial" element={<Industrial />} />
               <Route path="policy" element={<Policy />} />

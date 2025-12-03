@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet, ChevronLeft, ChevronRight, ShoppingBag } from 'lucide-react';
+import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -248,19 +248,6 @@ const Products = () => {
       features: ['Creamy smooth texture', 'Sweet & versatile', 'Cake layers', 'Delightful desserts'],
       price: 'Contact for pricing'
     },
-    {
-      id: 23,
-      name: 'CHOCOLINO - MILK CHOCOLATE BAR',
-      category: 'consumer',
-      image: '/lovable-uploads/chocolino_milk_1.png',
-      backImage: '/lovable-uploads/Chocolino_Dark_Back.png',
-      description: 'Premium compound chocolate with superior taste, quality & aroma. A delicious milk chocolate bar perfect for everyday indulgence.',
-      usageRate: 'Ready to eat',
-      packSize: '200g Bar',
-      shelfLife: '2 Years',
-      features: ['Premium quality', 'Superior taste & aroma', 'Milk chocolate', 'Ready to eat'],
-      price: 'Contact for pricing'
-    }
   ];
 
   const categories = [
@@ -320,14 +307,6 @@ const Products = () => {
       color: 'bg-blue-500 text-white',
       hoverColor: 'hover:bg-blue-600'
     },
-    { 
-      id: 'consumer', 
-      name: 'Consumer Goods', 
-      count: products.filter(p => p.category === 'consumer').length,
-      icon: ShoppingBag,
-      color: 'bg-pink-500 text-white',
-      hoverColor: 'hover:bg-pink-600'
-    }
   ];
 
   const filteredProducts = products.filter(product => {
@@ -494,10 +473,10 @@ const Products = () => {
             animationSpeed={6}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Our Product Range
+            Industrial Goods
           </GradientText>
           <Typewriter
-            text="Discover our comprehensive range of premium food ingredients designed for professional bakers and food manufacturers"
+            text="Premium food ingredients designed for professional bakers, confectioners, and food manufacturers"
             speed={50}
             loop={false}
             className="text-xl text-gray-600 max-w-3xl mx-auto"

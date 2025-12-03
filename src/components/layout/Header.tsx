@@ -15,7 +15,6 @@ const Header = () => {
   ];
 
   const rightNavItems = [
-    { path: '/industrial', label: 'Industrial' },
     { path: '/policy', label: 'Policy' },
     { path: '/contact', label: 'Contact' }
   ];
@@ -44,15 +43,15 @@ const Header = () => {
                     <Link
                       to={item.path}
                       className={`relative text-[15px] font-semibold tracking-wide transition-all duration-300 hover:text-amber-600 flex items-center gap-1 ${
-                        location.pathname === item.path || location.pathname === '/industrial'
-                          ? 'text-amber-600' 
+                        location.pathname === item.path || location.pathname === '/consumer'
+                          ? 'text-amber-600'
                           : 'text-gray-900 hover:text-amber-600'
                       }`}
                     >
                       {item.label}
                       <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
                       <span className={`absolute -bottom-6 left-0 w-full h-0.5 bg-amber-500 transform transition-all duration-300 ${
-                        location.pathname === item.path || location.pathname === '/industrial'
+                        location.pathname === item.path || location.pathname === '/consumer'
                           ? 'scale-x-100' 
                           : 'scale-x-0 group-hover:scale-x-100'
                       }`}></span>
@@ -61,13 +60,13 @@ const Header = () => {
                     <div className="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                       <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[180px]">
                         <Link
-                          to="/industrial"
+                          to="/products"
                           className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
                         >
                           Industrial Goods
                         </Link>
                         <Link
-                          to="/products"
+                          to="/consumer"
                           className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
                         >
                           Consumer Goods
