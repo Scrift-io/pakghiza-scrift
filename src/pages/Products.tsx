@@ -226,7 +226,8 @@ const Products = () => {
       id: 16,
       name: 'CHOCOLINO - HAZELNUT CHOCOLATE SPREAD',
       category: 'chocolate',
-      image: '/lovable-uploads/d98e959f-7b74-4857-9138-65e6d330ad58.png',
+      image: '/lovable-uploads/hazlenut_spread1.png',
+      backImage: '/lovable-uploads/hazlenut_spread_3.png',
       description: 'Indulgent Hazelnut Delight for Elevated Bakes. Rich hazelnut chocolate spread for cakes, cheesecakes, and brownies – perfect for indulgent baking.',
       usageRate: 'As needed',
       packSize: '1Kg | 3Kg Bucket',
@@ -238,12 +239,26 @@ const Products = () => {
       id: 17,
       name: 'CHOCOLINO - MILK CHOCOLATE SPREAD',
       category: 'chocolate',
-      image: '/lovable-uploads/ef05060b-66ed-4bf9-bc44-9e00d3dd13c7.png',
+      image: '/lovable-uploads/milk_choc_spread1.png',
+      backImage: '/lovable-uploads/milk_choc_spread2.png',
       description: 'Creamy Chocolate Spread – Smooth, Sweet & Versatile. Smooth milk chocolate spread perfect for creamy cake layers and delightful desserts.',
       usageRate: 'As needed',
       packSize: '1Kg | 3Kg Bucket',
       shelfLife: '2 Years',
       features: ['Creamy smooth texture', 'Sweet & versatile', 'Cake layers', 'Delightful desserts'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 23,
+      name: 'CHOCOLINO - MILK COMPOUND CHOCOLATE BAR',
+      category: 'consumer',
+      image: '/lovable-uploads/chocolino_milk_1.png',
+      backImage: '/lovable-uploads/Chocolino_Dark_Back.png',
+      description: 'Premium compound chocolate with superior taste, quality & aroma. A delicious milk chocolate bar perfect for everyday indulgence.',
+      usageRate: 'Ready to eat',
+      packSize: '200g Bar',
+      shelfLife: '2 Years',
+      features: ['Premium quality', 'Superior taste & aroma', 'Milk chocolate', 'Ready to eat'],
       price: 'Contact for pricing'
     }
   ];
@@ -574,12 +589,12 @@ const Products = () => {
                 className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden border-0 shadow-lg"
                 onClick={() => setSelectedProduct(product)}
               >
-                <div className={`relative overflow-hidden ${product.category === 'syrup' ? 'bg-white' : 'bg-gradient-to-br from-amber-50 to-yellow-50'}`}>
+                <div className={`relative overflow-hidden ${product.category === 'syrup' || product.category === 'consumer' || [16, 17].includes(product.id) ? 'bg-white' : 'bg-gradient-to-br from-amber-50 to-yellow-50'}`}>
                   <img 
                     src={product.image} 
                     alt={product.name} 
                     className={`w-full h-64 group-hover:scale-110 transition-transform duration-300 ${
-                      product.category === 'syrup' ? 'object-contain p-4' : 'object-cover'
+                      product.category === 'syrup' || product.category === 'consumer' || [16, 17].includes(product.id) ? 'object-contain p-4' : 'object-cover'
                     }`} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
