@@ -250,7 +250,7 @@ const Products = () => {
     },
     {
       id: 23,
-      name: 'CHOCOLINO - MILK COMPOUND CHOCOLATE BAR',
+      name: 'CHOCOLINO - MILK CHOCOLATE BAR',
       category: 'consumer',
       image: '/lovable-uploads/chocolino_milk_1.png',
       backImage: '/lovable-uploads/Chocolino_Dark_Back.png',
