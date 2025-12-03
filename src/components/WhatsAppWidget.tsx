@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const WhatsAppWidget = () => {
   const [showTooltip, setShowTooltip] = useState(false);
-  const phoneNumber = '923502661820'; // Company WhatsApp number - Karachi Head Office
+  const phoneNumber = '923148039941'; // Company WhatsApp number
   const message = 'Hello! I would like to inquire about your products.';
   
   const handleWhatsAppClick = () => {
