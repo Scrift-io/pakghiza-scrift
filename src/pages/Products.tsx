@@ -226,8 +226,12 @@ const Products = () => {
       id: 16,
       name: 'CHOCOLINO - HAZELNUT CHOCOLATE SPREAD',
       category: 'chocolate',
-      image: '/lovable-uploads/hazlenut_spread1.png',
-      backImage: '/lovable-uploads/hazlenut_spread_3.png',
+      image: '/lovable-uploads/hazelnut_spread_industrial_front.png',
+      images: [
+        '/lovable-uploads/hazelnut_spread_industrial_front.png',
+        '/lovable-uploads/hazelnut_spread_front2_industrial.png',
+        '/lovable-uploads/hazelnut_spread_industrial_back.png'
+      ],
       description: 'Indulgent Hazelnut Delight for Elevated Bakes. Rich hazelnut chocolate spread for cakes, cheesecakes, and brownies – perfect for indulgent baking.',
       usageRate: 'As needed',
       packSize: '1Kg | 3Kg Bucket',
@@ -239,8 +243,12 @@ const Products = () => {
       id: 17,
       name: 'CHOCOLINO - MILK CHOCOLATE SPREAD',
       category: 'chocolate',
-      image: '/lovable-uploads/milk_choc_spread1.png',
-      backImage: '/lovable-uploads/milk_choc_spread2.png',
+      image: '/lovable-uploads/milk_spread_industrial_front.png',
+      images: [
+        '/lovable-uploads/milk_spread_industrial_front.png',
+        '/lovable-uploads/milk_spread_industrial_2.png',
+        '/lovable-uploads/milk_spread_back_industrial.png'
+      ],
       description: 'Creamy Chocolate Spread – Smooth, Sweet & Versatile. Smooth milk chocolate spread perfect for creamy cake layers and delightful desserts.',
       usageRate: 'As needed',
       packSize: '1Kg | 3Kg Bucket',
@@ -385,7 +393,23 @@ const Products = () => {
   };
 
   const ProductModal = ({ product, onClose }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
     if (!product) return null;
+
+    // Use images array if available, otherwise fallback to [image, backImage]
+    const productImages = product.images || [
+      product.image,
+      ...(product.backImage ? [product.backImage] : [])
+    ];
+
+    const nextImage = () => {
+      setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+    };
+
+    const prevImage = () => {
+      setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+    };
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1001] p-4 overflow-y-auto">
@@ -400,20 +424,45 @@ const Products = () => {
             <div className="p-4 sm:p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-4">
-                  <div className="space-y-4">
+                  <div className="relative">
                     <img 
-                      src={product.image} 
-                      alt={product.name} 
-                      className="w-full h-64 object-contain rounded-xl shadow-lg bg-gray-50 p-4" 
+                      src={productImages[currentImageIndex]} 
+                      alt={`${product.name} - Image ${currentImageIndex + 1}`} 
+                      className="w-full h-72 object-contain rounded-xl shadow-lg bg-gray-50 p-4" 
                     />
-                    {product.backImage && (
-                      <img 
-                        src={product.backImage} 
-                        alt={`${product.name} - Back`} 
-                        className="w-full h-64 object-contain rounded-xl shadow-lg bg-white p-4" 
-                      />
+                    {productImages.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all"
+                        >
+                          <ChevronLeft className="w-5 h-5 text-gray-700" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all"
+                        >
+                          <ChevronRight className="w-5 h-5 text-gray-700" />
+                        </button>
+                      </>
                     )}
                   </div>
+                  {/* Image indicators */}
+                  {productImages.length > 1 && (
+                    <div className="flex justify-center gap-2">
+                      {productImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all ${
+                            index === currentImageIndex 
+                              ? 'bg-amber-500 scale-110' 
+                              : 'bg-gray-300 hover:bg-gray-400'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature, index) => (
                       <Badge key={index} variant="secondary" className="bg-white text-gray-700 border border-gray-200 shadow-sm hover:bg-gray-50 text-xs px-2.5 py-1">
