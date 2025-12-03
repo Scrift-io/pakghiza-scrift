@@ -105,6 +105,54 @@ const Consumer = () => {
       shelfLife: '18 Months',
       features: ['Creamy milk chocolate', 'Smooth texture', 'Sweet taste', 'Versatile spread'],
       price: 'Contact for pricing'
+    },
+    {
+      id: 28,
+      name: 'FUN DRIPS - CHOCOLATE SYRUP',
+      category: 'consumer',
+      image: '/lovable-uploads/fundrips_chocolate_front.png',
+      images: [
+        '/lovable-uploads/fundrips_chocolate_front.png',
+        '/lovable-uploads/fundrips_choc_back.png'
+      ],
+      description: 'Rich chocolate syrup perfect for drizzling over ice cream, pancakes, waffles, and desserts. A delicious treat for the whole family.',
+      usageRate: 'Ready to use',
+      packSize: '300ml Bottle',
+      shelfLife: '2 Years',
+      features: ['Rich chocolate flavor', 'Easy squeeze bottle', 'Perfect for desserts', 'Family favorite'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 29,
+      name: 'FUN DRIPS - STRAWBERRY SYRUP',
+      category: 'consumer',
+      image: '/lovable-uploads/fundrips_strawberry_front.png',
+      images: [
+        '/lovable-uploads/fundrips_strawberry_front.png',
+        '/lovable-uploads/fundrips_strawberry_back.png'
+      ],
+      description: 'Sweet strawberry syrup that adds fruity flavor to your favorite treats. Great for ice cream, milkshakes, pancakes, and more.',
+      usageRate: 'Ready to use',
+      packSize: '300ml Bottle',
+      shelfLife: '2 Years',
+      features: ['Fresh strawberry taste', 'Sweet & fruity', 'Versatile topping', 'Kid-friendly'],
+      price: 'Contact for pricing'
+    },
+    {
+      id: 30,
+      name: 'FUN DRIPS - CARAMEL SYRUP',
+      category: 'consumer',
+      image: '/lovable-uploads/fundrips_caramel_front.png',
+      images: [
+        '/lovable-uploads/fundrips_caramel_front.png',
+        '/lovable-uploads/fundrips_caramel_back.png'
+      ],
+      description: 'Smooth, buttery caramel syrup for drizzling on coffee, ice cream, waffles, and desserts. Adds a golden touch to any treat.',
+      usageRate: 'Ready to use',
+      packSize: '300ml Bottle',
+      shelfLife: '2 Years',
+      features: ['Buttery caramel flavor', 'Golden drizzle', 'Perfect for coffee', 'Dessert essential'],
+      price: 'Contact for pricing'
     }
   ];
 
