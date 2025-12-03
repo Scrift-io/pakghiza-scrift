@@ -574,7 +574,7 @@ const Products = () => {
                 className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden border-0 shadow-lg"
                 onClick={() => setSelectedProduct(product)}
               >
-                <div className="relative overflow-hidden bg-gradient-to-br from-amber-50 to-yellow-50">
+                <div className={`relative overflow-hidden ${product.category === 'syrup' ? 'bg-white' : 'bg-gradient-to-br from-amber-50 to-yellow-50'}`}>
                   <img 
                     src={product.image} 
                     alt={product.name} 
