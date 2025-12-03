@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
   const leftNavItems = [
@@ -148,18 +149,60 @@ const Header = () => {
             <div className="container mx-auto px-6 py-6">
               <div className="space-y-1">
                 {allNavItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block py-3 px-4 rounded-lg font-medium transition-all duration-200 ${
-                      location.pathname === item.path 
-                        ? 'bg-amber-50 text-amber-600 border-l-4 border-amber-500' 
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                  item.path === '/products' ? (
+                    <div key={item.path}>
+                      <button
+                        onClick={() => setIsProductsOpen(!isProductsOpen)}
+                        className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-medium transition-all duration-200 ${
+                          location.pathname === '/products' || location.pathname === '/consumer'
+                            ? 'bg-amber-50 text-amber-600 border-l-4 border-amber-500' 
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {isProductsOpen && (
+                        <div className="pl-4 mt-1 space-y-1">
+                          <Link
+                            to="/products"
+                            onClick={() => { setIsMenuOpen(false); setIsProductsOpen(false); }}
+                            className={`block py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-200 ${
+                              location.pathname === '/products'
+                                ? 'bg-amber-100 text-amber-700'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            }`}
+                          >
+                            Industrial Goods
+                          </Link>
+                          <Link
+                            to="/consumer"
+                            onClick={() => { setIsMenuOpen(false); setIsProductsOpen(false); }}
+                            className={`block py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-200 ${
+                              location.pathname === '/consumer'
+                                ? 'bg-amber-100 text-amber-700'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            }`}
+                          >
+                            Consumer Goods
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => { setIsMenuOpen(false); setIsProductsOpen(false); }}
+                      className={`block py-3 px-4 rounded-lg font-medium transition-all duration-200 ${
+                        location.pathname === item.path 
+                          ? 'bg-amber-50 text-amber-600 border-l-4 border-amber-500' 
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
