@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, ShoppingCart, X, Package, Cake, Shield, Palette, Wheat, Coffee, Droplet, ChevronLeft, ChevronRight, ShoppingBag } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -304,6 +304,14 @@ const Products = () => {
       icon: Droplet,
       color: 'bg-blue-500 text-white',
       hoverColor: 'hover:bg-blue-600'
+    },
+    { 
+      id: 'consumer', 
+      name: 'Consumer Goods', 
+      count: products.filter(p => p.category === 'consumer').length,
+      icon: ShoppingBag,
+      color: 'bg-pink-500 text-white',
+      hoverColor: 'hover:bg-pink-600'
     }
   ];
 
