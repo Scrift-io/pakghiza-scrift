@@ -18,21 +18,21 @@ const FeaturedProductsCarousel = () => {
   const products: Product[] = [
     {
       name: "FUN DRIPS - CARAMEL SYRUP",
-      image: "/lovable-uploads/1148c3f0-b9fc-4a15-b2a9-464aae369df1.png",
+      image: "/lovable-uploads/fundrips_caramel_front.png",
       description: "Premium Caramel Decor Sauce for Dessert Enhancement",
       category: "Decor Sauce",
       features: ["Premium quality", "Smooth texture", "Perfect for desserts"]
     },
     {
       name: "FUN DRIPS - STRAWBERRY SYRUP",
-      image: "/lovable-uploads/1060326f-27a6-43ee-96cb-3a2198ae510e.png",
+      image: "/lovable-uploads/fundrips_strawberry_front.png",
       description: "Delicious Strawberry Decor Sauce with Natural Flavor",
       category: "Decor Sauce",
       features: ["Natural strawberry flavor", "Vibrant color", "Versatile application"]
     },
     {
       name: "FUN DRIPS - CHOCOLATE SYRUP",
-      image: "/lovable-uploads/898229e8-d9a2-44b1-9fe1-79f1f51bd1f0.png",
+      image: "/lovable-uploads/fundrips_chocolate_front.png",
       description: "Rich Chocolate Decor Sauce for Premium Desserts",
       category: "Decor Sauce",
       features: ["Rich chocolate taste", "Professional grade", "Easy application"]
