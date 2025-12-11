@@ -202,14 +202,28 @@ class Media {
         }
         
         void main() {
-          vec2 ratio = vec2(
-            min((uPlaneSizes.x / uPlaneSizes.y) / (uImageSizes.x / uImageSizes.y), 1.0),
-            min((uPlaneSizes.y / uPlaneSizes.x) / (uImageSizes.y / uImageSizes.x), 1.0)
-          );
+          float planeAspect = uPlaneSizes.x / uPlaneSizes.y;
+          float imageAspect = uImageSizes.x / uImageSizes.y;
+          
+          vec2 ratio;
+          if (imageAspect > planeAspect) {
+            // Image is wider than plane - fit by width, letterbox vertically
+            ratio = vec2(1.0, planeAspect / imageAspect);
+          } else {
+            // Image is taller than plane - fit by height, pillarbox horizontally
+            ratio = vec2(imageAspect / planeAspect, 1.0);
+          }
+          
           vec2 uv = vec2(
-            vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
-            vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
+            (vUv.x - 0.5) / ratio.x + 0.5,
+            (vUv.y - 0.5) / ratio.y + 0.5
           );
+          
+          // Discard pixels outside the actual image bounds
+          if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
+            discard;
+          }
+          
           vec4 color = texture2D(tMap, uv);
           
           float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
