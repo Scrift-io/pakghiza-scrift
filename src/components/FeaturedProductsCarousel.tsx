@@ -38,32 +38,32 @@ const FeaturedProductsCarousel = () => {
       features: ["Rich chocolate taste", "Professional grade", "Easy application"]
     },
     {
-      name: "CHOCOLINO - STANDARD COMPOUND",
-      image: "/lovable-uploads/53b8a033-8fc0-4016-af1d-031479d8dd8c.png",
-      description: "Superior Quality Dark Chocolate Compound",
-      category: "Chocolate",
-      features: ["Superior taste", "Premium quality", "Professional aroma"]
-    },
-    {
-      name: "CHOCOLINO - MILK COMPOUND",
-      image: "/lovable-uploads/4193ce9d-be87-4e11-9477-ffcb11dc76af.png",
+      name: "CHOCOLINO - MILK CHOCOLATE BAR",
+      image: "/lovable-uploads/chocolino_milk_1.png",
       description: "Premium Milk Chocolate Compound with Rich Flavor",
       category: "Chocolate",
       features: ["Creamy milk chocolate", "Superior quality", "Rich taste & aroma"]
     },
     {
-      name: "CHOCOLINO - DARK COMPOUND",
-      image: "/lovable-uploads/c3cb38dc-2ece-459b-a69c-b74b36928b64.png",
+      name: "CHOCOLINO - DARK CHOCOLATE BAR",
+      image: "/lovable-uploads/chocolino_dark_front.png",
       description: "Premium Dark Chocolate Compound for Professional Use",
       category: "Chocolate",
       features: ["Intense dark chocolate", "Premium quality", "Professional grade"]
     },
     {
       name: "CHOCOLINO - HAZELNUT SPREAD",
-      image: "/lovable-uploads/141b75b4-03a8-408f-a99b-6ea09214a15b.png",
+      image: "/lovable-uploads/chocolino_hazelnut_spread_consumer_front.png",
       description: "Indulgent Hazelnut Chocolate Spread",
       category: "Spread",
       features: ["Rich hazelnut flavor", "Smooth texture", "Premium ingredients"]
+    },
+    {
+      name: "CHOCOLINO - DARK SPREAD",
+      image: "/lovable-uploads/chocolino_dark_spread_consumer_front.png",
+      description: "Rich Dark Chocolate Spread for Indulgent Treats",
+      category: "Spread",
+      features: ["Intense dark chocolate", "Smooth texture", "Premium quality"]
     }
   ];
 
